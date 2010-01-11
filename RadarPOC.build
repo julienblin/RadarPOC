@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<project name="RadarPOC" default="build" xmlns="http://nant.sf.net/release/0.86-beta1/nant.xsd">
+
+  <property name="dir.bin" value="Bin" />
+  <property name="dir.published" value="Published" />
+
+  <property name="now" value="${datetime::now()}" readonly="true" />
+  <property name="elapsedSecondsToday" value="${(datetime::get-hour(now) * 3600 + datetime::get-minute(now) * 60 + datetime::get-second(now)) / 10}" readonly="true" />
+  <property name="version" value="${datetime::get-year(now) - 2000}.${datetime::get-month(now)}.${datetime::get-day(now)}.${elapsedSecondsToday}" readonly="true" />
+
+  <target name="clean">
+    <delete>
+      <fileset basedir="${dir.bin}">
+        <include name="**/*" />
+      </fileset>
+    </delete>
+  </target>
+
+  <target name="build" description="Build the project" depends="clean">
+    <asminfo output="Sources\GlobalAssemblyInfo.cs" language="CSharp">
+      <imports>
+        <import namespace="System.Reflection" />
+        <import namespace="System.Runtime.CompilerServices" />
+        <import namespace="System.Runtime.InteropServices" />
+      </imports>
+      <attributes>
+        <attribute type="AssemblyConfigurationAttribute" value="" />
+        <attribute type="AssemblyCompanyAttribute" value="Russell" />
+        <attribute type="AssemblyProductAttribute" value="Russell.RADAR.POC" />
+        <attribute type="AssemblyCopyrightAttribute" value="Copyright Russell 2010" />
+        <attribute type="AssemblyTrademarkAttribute" value="" />
+        <attribute type="AssemblyCultureAttribute" value="" />
+
+        <attribute type="AssemblyVersionAttribute" value="${version}" />
+        <attribute type="AssemblyFileVersionAttribute" value="${version}" />
+      </attributes>
+    </asminfo>
+
+    <exec program="${framework::get-tool-path('msbuild.exe')}">
+      <arg line="&quot;${project::get-base-directory()}\Sources\Russell.RADAR.POC.sln&quot; /p:Configuration=Release" />
+    </exec>
+
+  </target>
+
+  <target name="publish" description="Precompile web applications" depends="build">
+    <delete>
+      <fileset basedir="${dir.published}">
+        <include name="**/*" />
+      </fileset>
+    </delete>
+
+    <exec program="${framework::get-tool-path('aspnet_compiler.exe')}">
+      <arg line="-v / -p &quot;Sources\WebApp&quot; &quot;${dir.published}\WebApp&quot;" />
+    </exec>
+
+    <delete>
+      <fileset basedir="${dir.published}">
+        <include name="**/*.csproj*"/>
+      </fileset>
+    </delete>
+    
+    <delete>
+      <fileset basedir="${dir.published}">
+        <include name="**/obj/**"/>
+      </fileset>
+    </delete>
+  </target>
+
+</project>
