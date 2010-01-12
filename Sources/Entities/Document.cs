@@ -11,5 +11,7 @@ namespace Russell.RADAR.POC.Entities
         public virtual string Author { get; set; }
 
         public virtual DocumentState State { get; set; }
+
+        public abstract DocumentType DocumentType { get; }
     }
 }

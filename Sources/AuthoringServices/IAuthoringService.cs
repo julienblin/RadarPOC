@@ -10,6 +10,11 @@ namespace Russell.RADAR.POC.AuthoringServices
     {
         Document Create(DocumentType contentType);
         Document Retrieve(int id);
-        void Save(Document document);
+
+        IEnumerable<Document> ListAll();
+
+        void Publish(Document document);
+
+        void Delete(Document document);
     }
 }

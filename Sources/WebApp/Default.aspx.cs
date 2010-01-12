@@ -21,7 +21,13 @@ namespace WebApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            using (IUnitOfWork uow = UnitOfWork.Start())
+            {
+                var authoringService = Resolve<IAuthoringService>();
+                repeaterDocuments.DataSource = authoringService.ListAll();
+                repeaterDocuments.DataBind();
+                uow.Commit();
+            }
         }
 
         void linkNewOpinionDocument_Click(object sender, EventArgs e)

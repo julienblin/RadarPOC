@@ -30,12 +30,22 @@ namespace Russell.RADAR.POC.AuthoringServices
 
         public Document Retrieve(int id)
         {
-            throw new NotImplementedException();
+            return UnitOfWork.CurrentSession.Get<Document>(id);
         }
 
-        public void Save(Document document)
+        public IEnumerable<Document> ListAll()
         {
-            throw new NotImplementedException();
+            return UnitOfWork.CurrentSession.CreateCriteria<Document>().List<Document>();
+        }
+
+        public void Publish(Document document)
+        {
+            document.State = DocumentState.Published;
+        }
+
+        public void Delete(Document document)
+        {
+            UnitOfWork.CurrentSession.Delete(document);
         }
     }
 }

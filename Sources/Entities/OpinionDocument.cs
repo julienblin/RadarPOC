@@ -9,5 +9,7 @@ namespace Russell.RADAR.POC.Entities
     {
         public virtual string Discussion { get; set; }
         public virtual string InvestmentStaff { get; set; }
+
+        public override DocumentType DocumentType { get { return DocumentType.Opinion; } }
     }
 }

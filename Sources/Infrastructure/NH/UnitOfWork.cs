@@ -63,6 +63,7 @@ namespace Russell.RADAR.POC.Infrastructure.NH
             {
                 Session.Transaction.Rollback();
             }
+            HttpContext.Current.Items[UOW_CONTEXT_KEY] = null;
         }
     }
 }
