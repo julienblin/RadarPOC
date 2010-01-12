@@ -89,6 +89,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="OpinionDocuments\Edit.aspx" />
+    <Content Include="OpinionDocuments\PrintHTML.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +115,13 @@
     </Compile>
     <Compile Include="OpinionDocuments\Edit.aspx.designer.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OpinionDocuments\PrintHTML.aspx.cs">
+      <DependentUpon>PrintHTML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OpinionDocuments\PrintHTML.aspx.designer.cs">
+      <DependentUpon>PrintHTML.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sessions\SessionHttpModule.cs" />

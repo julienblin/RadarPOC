@@ -21,6 +21,11 @@ namespace WebApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            LoadDocuments();
+        }
+
+        private void LoadDocuments()
+        {
             using (IUnitOfWork uow = UnitOfWork.Start())
             {
                 var authoringService = Resolve<IAuthoringService>();
@@ -42,6 +47,30 @@ namespace WebApp
             }
 
             Response.Redirect(string.Format("~/OpinionDocuments/Edit.aspx?id={0}", newDoc.Id));
+        }
+
+        public void Publish_Click(object sender, EventArgs e)
+        {
+            using (IUnitOfWork uow = UnitOfWork.Start())
+            {
+                var authoringService = Resolve<IAuthoringService>();
+                Document doc = authoringService.Retrieve(Convert.ToInt32(((LinkButton)sender).CommandArgument));
+                authoringService.Publish(doc);
+                uow.Commit();
+            }
+            LoadDocuments();
+        }
+
+        public void Delete_Click(object sender, EventArgs e)
+        {
+            using (IUnitOfWork uow = UnitOfWork.Start())
+            {
+                var authoringService = Resolve<IAuthoringService>();
+                Document doc = authoringService.Retrieve(Convert.ToInt32(((LinkButton)sender).CommandArgument));
+                authoringService.Delete(doc);
+                uow.Commit();
+            }
+            LoadDocuments();
         }
     }
 }

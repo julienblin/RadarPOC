@@ -13,5 +13,10 @@ namespace Russell.RADAR.POC.Entities
         public virtual DocumentState State { get; set; }
 
         public abstract DocumentType DocumentType { get; }
+
+        public virtual bool CanBeEdited()
+        {
+            return (State != DocumentState.Published);
+        }
     }
 }
