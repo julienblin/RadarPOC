@@ -3,6 +3,7 @@
 
   <property name="dir.bin" value="Bin" />
   <property name="dir.published" value="Published" />
+  <property name="db.sqlite.path" value="${project::get-base-directory()}\Data\radar.db" />
 
   <property name="now" value="${datetime::now()}" readonly="true" />
   <property name="elapsedSecondsToday" value="${(datetime::get-hour(now) * 3600 + datetime::get-minute(now) * 60 + datetime::get-second(now)) / 10}" readonly="true" />
@@ -58,12 +59,55 @@
         <include name="**/*.csproj*"/>
       </fileset>
     </delete>
-    
+
     <delete>
       <fileset basedir="${dir.published}">
         <include name="**/obj/**"/>
       </fileset>
     </delete>
+  </target>
+
+  <target name="create-sqlite-db" description="drop and recreate a new sqlite db using NHibernate schema generation" depends="build">
+    <if test="${file::exists(db.sqlite.path)}">
+      <delete file="${db.sqlite.path}" />
+    </if>
+    
+    <script language="C#">
+      <references>
+        <include name="System.Data.dll" />
+        <include name="System.Data.OracleClient.dll" />
+        <include name="System.configuration.dll" />
+        <include name="System.Transactions.dll" />
+        <include name="System.Web" />
+        <include name="System.Core.dll"/>
+        <include name="Dependencies\SQLite-1.0.65\System.Data.SQLite.DLL" />
+        <include name="Dependencies\Log4net-1.2.10\log4net.dll" />
+        <include name="Dependencies\NHibernate-2.1.2.GA\Iesi.Collections.dll"/>
+        <include name="Dependencies\NHibernate-2.1.2.GA\Antlr3.Runtime.dll"/>
+        <include name="Dependencies\NHibernate-2.1.2.GA\NHibernate.dll" />
+        <include name="Dependencies\FluentNHibernate-1.0-RTM\FluentNHibernate.dll" />
+        <include name="${dir.bin}\Russell.RADAR.POC.Entities.dll" />
+      </references>
+      <code>
+        <![CDATA[
+		      public static void ScriptMain(Project project) {
+		        string dbFile = project.Properties["db.sqlite.path"];
+            string connectionString = string.Format("Data Source={0};Version=3;New=True", dbFile);
+            
+            NHibernate.Cfg.Configuration config = FluentNHibernate.Cfg.Fluently.Configure()
+                .Database(FluentNHibernate.Cfg.Db.SQLiteConfiguration.Standard.ConnectionString(connectionString))
+                .Mappings(delegate(FluentNHibernate.Cfg.MappingConfiguration m)
+                        {
+                            m.FluentMappings.AddFromAssemblyOf<Russell.RADAR.POC.Entities.Document>();
+                        })
+                .BuildConfiguration();
+
+            new NHibernate.Tool.hbm2ddl.SchemaUpdate(config).Execute(true, true);
+		      }
+	      ]]>
+      </code>
+    </script>
+
   </target>
 
 </project>
