@@ -20,7 +20,7 @@
                             <th>Id</th>
                             <th>Type</th>
                             <th>State</th>
-                            <th colspan="3">Actions</th>
+                            <th colspan="5">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,6 +33,7 @@
                     <td><asp:HyperLink runat="server" Text="Edit" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/Edit.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' /></td>
                     <td><asp:LinkButton runat="server" Text="Publish" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "Id")%>' OnClick="Publish_Click" /></td>
                     <td><asp:HyperLink runat="server" Text="Print-HTML" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintHTML.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' /></td>
+                    <td><asp:HyperLink ID="HyperLink1" runat="server" Text="Print-PDF" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintPDF.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' /></td>
                     <td><asp:LinkButton runat="server" Text="Delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "Id")%>' OnClick="Delete_Click" /></td>
                 </tr>
             </ItemTemplate>

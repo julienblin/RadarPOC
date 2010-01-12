@@ -11,6 +11,7 @@ using Russell.RADAR.POC.Entities;
 using System.Configuration;
 using Russell.RADAR.POC.AuthoringServices;
 using Castle.Facilities.FactorySupport;
+using Russell.RADAR.POC.PublishingServices;
 
 namespace Russell.RADAR.POC.WebApp
 {
@@ -41,7 +42,8 @@ namespace Russell.RADAR.POC.WebApp
         private void RegisterServices()
         {
             Register(
-                Component.For<IAuthoringService>().ImplementedBy<NHAuthoringService>()
+                Component.For<IAuthoringService>().ImplementedBy<NHAuthoringService>(),
+                Component.For<IPublishingService>().ImplementedBy<TelerikReportPublishingService>()
             );
         }
 
