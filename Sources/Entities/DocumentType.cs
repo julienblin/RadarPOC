@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Russell.RADAR.POC.Entities
 {
-    public enum ContentType
+    public enum DocumentType
     {
         Opinion = 0
     }

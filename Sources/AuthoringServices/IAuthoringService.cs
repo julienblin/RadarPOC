@@ -8,7 +8,7 @@ namespace Russell.RADAR.POC.AuthoringServices
 {
     public interface IAuthoringService
     {
-        Document Create(ContentType contentType);
+        Document Create(DocumentType contentType);
         Document Retrieve(int id);
         void Save(Document document);
     }

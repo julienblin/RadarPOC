@@ -12,6 +12,7 @@ namespace Russell.RADAR.POC.Entities
         {
             Id(x => x.Id);
             Map(x => x.Author);
+            Map(x => x.State);
         }
     }
 }

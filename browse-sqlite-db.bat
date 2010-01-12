@@ -1,0 +1,1 @@
+"Dependencies\SQLite-1.0.65\SQLite Database Browser.exe" "Data\radar.db"

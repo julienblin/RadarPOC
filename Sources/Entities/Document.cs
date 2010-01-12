@@ -9,5 +9,7 @@ namespace Russell.RADAR.POC.Entities
     {
         public virtual int Id { get; set; }
         public virtual string Author { get; set; }
+
+        public virtual DocumentState State { get; set; }
     }
 }

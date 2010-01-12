@@ -9,12 +9,26 @@ using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using Russell.RADAR.POC.Entities;
 using System.Configuration;
+using Russell.RADAR.POC.AuthoringServices;
+using Castle.Facilities.FactorySupport;
 
 namespace Russell.RADAR.POC.WebApp
 {
     public class WebAppContainer : WindsorContainer
     {
         public WebAppContainer()
+        {
+            RegisterFacilities();
+            RegisterNHibernate();
+            RegisterServices();
+        }
+
+        private void RegisterFacilities()
+        {
+            AddFacility<FactorySupportFacility>();
+        }
+
+        private void RegisterNHibernate()
         {
             Register(
                 Component.For<ISessionFactory>()
@@ -24,10 +38,17 @@ namespace Russell.RADAR.POC.WebApp
             );
         }
 
+        private void RegisterServices()
+        {
+            Register(
+                Component.For<IAuthoringService>().ImplementedBy<NHAuthoringService>()
+            );
+        }
+
         private ISessionFactory ConfigureFluentNHibernate()
         {
             return Fluently.Configure()
-                .Database(SQLiteConfiguration.Standard.ConnectionString(@"Radar"))
+                .Database(SQLiteConfiguration.Standard.ConnectionString(x => x.FromConnectionStringWithKey(@"Radar")))
                 .Mappings(m =>
                     m.FluentMappings.AddFromAssemblyOf<Document>())
                 .BuildSessionFactory();
