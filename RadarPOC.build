@@ -108,6 +108,9 @@
       </code>
     </script>
 
+    <!-- Adjust config file settings -->
+    <xmlpoke file="Sources\WebApp\Web.config" xpath="/configuration/connectionStrings/add[@name='Radar']/@connectionString" value="Data Source=${db.sqlite.path};Version=3;" />
+
   </target>
 
 </project>

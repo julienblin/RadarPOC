@@ -8,6 +8,7 @@ using NHibernate;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using Russell.RADAR.POC.Entities;
+using System.Configuration;
 
 namespace Russell.RADAR.POC.WebApp
 {
@@ -26,7 +27,7 @@ namespace Russell.RADAR.POC.WebApp
         private ISessionFactory ConfigureFluentNHibernate()
         {
             return Fluently.Configure()
-                .Database(SQLiteConfiguration.Standard.UsingFile("radar.db"))
+                .Database(SQLiteConfiguration.Standard.ConnectionString(@"Radar"))
                 .Mappings(m =>
                     m.FluentMappings.AddFromAssemblyOf<Document>())
                 .BuildSessionFactory();
