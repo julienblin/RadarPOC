@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.InDesign, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c6e8663d8dbf0c70, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\InDesign-6.0-TLB\Interop.InDesign.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -51,6 +55,7 @@
     <Compile Include="..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="InDesignPublishingService.cs" />
     <Compile Include="IPublishingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TelerikReportPublishingService.cs" />
@@ -70,7 +75,13 @@
   <ItemGroup>
     <EmbeddedResource Include="TelerikTemplates\OpinionDocumentTemplate.resx">
       <DependentUpon>OpinionDocumentTemplate.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InDesignTemplates\OpinionDocument.indd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

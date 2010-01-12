@@ -37,6 +37,12 @@
       </attributes>
     </asminfo>
 
+    <!-- Generate InDesign TypeLib -->
+    <tlbimp typelib="Dependencies\InDesign-6.0-TLB\InDesign.tlb"
+            keyfile="Dependencies\InDesign-6.0-TLB\InDesign.snk"
+            output="Dependencies\InDesign-6.0-TLB\Interop.InDesign.dll"
+            namespace="InDesign" />
+    
     <exec program="${framework::get-tool-path('msbuild.exe')}">
       <arg line="&quot;${project::get-base-directory()}\Sources\Russell.RADAR.POC.sln&quot; /p:Configuration=Release" />
     </exec>

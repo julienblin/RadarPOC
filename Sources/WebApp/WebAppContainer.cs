@@ -43,7 +43,7 @@ namespace Russell.RADAR.POC.WebApp
         {
             Register(
                 Component.For<IAuthoringService>().ImplementedBy<NHAuthoringService>(),
-                Component.For<IPublishingService>().ImplementedBy<TelerikReportPublishingService>()
+                Component.For<IPublishingService>().ImplementedBy<InDesignPublishingService>()
             );
         }
 
