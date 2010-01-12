@@ -29,7 +29,7 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager;
+        protected global::Telerik.Web.UI.RadScriptManager ScriptManager;
         
         /// <summary>
         /// editorDiscussion control.

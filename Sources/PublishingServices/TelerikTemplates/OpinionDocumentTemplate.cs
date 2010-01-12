@@ -29,5 +29,11 @@ namespace Russell.RADAR.POC.PublishingServices.TelerikTemplates
             get { return textBoxDiscussions.Value; }
             set { textBoxDiscussions.Value = value; }
         }
+
+        public string InvestementStaff
+        {
+            get { return textBoxInvestementStaff.Value; }
+            set { textBoxInvestementStaff.Value = value; }
+        }
     }
 }

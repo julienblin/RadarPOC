@@ -17,6 +17,7 @@ namespace Russell.RADAR.POC.PublishingServices
 
             var template = new OpinionDocumentTemplate();
             template.Discussion = opDoc.Discussion;
+            template.InvestementStaff = opDoc.InvestmentStaff;
 
             var reportProcessor = new ReportProcessor();
             var renderResult = reportProcessor.RenderReport("PDF", template, null);

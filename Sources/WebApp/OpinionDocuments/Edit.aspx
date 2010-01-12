@@ -10,10 +10,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:ScriptManager ID="ScriptManager" runat="server" />
+    <telerik:RadScriptManager ID="ScriptManager" runat="server" 
+        EnableTheming="True">
+    </telerik:RadScriptManager>
     <div>
         <h2>Discussion</h2>
-        <telerik:RadEditor ID="editorDiscussion" runat="server">
+        <telerik:RadEditor ID="editorDiscussion" runat="server" Skin="Office2007">
+            <Content>
+</Content>
         </telerik:RadEditor>
     </div>
     <div>
