@@ -42,8 +42,8 @@ namespace Russell.RADAR.POC.WebApp
         private void RegisterServices()
         {
             Register(
-                Component.For<IAuthoringService>().ImplementedBy<NHAuthoringService>(),
-                Component.For<IPublishingService>().ImplementedBy<TelerikReportPublishingService>()
+                Component.For<IAuthoringService>().ImplementedBy<NHAuthoringService>()
+                //Component.For<IPublishingService>().ImplementedBy<TelerikReportPublishingService>()
             );
         }
 

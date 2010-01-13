@@ -23,33 +23,6 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ScriptManager control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadScriptManager ScriptManager;
-        
-        /// <summary>
-        /// editorDiscussion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadEditor editorDiscussion;
-        
-        /// <summary>
-        /// editorInvestmentStaff control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Telerik.Web.UI.RadEditor editorInvestmentStaff;
-        
-        /// <summary>
         /// buttonSave control.
         /// </summary>
         /// <remarks>

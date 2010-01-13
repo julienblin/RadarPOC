@@ -13,7 +13,6 @@ using System.Xml.Linq;
 using Russell.RADAR.POC.Entities;
 using Russell.RADAR.POC.Infrastructure.NH;
 using Russell.RADAR.POC.AuthoringServices;
-using Telerik.Web.UI;
 
 namespace Russell.RADAR.POC.WebApp.OpinionDocuments
 {
@@ -26,8 +25,6 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
             base.OnInitComplete(e);
             buttonSave.Click += new EventHandler(buttonSave_Click);
             buttonCancel.Click += new EventHandler(buttonCancel_Click);
-            editorDiscussion.StripFormattingOptions = EditorStripFormattingOptions.MSWordRemoveAll;
-            editorInvestmentStaff.StripFormattingOptions = EditorStripFormattingOptions.MSWordRemoveAll;
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -44,8 +41,8 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
 
             if (!IsPostBack)
             {
-                editorDiscussion.Content = document.Discussion;
-                editorInvestmentStaff.Content = document.InvestmentStaff;
+                //editorDiscussion.Content = document.Discussion;
+                //editorInvestmentStaff.Content = document.InvestmentStaff;
             }
         }
 
@@ -53,8 +50,8 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
         {
             using (IUnitOfWork uow = UnitOfWork.Start())
             {
-                document.Discussion = editorDiscussion.Content;
-                document.InvestmentStaff = editorInvestmentStaff.Content;
+                //document.Discussion = editorDiscussion.Content;
+                //document.InvestmentStaff = editorInvestmentStaff.Content;
                 uow.Commit();
             }
             Response.Redirect("~/Default.aspx");
