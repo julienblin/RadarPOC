@@ -23,5 +23,15 @@ namespace Russell.RADAR.POC.PublishingServices
             var renderResult = reportProcessor.RenderReport("PDF", template, null);
             return renderResult.DocumentBytes;
         }
+
+        public string PublishAsPDFFile(Document document)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ExportOption ExportOption
+        {
+            get { return ExportOption.AsByte; }
+        }
     }
 }

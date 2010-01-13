@@ -9,5 +9,14 @@ namespace Russell.RADAR.POC.PublishingServices
     public interface IPublishingService
     {
         byte[] PublishAsPDF(Document document);
+        string PublishAsPDFFile(Document document);
+
+        ExportOption ExportOption { get; }
+    }
+
+    public enum ExportOption
+    {
+        AsByte,
+        AsFile
     }
 }

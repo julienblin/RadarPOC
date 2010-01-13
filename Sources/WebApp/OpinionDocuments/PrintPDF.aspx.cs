@@ -14,6 +14,7 @@ using Russell.RADAR.POC.Entities;
 using Russell.RADAR.POC.Infrastructure.NH;
 using Russell.RADAR.POC.AuthoringServices;
 using Russell.RADAR.POC.PublishingServices;
+using System.Diagnostics;
 
 namespace Russell.RADAR.POC.WebApp.OpinionDocuments
 {
@@ -33,11 +34,21 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
                 }
             }
 
+            Response.ContentType = "application/pdf";
             var publishingService = Resolve<IPublishingService>();
 
-            Response.ContentType = "application/pdf";
-
-            Response.BinaryWrite(publishingService.PublishAsPDF(document));
+            switch (publishingService.ExportOption)
+            {
+                case ExportOption.AsByte:
+                    Response.BinaryWrite(publishingService.PublishAsPDF(document));
+                    break;
+                case ExportOption.AsFile:
+                    Response.WriteFile(publishingService.PublishAsPDFFile(document));
+                    break;
+                default:
+                    Debug.Assert(false);
+                    break;
+            }
 
             Response.Flush();
         }
