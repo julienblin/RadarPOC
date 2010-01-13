@@ -39,19 +39,16 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
                 }
             }
 
-            if (!IsPostBack)
-            {
-                //editorDiscussion.Content = document.Discussion;
-                //editorInvestmentStaff.Content = document.InvestmentStaff;
-            }
+            textAreaDiscussion.InnerText = document.Discussion;
+            textAreaInvestmentStaff.InnerText = document.InvestmentStaff;
         }
 
         void buttonSave_Click(object sender, EventArgs e)
         {
             using (IUnitOfWork uow = UnitOfWork.Start())
             {
-                //document.Discussion = editorDiscussion.Content;
-                //document.InvestmentStaff = editorInvestmentStaff.Content;
+                document.Discussion = Request.Params["textAreaDiscussion"];
+                document.InvestmentStaff = Request.Params["textAreaInvestmentStaff"];
                 uow.Commit();
             }
             Response.Redirect("~/Default.aspx");
