@@ -8,6 +8,6 @@ namespace Russell.RADAR.POC.PublishingServices
 {
     public interface IPublishingService
     {
-        byte[] PublishAsPDF(Document document);
+        byte[] Publish(Document document);
     }
 }

@@ -52,12 +52,17 @@
     </Compile>
     <Compile Include="IPublishingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WPMLPublishingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{080AF83A-F43C-40CF-9108-78A2A09FF258}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WordTemplates\OpinionDocument.xml" />
+    <Content Include="WordTemplates\XHTML2WordML.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

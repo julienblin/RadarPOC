@@ -35,11 +35,13 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
 
             var publishingService = Resolve<IPublishingService>();
 
-            Response.ContentType = "application/pdf";
+            Response.ContentType = @"application/msword";
+            Response.AddHeader("Content-Disposition", "attachment; filename=GeneratedOpinionDocument.xml");
 
-            Response.BinaryWrite(publishingService.PublishAsPDF(document));
+            Response.BinaryWrite(publishingService.Publish(document));
 
             Response.Flush();
+            Response.End();
         }
     }
 }

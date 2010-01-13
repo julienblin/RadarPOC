@@ -12,12 +12,14 @@ using System.Configuration;
 using Russell.RADAR.POC.AuthoringServices;
 using Castle.Facilities.FactorySupport;
 using Russell.RADAR.POC.PublishingServices;
+using Castle.Windsor.Configuration.Interpreters;
 
 namespace Russell.RADAR.POC.WebApp
 {
     public class WebAppContainer : WindsorContainer
     {
         public WebAppContainer()
+            : base(new XmlInterpreter())
         {
             RegisterFacilities();
             RegisterNHibernate();
@@ -43,7 +45,6 @@ namespace Russell.RADAR.POC.WebApp
         {
             Register(
                 Component.For<IAuthoringService>().ImplementedBy<NHAuthoringService>()
-                //Component.For<IPublishingService>().ImplementedBy<TelerikReportPublishingService>()
             );
         }
 
