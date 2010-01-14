@@ -36,7 +36,7 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
             var publishingService = Resolve<IPublishingService>();
 
             Response.ContentType = @"application/msword";
-            Response.AddHeader("Content-Disposition", "attachment; filename=GeneratedOpinionDocument.xml");
+            Response.AddHeader("Content-Disposition", "attachment; filename=GeneratedOpinionDocument.docx");
 
             Response.BinaryWrite(publishingService.Publish(document));
 

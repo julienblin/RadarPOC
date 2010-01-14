@@ -30,8 +30,11 @@ namespace Russell.RADAR.POC.WebApp.Sessions
         private void CloseSession(object sender, EventArgs e)
         {
             var currentSession = (ISession)HttpContext.Current.Items[UnitOfWork.SESSION_CONTEXT_KEY];
-            currentSession.Flush();
-            currentSession.Close();
+            if (currentSession != null)
+            {
+                currentSession.Flush();
+                currentSession.Close();
+            }
         }
 
         public void Dispose()

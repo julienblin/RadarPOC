@@ -815,7 +815,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="javascripts\ckeditor\.htaccess" />
     <None Include="javascripts\ckeditor\ckeditor.pack" />
     <None Include="javascripts\ckeditor\ckeditor.php" />
     <None Include="javascripts\ckeditor\ckeditor_php4.php" />

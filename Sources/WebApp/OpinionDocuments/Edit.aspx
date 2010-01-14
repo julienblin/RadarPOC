@@ -10,26 +10,21 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <p>
         <h2>
             Discussion</h2>
-        <textarea id="textAreaDiscussion" name="textAreaDiscussion" cols="1" runat="server"></textarea>
-    </div>
-    <div>
+        <textarea id="textAreaDiscussion" class="ckeditor" name="textAreaDiscussion" cols="80" rows="20" runat="server"></textarea>
+    </p>
+    <p>
         <h2>
             Investment Staff</h2>
-        <textarea id="textAreaInvestmentStaff" name="textAreaInvestmentStaff" cols="1" runat="server"></textarea>
-    </div>
-    <div>
+        <textarea id="textAreaInvestmentStaff" class="ckeditor" name="textAreaInvestmentStaff" cols="80" rows="20" runat="server"></textarea>
+    </p>
+    <p>
         <asp:Button ID="buttonSave" Text="Save" runat="server" />
         <asp:Button ID="buttonCancel" Text="Cancel" runat="server" />
-    </div>
+    </p>
     </form>
-
-    <script type="text/javascript">
-	    CKEDITOR.replace('textAreaDiscussion');
-	    CKEDITOR.replace('textAreaInvestmentStaff');
-    </script>
 
 </body>
 </html>
