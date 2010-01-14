@@ -16,7 +16,7 @@ namespace WebApp
         protected override void OnInitComplete(EventArgs e)
         {
             base.OnInitComplete(e);
-            linkNewOpinionDocument.Click += new EventHandler(linkNewOpinionDocument_Click);
+            linkNewOpinionDocument.Click += new ImageClickEventHandler(linkNewOpinionDocument_Click);
         }
 
         protected void Page_Load(object sender, EventArgs e)

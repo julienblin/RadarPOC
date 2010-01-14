@@ -87,6 +87,8 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\btn_create_content_dd.gif" />
+    <Content Include="images\logo_russell.gif" />
     <Content Include="javascripts\ckeditor\adapters\jquery.js" />
     <Content Include="javascripts\ckeditor\CHANGES.html" />
     <Content Include="javascripts\ckeditor\ckeditor.js">
@@ -752,6 +754,7 @@
     <Content Include="OpinionDocuments\PrintPDF.aspx" />
     <Content Include="OpinionDocuments\Edit.aspx" />
     <Content Include="OpinionDocuments\PrintHTML.aspx" />
+    <Content Include="stylesheets\hubble.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
