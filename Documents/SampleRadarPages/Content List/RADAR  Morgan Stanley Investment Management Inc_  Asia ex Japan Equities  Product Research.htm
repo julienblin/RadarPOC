@@ -1,0 +1,1811 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0050)http://radar/authoring/manageContent.aspx?pid=8566 -->
+<HTML><HEAD><TITLE>RADAR | Morgan Stanley Investment Management Inc. | Asia ex Japan Equities | Product Research</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8"><LINK 
+href="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/hubble.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=javascript 
+src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/AddRemoveList.js"></SCRIPT>
+
+<SCRIPT language=javascript>
+			
+			window.attachEvent("onload", OnLoad);
+			
+			function OnLoad()
+			{
+				ResetEvent();
+				ShowPopup();				
+			}
+			
+			document.attachEvent("onkeypress", captureKey);
+			function captureKey()
+			{
+				if(window.event.keyCode == 13)
+				{
+					return false;
+				}
+			}
+			
+			function ResetEvent()
+			{
+				if(document.all("__EVENTTARGET") != null)
+					document.all("__EVENTTARGET").value = "";
+				if(document.all("__EVENTARGUMENT") != null)
+					document.all("__EVENTARGUMENT").value = "";
+			}
+			
+			function ShowPopup(){									
+				
+				
+				
+			}
+			
+			var ids = null;
+			var dontHideDropDown;
+			var buttonIds = null;
+			var dontHideDropDownButton;
+			document.attachEvent("onclick",HideDiv)
+			var ids = new Array('PageTemplate_ucContentResearch_dgContent__ctl2_DropDContentType_div','PageTemplate_ucContentResearch_dgContent__ctl2_DropDEffectiveDate_div','PageTemplate_ucContentResearch_dgContent__ctl2_DropDPurpose_div','PageTemplate_ucContentResearch_dgContent__ctl2_DropDOutcome_div','PageTemplate_ucContentResearch_dgContent__ctl2_DropDAuthor_div','PageTemplate_ucContentResearch_dgContent__ctl2_DropDStatus_div','PageTemplate_ucProductList_dgProduct__ctl2_ddlFilterProduct_div','PageTemplate_ucProductList_dgProduct__ctl2_ddlFilterAssetClass_div','PageTemplate_ucProductList_dgProduct__ctl2_ddlFilterGeo_div','PageTemplate_ucProductList_dgProduct__ctl2_ddlFilterStyle_div','PageTemplate_ucProductList_dgProduct__ctl2_ddlFilterSubStyle_div','PageTemplate_ucProductList_dgProduct__ctl2_ddlFilterRank_div','PageTemplate_ucProductList_dgProduct__ctl2_ddlFilterLastResMeeting_div','PageTemplate_ucProductList_dgProduct__ctl2_ddlFilterOfferingStatus_div','{0}');
+			var buttonIds = new Array('PageTemplate_ucSearchResults_ddbBuildReport_div','PageTemplate_header_ddbMaintenanceToolbar_div','PageTemplate_ucContentResearch_ddbContentType_div','PageTemplate_ucOpinionContent_ddbContentType_div','PageTemplate_ucProductList_ddbOutput_div','PageTemplate_ucProductList_ddbCreateContent_div','PageTemplate_ucContentResearch_ddbOutput_div','PageTemplate_ucInvestmentApproachContent_ddbContentType_div','PageTemplate_ucFindingsContent_ucFindingsManagerResearch_ddbOutput_div','PageTemplate_ucFindingsContent_ucFindingsManagerResearch_ddbContentType_div','PageTemplate_ucOpinionContent_ddbOutput_div','{0}');
+			var virtualPath = 'http://' + window.location.host + '';
+		
+			function HideDiv(){									
+				if (dontHideDropDown != 1){
+					var myDiv
+					if(ids != null)
+					{
+						for (var i=0; i < ids.length; i++){
+							myDiv = document.getElementById(ids[i]);
+							if (myDiv != null){
+							myDiv.style.display='none';
+							closeShim(myDiv);
+							}
+						}
+					}					
+				}
+				dontHideDropDown = 0;
+				if (dontHideDropDownButton != 1){
+					if(buttonIds != null)
+					{
+						for (var i=0; i < buttonIds.length; i++){
+							myDiv = document.getElementById(buttonIds[i]);
+							if (myDiv != null){
+							myDiv.style.display='none';
+							}
+						}
+					}					
+				}	
+				dontHideDropDownButton = 0;										
+			}
+			
+			function HideOtherDiv(clickedDivId){
+				if(ids != null)
+				{
+					for (var i=0; i < ids.length; i++){
+						myDiv = document.getElementById(ids[i]);
+						if (myDiv != null && clickedDivId != ids[i]){
+							myDiv.style.display='none';
+							closeShim(myDiv);
+						}
+					}
+				}
+				if(buttonIds != null)
+				{
+					for (var i=0; i < buttonIds.length; i++){
+						myDiv = document.getElementById(buttonIds[i]);
+						if (myDiv != null && clickedDivId != buttonIds[i]){
+							myDiv.style.display='none';
+						}
+					}
+				}
+			}
+
+			function openShim(menu)
+			{
+				if (menu==null) return;
+				var shim = getShim(menu);
+				if (shim==null) shim = createMenuShim(menu,getShimId(menu.id));
+			    
+				shim.style.width = menu.offsetWidth;
+				shim.style.height = menu.offsetHeight;
+				shim.style.position = "absolute";
+				shim.style.top = menu.offsetTop;
+				shim.style.left = menu.offsetLeft; 
+				shim.style.zIndex = menu.style.zIndex - 1;
+				shim.style.display = "block";
+			}
+
+			//Closes the shim associated with the menu
+			function closeShim(menu)
+			{
+				if (menu==null) return;
+				var shim = getShim(menu);
+				if (shim!=null) shim.style.display = "none";
+			}
+
+			//Creates a new shim for the menu
+			function createMenuShim(menu)
+			{
+				if (menu==null) return null;
+				var shim = document.createElement("<iframe scrolling='no' frameborder='0'"+" src='/PublicContent/blank.html' style='position:absolute; top:0px;"+"left:0px; display:none'></iframe>"); 
+			    
+				shim.name = getShimId(menu);
+				shim.id = getShimId(menu);
+				//Unremark this line if you need your menus to be transparent for some reason
+				//shim.style.filter="progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)";
+				
+				if (menu.offsetParent==null || menu.offsetParent.id=="") 
+				{
+					window.document.body.appendChild(shim);
+				}
+				else 
+				{
+					menu.offsetParent.appendChild(shim); 
+				}
+
+				return shim;
+			}
+
+			//Creates an id for the shim based on the menu id
+			function getShimId(menu)
+			{
+				if (menu.id==null) return "__shim";
+				return "__shim"+menu.id;
+			}
+
+			//Returns the shim for a specific menu
+			function getShim(menu)
+			{
+				return document.getElementById(getShimId(menu));
+			}
+
+			function getMenuItemCount(menu)
+			{
+				var count = 0;
+				var child = menu.firstChild;
+
+				while (child)
+				{
+					if (child.nodeName=="DIV") count = count + 1;
+					child = child.nextSibling;
+				}
+				return count;    
+			}
+		</SCRIPT>
+
+<META http-equiv=expires content="Fri, 28 Oct 1983 1:00:00 GMT">
+<META http-equiv=pragma content=no-cache>
+<META content="MSHTML 6.00.3790.4605" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff leftMargin=0 topMargin=0 marginwidth="0" marginheight="0">
+<FORM id=__aspnetForm name=__aspnetForm action=manageContent.aspx?pid=8566 
+method=post><INPUT type=hidden name=__EVENTTARGET> <INPUT type=hidden 
+name=__EVENTARGUMENT> <INPUT type=hidden 
+value=dDwxMDY4MDU0NzA2O3Q8cDxsPFBhZ2VUaXRsZTtjdXJTb3J0Q29sdW1uO1BhZ2VIZWFkbGluZTtzZWxlY3RBbGxDaGVjazs+O2w8O1J1c3NlbGwuUkFEQVIuV2ViLkdyaWRDb2x1bW5zK0NvbnRlbnRHcmlkQ29sdW1uLCBSdXNzZWxsLlJBREFSLldlYiwgVmVyc2lvbj0xLjEuOC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGw8RWZmZWN0aXZlRGF0ZT47UHJvZHVjdCBSZXNlYXJjaDtQYWdlVGVtcGxhdGVfdWNDb250ZW50UmVzZWFyY2hfZGdDb250ZW50X19jdGwyX2Noa1NlbGVjdEFsbDs+PjtsPGk8MD47PjtsPHQ8O2w8aTwwPjs+O2w8dDw7bDxpPDY+O2k8OD47aTwxMD47PjtsPHQ8O2w8aTwxMz47PjtsPHQ8cDw7cDxsPGhpZElkOz47bDxQYWdlVGVtcGxhdGVfaGVhZGVyX2RkYk1haW50ZW5hbmNlVG9vbGJhcl9oaWQ7Pj4+O2w8aTwwPjs+O2w8dDxwPGw8b25jbGljazs+O2w8U2hvd0hpZGVCdXR0b25EaXYoJ1BhZ2VUZW1wbGF0ZV9oZWFkZXJfZGRiTWFpbnRlbmFuY2VUb29sYmFyX2RpdicpOz4+Ozs+Oz4+Oz4+O3Q8O2w8aTwwPjtpPDE+O2k8Mj47aTwzPjtpPDQ+Oz47bDx0PDtsPGk8MT47aTwzPjs+O2w8dDxwPHA8bDxWaXNpYmxlOz47bDxvPGY+Oz4+Oz47Oz47dDw7bDxpPDA+O2k8MT47aTwyPjtpPDQ+O2k8NT47aTw2PjtpPDc+O2k8OD47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8TW9yZ2FuIFN0YW5sZXkgSW52ZXN0bWVudCBNYW5hZ2VtZW50IEluYy47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPE1vcmdhbiBTdGFubGV5IEludmVzdG1lbnQgTWFuYWdlbWVudCBJbmMuOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDxBc2lhIGV4IEphcGFuIEVxdWl0aWVzOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDxFcXVpdHk7Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPEFzaWEgZXggSmFwYW47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPC07Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPC07Pj47Pjs7Pjt0PDtsPGk8MD47PjtsPHQ8cDxsPHNyYzs+O2w8L2ltYWdlcy9hcnJvdy5naWY7Pj47Oz47Pj47Pj47Pj47dDw7bDxpPDE+O2k8Mj47aTwzPjtpPDQ+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDxwPGw8SW1hZ2VVcmw7PjtsPC9pbWFnZXMvcmFuay8yLmdpZjs+Pjs+Ozs+Oz4+O3Q8cDxwPGw8VGV4dDs+O2w8OC8xLzIwMDU7Pj47Pjs7Pjt0PDtsPGk8MT47PjtsPHQ8cDxsPHRhYnM7PjtsPGI8QUFFQUFBRC8vLy8vQVFBQUFBQUFBQUFNQWdBQUFGeFNkWE56Wld4c0xrWnlZVzFsZDI5eWF5NVhaV0l1UTI5dWRISnZiSE1zSUZabGNuTnBiMjQ5TVM0d0xqTTJOakF1TVRRNE5qUXNJRU4xYkhSMWNtVTlibVYxZEhKaGJDd2dVSFZpYkdsalMyVjVWRzlyWlc0OWJuVnNiQVVCQUFBQU1GSjFjM05sYkd3dVJuSmhiV1YzYjNKckxsZGxZaTVEYjI1MGNtOXNjeTVVWVdKSmRHVnRRMjlzYkdWamRHbHZiZ0VBQUFBVFEyOXNiR1ZqZEdsdmJrSmhjMlVyYkdsemRBTWNVM2x6ZEdWdExrTnZiR3hsWTNScGIyNXpMa0Z5Y21GNVRHbHpkQUlBQUFBSkF3QUFBQVFEQUFBQUhGTjVjM1JsYlM1RGIyeHNaV04wYVc5dWN5NUJjbkpoZVV4cGMzUURBQUFBQmw5cGRHVnRjd1ZmYzJsNlpRaGZkbVZ5YzJsdmJnVUFBQWdJQ1FRQUFBQUZBQUFBQlFBQUFCQUVBQUFBRUFBQUFBa0ZBQUFBQ1FZQUFBQUpCd0FBQUFrSUFBQUFDUWtBQUFBTkN3VUZBQUFBSmxKMWMzTmxiR3d1Um5KaGJXVjNiM0pyTGxkbFlpNURiMjUwY205c2N5NVVZV0pKZEdWdEF3QUFBQXB0WDNSaFlrbHVaR1Y0Qm0xZmRHVjRkQk50WDJOc2FXVnVkRk5wWkdWRGIyMXRZVzVrQUFFQkNBSUFBQUFBQUFBQUJnb0FBQUFUVUhKdlpIVmpkQ0JKYm1admNtMWhkR2x2YmdZTEFBQUFIRVpwYkd4UWNtOWtkV04wU1c1bWIzSnRZWFJwYjI1VVlXSW9LVHNCQmdBQUFBVUFBQUFCQUFBQUJnd0FBQUFQVEdGMFpYTjBJRVpwYm1ScGJtZHpCZzBBQUFBVlJtbHNiRXhoYzNSTlpXVjBhVzVuVkdGaUtDazdBUWNBQUFBRkFBQUFBZ0FBQUFZT0FBQUFERkpoYm1zZ1NHbHpkRzl5ZVFZUEFBQUFGVVpwYkd4U1lXNXJTR2x6ZEc5eWVWUmhZaWdwT3dFSUFBQUFCUUFBQUFNQUFBQUdFQUFBQUJOUWNtOWtkV04wSUVsa1pXNTBhV1pwWlhKekJoRUFBQUFiUm1sc2JGQnliMlIxWTNSSlpHVnVkR2xtYVdWeVZHRmlLQ2s3QVFrQUFBQUZBQUFBQkFBQUFBWVNBQUFBQ0VOdmJuUmhZM1J6QmhNQUFBQVNSbWxzYkVOdmJuUmhZM1J6VkdGaUtDazdDdz09Pjs+PjtsPGk8MD47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPDtwPGw8c2VsZWN0ZWRJbmRleDs+O2w8MDs+Pj47Oz47Pj47Pj47Pj47dDw7bDxpPDU+Oz47bDx0PDtsPGk8MT47PjtsPHQ8O2w8aTwxPjs+O2w8dDxAMDxwPHA8bDxXaWR0aDtEYXRhS2V5cztfIUl0ZW1Db3VudDtfIVNCOz47bDwxPDUwMHB4PjtsPD47aTw1PjtpPDI1Nj47Pj47Pjs7Ozs7Ozs7PjtsPGk8MD47aTwxPjtpPDI+O2k8Mz47aTw0Pjs+O2w8dDw7bDxpPDE+O2k8Mz47aTw1PjtpPDc+Oz47bDx0PHA8cDxsPFZpc2libGU7PjtsPG88Zj47Pj47Pjs7Pjt0PHA8cDxsPFZpc2libGU7PjtsPG88dD47Pj47Pjs7Pjt0PHA8cDxsPEltYWdlVXJsOz47bDwvaW1hZ2VzL3JhbmsvaGlzdG9yeS8yLmdpZjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDb21tYW5kQXJndW1lbnQ7PjtsPDgvMS8yMDA1OzExMzE1Oz4+Oz47Oz47Pj47dDw7bDxpPDU+O2k8Nz47PjtsPHQ8cDxwPGw8SW1hZ2VVcmw7PjtsPC9pbWFnZXMvcmFuay9oaXN0b3J5LzMuZ2lmOz4+Oz47Oz47dDxwPHA8bDxUZXh0O0NvbW1hbmRBcmd1bWVudDs+O2w8Mi8xOC8yMDA1Ozc1MTA7Pj47Pjs7Pjs+Pjt0PDtsPGk8NT47aTw5Pjs+O2w8dDxwPHA8bDxJbWFnZVVybDs+O2w8L2ltYWdlcy9yYW5rL2hpc3RvcnkvMi5naWY7Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7PjtsPDEwLzI0LzIwMDE7Pj47Pjs7Pjs+Pjt0PDtsPGk8NT47aTw3Pjs+O2w8dDxwPHA8bDxJbWFnZVVybDs+O2w8L2ltYWdlcy9yYW5rL2hpc3RvcnkvMS5naWY7Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q29tbWFuZEFyZ3VtZW50Oz47bDwyLzIvMjAwMDszNjk5Oz4+Oz47Oz47Pj47dDw7bDxpPDU+O2k8OT47PjtsPHQ8cDxwPGw8SW1hZ2VVcmw7PjtsPC9pbWFnZXMvcmFuay9oaXN0b3J5LzIuZ2lmOz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDwzLzEwLzE5OTk7Pj47Pjs7Pjs+Pjs+Pjs+Pjs+Pjs+Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxsPHRhYnM7PjtsPGI8QUFFQUFBRC8vLy8vQVFBQUFBQUFBQUFNQWdBQUFGeFNkWE56Wld4c0xrWnlZVzFsZDI5eWF5NVhaV0l1UTI5dWRISnZiSE1zSUZabGNuTnBiMjQ5TVM0d0xqTTJOakF1TVRRNE5qUXNJRU4xYkhSMWNtVTlibVYxZEhKaGJDd2dVSFZpYkdsalMyVjVWRzlyWlc0OWJuVnNiQVVCQUFBQU1GSjFjM05sYkd3dVJuSmhiV1YzYjNKckxsZGxZaTVEYjI1MGNtOXNjeTVVWVdKSmRHVnRRMjlzYkdWamRHbHZiZ0VBQUFBVFEyOXNiR1ZqZEdsdmJrSmhjMlVyYkdsemRBTWNVM2x6ZEdWdExrTnZiR3hsWTNScGIyNXpMa0Z5Y21GNVRHbHpkQUlBQUFBSkF3QUFBQVFEQUFBQUhGTjVjM1JsYlM1RGIyeHNaV04wYVc5dWN5NUJjbkpoZVV4cGMzUURBQUFBQmw5cGRHVnRjd1ZmYzJsNlpRaGZkbVZ5YzJsdmJnVUFBQWdJQ1FRQUFBQUlBQUFBQ0FBQUFCQUVBQUFBRUFBQUFBa0ZBQUFBQ1FZQUFBQUpCd0FBQUFrSUFBQUFDUWtBQUFBSkNnQUFBQWtMQUFBQUNRd0FBQUFOQ0FVRkFBQUFKbEoxYzNObGJHd3VSbkpoYldWM2IzSnJMbGRsWWk1RGIyNTBjbTlzY3k1VVlXSkpkR1Z0QXdBQUFBcHRYM1JoWWtsdVpHVjRCbTFmZEdWNGRCTnRYMk5zYVdWdWRGTnBaR1ZEYjIxdFlXNWtBQUVCQ0FJQUFBQUFBQUFBQmcwQUFBQVFVSEp2WkhWamRDQlNaWE5sWVhKamFBWU9BQUFBSm1sbUtIZHBibVJ2ZHk1cGJtbDBVSEp2WjNKbGMzTXBhVzVwZEZCeWIyZHlaWE56S0NrN0FRWUFBQUFGQUFBQUFRQUFBQVlQQUFBQUNFWnBibVJwYm1kekJoQUFBQUFtYVdZb2QybHVaRzkzTG1sdWFYUlFjbTluY21WemN5bHBibWwwVUhKdlozSmxjM01vS1RzQkJ3QUFBQVVBQUFBQ0FBQUFCaEVBQUFBSFQzQnBibWx2YmdZU0FBQUFKbWxtS0hkcGJtUnZkeTVwYm1sMFVISnZaM0psYzNNcGFXNXBkRkJ5YjJkeVpYTnpLQ2s3QVFnQUFBQUZBQUFBQXdBQUFBWVRBQUFBRTBsdWRtVnpkRzFsYm5RZ1FYQndjbTloWTJnR0ZBQUFBQ1pwWmloM2FXNWtiM2N1YVc1cGRGQnliMmR5WlhOektXbHVhWFJRY205bmNtVnpjeWdwT3dFSkFBQUFCUUFBQUFRQUFBQUdGUUFBQUE1TllXNWhaMlZ5SUZWd1pHRjBaUVlXQUFBQUptbG1LSGRwYm1SdmR5NXBibWwwVUhKdlozSmxjM01wYVc1cGRGQnliMmR5WlhOektDazdBUW9BQUFBRkFBQUFCUUFBQUFZWEFBQUFCa0ZuWlc1a1lRWVlBQUFBSm1sbUtIZHBibVJ2ZHk1cGJtbDBVSEp2WjNKbGMzTXBhVzVwZEZCeWIyZHlaWE56S0NrN0FRc0FBQUFGQUFBQUJnQUFBQVlaQUFBQURFWnNZWE5vSUZKbGNHOXlkQVlhQUFBQUptbG1LSGRwYm1SdmR5NXBibWwwVUhKdlozSmxjM01wYVc1cGRGQnliMmR5WlhOektDazdBUXdBQUFBRkFBQUFCd0FBQUFZYkFBQUFEbE52ZFc1a2FXNW5JRUp2WVhKa0Jod0FBQUFtYVdZb2QybHVaRzkzTG1sdWFYUlFjbTluY21WemN5bHBibWwwVUhKdlozSmxjM01vS1RzTD47Pj47bDxpPDA+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDw7cDxsPHNlbGVjdGVkSW5kZXg7PjtsPDA7Pj4+Ozs+Oz4+Oz4+Oz4+O3Q8O2w8aTwxPjtpPDM+O2k8NT47aTw3PjtpPDk+O2k8MTE+O2k8MTM+O2k8MTU+Oz47bDx0PDtsPGk8MT47PjtsPHQ8cDxwPGw8Y3VyU29ydE9yZGVyO1VzZURlZmF1bHRTb3J0aW5nO1Zpc2libGU7PjtsPFN5c3RlbS5Db21wb25lbnRNb2RlbC5MaXN0U29ydERpcmVjdGlvbiwgU3lzdGVtLCBWZXJzaW9uPTEuMC41MDAwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OTxEZXNjZW5kaW5nPjtvPHQ+O288dD47Pj47PjtsPGk8Mj47aTwzPjtpPDU+O2k8Nj47aTw3Pjs+O2w8dDxwPDtwPGw8aGlkSWQ7PjtsPFBhZ2VUZW1wbGF0ZV91Y0NvbnRlbnRSZXNlYXJjaF9kZGJPdXRwdXRfaGlkOz4+PjtsPGk8MD47PjtsPHQ8cDxsPG9uY2xpY2s7PjtsPFNob3dIaWRlQnV0dG9uRGl2KCdQYWdlVGVtcGxhdGVfdWNDb250ZW50UmVzZWFyY2hfZGRiT3V0cHV0X2RpdicpOz4+Ozs+Oz4+O3Q8cDw7cDxsPGhpZElkOz47bDxQYWdlVGVtcGxhdGVfdWNDb250ZW50UmVzZWFyY2hfZGRiQ29udGVudFR5cGVfaGlkOz4+PjtsPGk8MD47PjtsPHQ8cDxsPG9uY2xpY2s7PjtsPFNob3dIaWRlQnV0dG9uRGl2KCdQYWdlVGVtcGxhdGVfdWNDb250ZW50UmVzZWFyY2hfZGRiQ29udGVudFR5cGVfZGl2Jyk7Pj47Oz47Pj47dDxwPHA8bDxUZXh0Oz47bDw0ODs+Pjs+Ozs+O3Q8QDA8cDxwPGw8UGFnZUNvdW50O18hSXRlbUNvdW50O18hRGF0YVNvdXJjZUl0ZW1Db3VudDtEYXRhS2V5cztQYWdlU2l6ZTs+O2w8aTw1PjtpPDEwPjtpPDQ4PjtsPDU0ODA4X0FHTkRfRU5HOzU2MDQyX0ZSX0VORzs1MzA0OV9GUl9FTkc7NTIxNzBfRlJfRU5HOzExMzE1X09QSU5fRU5HOzUxMDYwX0ZSX0VORzs1MDk1Ml9GUl9FTkc7NTA5NTJfRlJfSlBOOzUxMDg0X0ZSX0VORzs3NTEwX09QSU5fRU5HOz47aTwxMD47Pj47Pjs7Ozs7Ozs7Ozs+O2w8aTwwPjs+O2w8dDw7bDxpPDE+O2k8Mj47aTwzPjtpPDQ+O2k8NT47aTw2PjtpPDc+O2k8OD47aTw5PjtpPDEwPjtpPDExPjs+O2w8dDw7bDxpPDA+O2k8Mj47aTwzPjtpPDQ+O2k8NT47aTw2PjtpPDc+Oz47bDx0PDtsPGk8MT47PjtsPHQ8cDxwPGw8Q2hlY2tlZDs+O2w8bzxmPjs+PjtwPGw8b25jbGljazs+O2w8U2VsZWN0QWxsKClcOzs+Pj47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8O3A8bDxtYXhXaWR0aDtoaWRJZDs+O2w8O1BhZ2VUZW1wbGF0ZV91Y0NvbnRlbnRSZXNlYXJjaF9kZ0NvbnRlbnRfX2N0bDJfRHJvcERDb250ZW50VHlwZV9oaWQ7Pj4+O2w8aTwyPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8bDxvbmNsaWNrOz47bDxTaG93SGlkZURpdignUGFnZVRlbXBsYXRlX3VjQ29udGVudFJlc2VhcmNoX2RnQ29udGVudF9fY3RsMl9Ecm9wRENvbnRlbnRUeXBlX2RpdicpOz4+Ozs+Oz4+Oz4+Oz4+O3Q8O2w8aTwxPjtpPDU+Oz47bDx0PHA8O3A8bDxtYXhXaWR0aDtoaWRJZDs+O2w8O1BhZ2VUZW1wbGF0ZV91Y0NvbnRlbnRSZXNlYXJjaF9kZ0NvbnRlbnRfX2N0bDJfRHJvcERFZmZlY3RpdmVEYXRlX2hpZDs+Pj47bDxpPDI+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDxsPG9uY2xpY2s7PjtsPFNob3dIaWRlRGl2KCdQYWdlVGVtcGxhdGVfdWNDb250ZW50UmVzZWFyY2hfZGdDb250ZW50X19jdGwyX0Ryb3BERWZmZWN0aXZlRGF0ZV9kaXYnKTs+Pjs7Pjs+Pjs+Pjt0PHA8cDxsPEltYWdlVXJsO1Zpc2libGU7PjtsPC9pbWFnZXMvZG93bkFycm93LmdpZjtvPHQ+Oz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8O3A8bDxtYXhXaWR0aDtoaWRJZDs+O2w8O1BhZ2VUZW1wbGF0ZV91Y0NvbnRlbnRSZXNlYXJjaF9kZ0NvbnRlbnRfX2N0bDJfRHJvcERQdXJwb3NlX2hpZDs+Pj47bDxpPDI+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDxsPG9uY2xpY2s7PjtsPFNob3dIaWRlRGl2KCdQYWdlVGVtcGxhdGVfdWNDb250ZW50UmVzZWFyY2hfZGdDb250ZW50X19jdGwyX0Ryb3BEUHVycG9zZV9kaXYnKTs+Pjs7Pjs+Pjs+Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDw7cDxsPG1heFdpZHRoO2hpZElkOz47bDw7UGFnZVRlbXBsYXRlX3VjQ29udGVudFJlc2VhcmNoX2RnQ29udGVudF9fY3RsMl9Ecm9wRE91dGNvbWVfaGlkOz4+PjtsPGk8Mj47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPGw8b25jbGljazs+O2w8U2hvd0hpZGVEaXYoJ1BhZ2VUZW1wbGF0ZV91Y0NvbnRlbnRSZXNlYXJjaF9kZ0NvbnRlbnRfX2N0bDJfRHJvcERPdXRjb21lX2RpdicpOz4+Ozs+Oz4+Oz4+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPDtwPGw8bWF4V2lkdGg7aGlkSWQ7PjtsPDtQYWdlVGVtcGxhdGVfdWNDb250ZW50UmVzZWFyY2hfZGdDb250ZW50X19jdGwyX0Ryb3BEQXV0aG9yX2hpZDs+Pj47bDxpPDI+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDxsPG9uY2xpY2s7PjtsPFNob3dIaWRlRGl2KCdQYWdlVGVtcGxhdGVfdWNDb250ZW50UmVzZWFyY2hfZGdDb250ZW50X19jdGwyX0Ryb3BEQXV0aG9yX2RpdicpOz4+Ozs+Oz4+Oz4+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPDtwPGw8bWF4V2lkdGg7aGlkSWQ7PjtsPDtQYWdlVGVtcGxhdGVfdWNDb250ZW50UmVzZWFyY2hfZGdDb250ZW50X19jdGwyX0Ryb3BEU3RhdHVzX2hpZDs+Pj47bDxpPDI+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDxsPG9uY2xpY2s7PjtsPFNob3dIaWRlRGl2KCdQYWdlVGVtcGxhdGVfdWNDb250ZW50UmVzZWFyY2hfZGdDb250ZW50X19jdGwyX0Ryb3BEU3RhdHVzX2RpdicpOz4+Ozs+Oz4+Oz4+Oz4+Oz4+O3Q8O2w8aTwwPjtpPDI+O2k8Mz47aTw0PjtpPDU+O2k8Nj47aTw3Pjs+O2w8dDw7bDxpPDE+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxEZXNlbGVjdEFsbCgpXDs7Pj4+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxOYXZpZ2F0ZVVybDtUZXh0O1Zpc2libGU7PjtsPC9hdXRob3JpbmcvbWFuYWdlQ29udGVudC5hc3B4P3BpZD04NTY2JmNpZD01NDgwOCZsaWQ9RU5HJmN0Yz1BR05EO0FnZW5kYTtvPHQ+Oz4+O3A8bDxjdENvZGU7Y29udGVudGlkO2xhbmd1YWdlY29kZTs+O2w8QUdORDs1NDgwODtFTkc7Pj4+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDwxMS8xNi8yMDA2Oz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFByb2R1Y3QgUmV2aWV3Oz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPC07Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8VGhvbWFzLCBOaWNob2xhczs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxGaW5hbDs+Pjs+Ozs+Oz4+Oz4+O3Q8O2w8aTwwPjtpPDI+O2k8Mz47aTw0PjtpPDU+O2k8Nj47aTw3Pjs+O2w8dDw7bDxpPDE+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxEZXNlbGVjdEFsbCgpXDs7Pj4+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxOYXZpZ2F0ZVVybDtUZXh0O1Zpc2libGU7PjtsPC9hdXRob3JpbmcvbWFuYWdlQ29udGVudC5hc3B4P3BpZD04NTY2JmNpZD01NjA0MiZsaWQ9RU5HJmN0Yz1GUjtGaW5kaW5ncyAtIFJlc2VhcmNoO288dD47Pj47cDxsPGN0Q29kZTtjb250ZW50aWQ7bGFuZ3VhZ2Vjb2RlOz47bDxGUjs1NjA0MjtFTkc7Pj4+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDwxMS8xNi8yMDA2Oz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFByb2R1Y3QgUmV2aWV3Oz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFJhbmsocykgTWFpbnRhaW5lZDs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxUaG9tYXMsIE5pY2hvbGFzOz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEZpbmFsOz4+Oz47Oz47Pj47Pj47dDw7bDxpPDA+O2k8Mj47aTwzPjtpPDQ+O2k8NT47aTw2PjtpPDc+Oz47bDx0PDtsPGk8MT47PjtsPHQ8cDw7cDxsPG9uY2xpY2s7PjtsPERlc2VsZWN0QWxsKClcOzs+Pj47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPE5hdmlnYXRlVXJsO1RleHQ7VmlzaWJsZTs+O2w8L2F1dGhvcmluZy9tYW5hZ2VDb250ZW50LmFzcHg/cGlkPTg1NjYmY2lkPTUzMDQ5JmxpZD1FTkcmY3RjPUZSO0ZpbmRpbmdzIC0gUmVzZWFyY2g7bzx0Pjs+PjtwPGw8Y3RDb2RlO2NvbnRlbnRpZDtsYW5ndWFnZWNvZGU7PjtsPEZSOzUzMDQ5O0VORzs+Pj47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPDcvMTMvMjAwNjs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxQcm9kdWN0IFJldmlldzs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDwtOz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEh1c3ZhZWcsIEthdGhyaW5lOz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEZpbmFsOz4+Oz47Oz47Pj47Pj47dDw7bDxpPDA+O2k8Mj47aTwzPjtpPDQ+O2k8NT47aTw2PjtpPDc+Oz47bDx0PDtsPGk8MT47PjtsPHQ8cDw7cDxsPG9uY2xpY2s7PjtsPERlc2VsZWN0QWxsKClcOzs+Pj47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPE5hdmlnYXRlVXJsO1RleHQ7VmlzaWJsZTs+O2w8L2F1dGhvcmluZy9tYW5hZ2VDb250ZW50LmFzcHg/cGlkPTg1NjYmY2lkPTUyMTcwJmxpZD1FTkcmY3RjPUZSO0ZpbmRpbmdzIC0gUmVzZWFyY2g7bzx0Pjs+PjtwPGw8Y3RDb2RlO2NvbnRlbnRpZDtsYW5ndWFnZWNvZGU7PjtsPEZSOzUyMTcwO0VORzs+Pj47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPDIvOC8yMDA2Oz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFByb2R1Y3QgUmV2aWV3Oz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPC07Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8R2FsaW5kbywgR3VzdGF2bzs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxGaW5hbDs+Pjs+Ozs+Oz4+Oz4+O3Q8O2w8aTwwPjtpPDI+O2k8Mz47aTw0PjtpPDU+O2k8Nj47aTw3Pjs+O2w8dDw7bDxpPDE+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxEZXNlbGVjdEFsbCgpXDs7Pj4+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxOYXZpZ2F0ZVVybDtUZXh0O1Zpc2libGU7PjtsPC9hdXRob3JpbmcvbWFuYWdlQ29udGVudC5hc3B4P3BpZD04NTY2JmNpZD0xMTMxNSZsaWQ9RU5HJmN0Yz1PUElOO09waW5pb247bzx0Pjs+PjtwPGw8Y3RDb2RlO2NvbnRlbnRpZDtsYW5ndWFnZWNvZGU7PjtsPE9QSU47MTEzMTU7RU5HOz4+Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8OC8xLzIwMDU7Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8LTs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDwtOz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEh1c3ZhZWcsIEthdGhyaW5lOz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEZpbmFsOz4+Oz47Oz47Pj47Pj47dDw7bDxpPDA+O2k8Mj47aTwzPjtpPDQ+O2k8NT47aTw2PjtpPDc+Oz47bDx0PDtsPGk8MT47PjtsPHQ8cDw7cDxsPG9uY2xpY2s7PjtsPERlc2VsZWN0QWxsKClcOzs+Pj47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPE5hdmlnYXRlVXJsO1RleHQ7VmlzaWJsZTs+O2w8L2F1dGhvcmluZy9tYW5hZ2VDb250ZW50LmFzcHg/cGlkPTg1NjYmY2lkPTUxMDYwJmxpZD1FTkcmY3RjPUZSO0ZpbmRpbmdzIC0gUmVzZWFyY2g7bzx0Pjs+PjtwPGw8Y3RDb2RlO2NvbnRlbnRpZDtsYW5ndWFnZWNvZGU7PjtsPEZSOzUxMDYwO0VORzs+Pj47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPDcvMTgvMjAwNTs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxQcm9kdWN0IFJldmlldzs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDwtOz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFZpbmNlbnQsIFNjb3R0Oz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEZpbmFsOz4+Oz47Oz47Pj47Pj47dDw7bDxpPDA+O2k8Mj47aTwzPjtpPDQ+O2k8NT47aTw2PjtpPDc+Oz47bDx0PDtsPGk8MT47PjtsPHQ8cDw7cDxsPG9uY2xpY2s7PjtsPERlc2VsZWN0QWxsKClcOzs+Pj47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPE5hdmlnYXRlVXJsO1RleHQ7VmlzaWJsZTs+O2w8L2F1dGhvcmluZy9tYW5hZ2VDb250ZW50LmFzcHg/cGlkPTg1NjYmY2lkPTUwOTUyJmxpZD1FTkcmY3RjPUZSO0ZpbmRpbmdzIC0gUmVzZWFyY2g7bzx0Pjs+PjtwPGw8Y3RDb2RlO2NvbnRlbnRpZDtsYW5ndWFnZWNvZGU7PjtsPEZSOzUwOTUyO0VORzs+Pj47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPDYvMzAvMjAwNTs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxQcm9kdWN0IFJldmlldzs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxSYW5rKHMpIE1haW50YWluZWQ7Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8UGFyaXMsIE1hcms7Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8RmluYWw7Pj47Pjs7Pjs+Pjs+Pjt0PDtsPGk8MD47aTwyPjtpPDM+O2k8ND47aTw1PjtpPDY+O2k8Nz47PjtsPHQ8O2w8aTwxPjs+O2w8dDxwPDtwPGw8b25jbGljazs+O2w8RGVzZWxlY3RBbGwoKVw7Oz4+Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8TmF2aWdhdGVVcmw7VGV4dDtWaXNpYmxlOz47bDwvYXV0aG9yaW5nL21hbmFnZUNvbnRlbnQuYXNweD9waWQ9ODU2NiZjaWQ9NTA5NTImbGlkPUpQTiZjdGM9RlI7RmluZGluZ3MgLSBSZXNlYXJjaCAoSlBOKTtvPHQ+Oz4+O3A8bDxjdENvZGU7Y29udGVudGlkO2xhbmd1YWdlY29kZTs+O2w8RlI7NTA5NTI7SlBOOz4+Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8Ni8zMC8yMDA1Oz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFByb2R1Y3QgUmV2aWV3Oz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFJhbmsocykgTWFpbnRhaW5lZDs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxQYXJpcywgTWFyazs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxGaW5hbDs+Pjs+Ozs+Oz4+Oz4+O3Q8O2w8aTwwPjtpPDI+O2k8Mz47aTw0PjtpPDU+O2k8Nj47aTw3Pjs+O2w8dDw7bDxpPDE+Oz47bDx0PHA8O3A8bDxvbmNsaWNrOz47bDxEZXNlbGVjdEFsbCgpXDs7Pj4+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxOYXZpZ2F0ZVVybDtUZXh0O1Zpc2libGU7PjtsPC9hdXRob3JpbmcvbWFuYWdlQ29udGVudC5hc3B4P3BpZD04NTY2JmNpZD01MTA4NCZsaWQ9RU5HJmN0Yz1GUjtGaW5kaW5ncyAtIFJlc2VhcmNoO288dD47Pj47cDxsPGN0Q29kZTtjb250ZW50aWQ7bGFuZ3VhZ2Vjb2RlOz47bDxGUjs1MTA4NDtFTkc7Pj4+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDw1LzEzLzIwMDU7Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8UHJvZHVjdCBSZXZpZXc7Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8LTs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxUaG9tYXMsIE5pY2hvbGFzOz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEZpbmFsOz4+Oz47Oz47Pj47Pj47dDw7bDxpPDA+O2k8Mj47aTwzPjtpPDQ+O2k8NT47aTw2PjtpPDc+Oz47bDx0PDtsPGk8MT47PjtsPHQ8cDw7cDxsPG9uY2xpY2s7PjtsPERlc2VsZWN0QWxsKClcOzs+Pj47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPE5hdmlnYXRlVXJsO1RleHQ7VmlzaWJsZTs+O2w8L2F1dGhvcmluZy9tYW5hZ2VDb250ZW50LmFzcHg/cGlkPTg1NjYmY2lkPTc1MTAmbGlkPUVORyZjdGM9T1BJTjtPcGluaW9uO288dD47Pj47cDxsPGN0Q29kZTtjb250ZW50aWQ7bGFuZ3VhZ2Vjb2RlOz47bDxPUElOOzc1MTA7RU5HOz4+Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8Mi8xOC8yMDA1Oz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPC07Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8LTs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxMdW5keSwgSWFuOz4+Oz47Oz47Pj47dDw7bDxpPDE+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEZpbmFsOz4+Oz47Oz47Pj47Pj47Pj47Pj47dDxwPHA8bDxzaG93QWxsSXRlbXM7Y3VycmVudFBhZ2U7cGFnZVNpemU7dG90YWxSZWNvcmRzOz47bDxvPGY+O2k8MD47aTwxMD47aTw0OD47Pj47PjtsPGk8MD47PjtsPHQ8O2w8aTwxPjs+O2w8dDw7bDxpPDQ+Oz47bDx0PHA8bDxfIUl0ZW1Db3VudDs+O2w8aTw1Pjs+PjtsPGk8MD47aTwyPjtpPDQ+O2k8Nj47aTw4Pjs+O2w8dDw7bDxpPDE+O2k8Mz47PjtsPHQ8cDxwPGw8VmlzaWJsZTs+O2w8bzxmPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtGb250X0JvbGQ7XyFTQjs+O2w8MTtvPHQ+O2k8MjA0OD47Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47aTwzPjs+O2w8dDxwPHA8bDxUZXh0O0NvbW1hbmRBcmd1bWVudDs+O2w8MjsxOz4+Oz47Oz47dDxwPHA8bDxWaXNpYmxlOz47bDxvPGY+Oz4+Oz47Oz47Pj47dDw7bDxpPDE+O2k8Mz47PjtsPHQ8cDxwPGw8VGV4dDtDb21tYW5kQXJndW1lbnQ7PjtsPDM7Mjs+Pjs+Ozs+O3Q8cDxwPGw8VmlzaWJsZTs+O2w8bzxmPjs+Pjs+Ozs+Oz4+O3Q8O2w8aTwxPjtpPDM+Oz47bDx0PHA8cDxsPFRleHQ7Q29tbWFuZEFyZ3VtZW50Oz47bDw0OzM7Pj47Pjs7Pjt0PHA8cDxsPFZpc2libGU7PjtsPG88Zj47Pj47Pjs7Pjs+Pjt0PDtsPGk8MT47aTwzPjs+O2w8dDxwPHA8bDxUZXh0O0NvbW1hbmRBcmd1bWVudDs+O2w8NTs0Oz4+Oz47Oz47dDxwPHA8bDxWaXNpYmxlOz47bDxvPGY+Oz4+Oz47Oz47Pj47Pj47Pj47Pj47Pj47Pj47Pj47dDw7bDxpPDE+Oz47bDx0PDtsPGk8MD47aTwyPjs+O2w8dDw7bDxpPDE+Oz47bDx0PHA8bDx0YWJzOz47bDxiPEFBRUFBQUQvLy8vL0FRQUFBQUFBQUFBTUFnQUFBRnhTZFhOelpXeHNMa1p5WVcxbGQyOXlheTVYWldJdVEyOXVkSEp2YkhNc0lGWmxjbk5wYjI0OU1TNHdMak0yTmpBdU1UUTROalFzSUVOMWJIUjFjbVU5Ym1WMWRISmhiQ3dnVUhWaWJHbGpTMlY1Vkc5clpXNDliblZzYkFVQkFBQUFNRkoxYzNObGJHd3VSbkpoYldWM2IzSnJMbGRsWWk1RGIyNTBjbTlzY3k1VVlXSkpkR1Z0UTI5c2JHVmpkR2x2YmdFQUFBQVRRMjlzYkdWamRHbHZia0poYzJVcmJHbHpkQU1jVTNsemRHVnRMa052Ykd4bFkzUnBiMjV6TGtGeWNtRjVUR2x6ZEFJQUFBQUpBd0FBQUFRREFBQUFIRk41YzNSbGJTNURiMnhzWldOMGFXOXVjeTVCY25KaGVVeHBjM1FEQUFBQUJsOXBkR1Z0Y3dWZmMybDZaUWhmZG1WeWMybHZiZ1VBQUFnSUNRUUFBQUFEQUFBQUF3QUFBQkFFQUFBQUVBQUFBQWtGQUFBQUNRWUFBQUFKQndBQUFBME5CUVVBQUFBbVVuVnpjMlZzYkM1R2NtRnRaWGR2Y21zdVYyVmlMa052Ym5SeWIyeHpMbFJoWWtsMFpXMERBQUFBQ20xZmRHRmlTVzVrWlhnR2JWOTBaWGgwRTIxZlkyeHBaVzUwVTJsa1pVTnZiVzFoYm1RQUFRRUlBZ0FBQUFBQUFBQUdDQUFBQUFoU1pYTmxZWEpqYUFZSkFBQUFKbWxtS0hkcGJtUnZkeTVwYm1sMFVISnZaM0psYzNNcGFXNXBkRkJ5YjJkeVpYTnpLQ2s3QVFZQUFBQUZBQUFBQVFBQUFBWUtBQUFBRkZCdmNuUm1iMnhwYnlCTllXNWhaMlZ0Wlc1MEJnc0FBQUFtYVdZb2QybHVaRzkzTG1sdWFYUlFjbTluY21WemN5bHBibWwwVUhKdlozSmxjM01vS1RzQkJ3QUFBQVVBQUFBQ0FBQUFCZ3dBQUFBRVRtOTBaUVlOQUFBQUptbG1LSGRwYm1SdmR5NXBibWwwVUhKdlozSmxjM01wYVc1cGRGQnliMmR5WlhOektDazdDdz09Pjs+Pjs7Pjs+Pjt0PDtsPGk8MT47aTwzPjtpPDU+Oz47bDx0PDtsPGk8MT47PjtsPHQ8O2w8aTwzPjtpPDg+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEZpbmRpbmdzIC0gUmVzZWFyY2g7Pj47Pjs7Pjt0PDtsPGk8MTM+Oz47bDx0PDtsPGk8Mz47PjtsPHQ8QDA8Ozs7Ozs7Ozs7Oz47Oz47Pj47Pj47Pj47Pj47dDw7bDxpPDE+Oz47bDx0PDtsPGk8Mz47aTw4Pjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxGaW5kaW5ncyAtIFBvcnRmb2xpbyBNYW5hZ2VtZW50Oz4+Oz47Oz47dDw7bDxpPDEzPjs+O2w8dDw7bDxpPDM+Oz47bDx0PEAwPDs7Ozs7Ozs7Ozs+Ozs+Oz4+Oz4+Oz4+Oz4+O3Q8O2w8aTwxPjs+O2w8dDw7bDxpPDM+O2k8OD47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8RmluZGluZ3MgLSBOb3RlOz4+Oz47Oz47dDw7bDxpPDEzPjs+O2w8dDw7bDxpPDM+Oz47bDx0PEAwPDs7Ozs7Ozs7Ozs+Ozs+Oz4+Oz4+Oz4+Oz4+Oz4+Oz4+Oz4+O3Q8O2w8aTwxPjs+O2w8dDw7bDxpPDM+O2k8OD47PjtsPHQ8cDxwPGw8VGV4dDs+O2w8T3Bpbmlvbjs+Pjs+Ozs+O3Q8O2w8aTwxMz47PjtsPHQ8O2w8aTwzPjs+O2w8dDxAMDw7Ozs7Ozs7Ozs7Pjs7Pjs+Pjs+Pjs+Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8O2w8aTwzPjtpPDg+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEludmVzdG1lbnQgQXBwcm9hY2g7Pj47Pjs7Pjt0PDtsPGk8MTM+Oz47bDx0PDtsPGk8Mz47PjtsPHQ8QDA8Ozs7Ozs7Ozs7Oz47Oz47Pj47Pj47Pj47Pj47dDw7bDxpPDE+Oz47bDx0PDtsPGk8Mz47aTw4Pjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxNYW5hZ2VyIFVwZGF0ZTs+Pjs+Ozs+O3Q8O2w8aTwxMz47PjtsPHQ8O2w8aTwzPjs+O2w8dDxAMDw7Ozs7Ozs7Ozs7Pjs7Pjs+Pjs+Pjs+Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8O2w8aTwzPjtpPDg+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEFnZW5kYTs+Pjs+Ozs+O3Q8O2w8aTwxMz47PjtsPHQ8O2w8aTwzPjs+O2w8dDxAMDw7Ozs7Ozs7Ozs7Pjs7Pjs+Pjs+Pjs+Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8O2w8aTwzPjtpPDg+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPEZsYXNoIFJlcG9ydDs+Pjs+Ozs+O3Q8O2w8aTwxMz47PjtsPHQ8O2w8aTwzPjs+O2w8dDxAMDw7Ozs7Ozs7Ozs7Pjs7Pjs+Pjs+Pjs+Pjs+Pjt0PDtsPGk8MT47PjtsPHQ8O2w8aTwzPjtpPDg+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFNvdW5kaW5nIEJvYXJkOz4+Oz47Oz47dDw7bDxpPDEzPjs+O2w8dDw7bDxpPDM+Oz47bDx0PEAwPDs7Ozs7Ozs7Ozs+Ozs+Oz4+Oz4+Oz4+Oz4+Oz4+O3Q8cDw7cDxsPHN0eWxlOz47bDxEaXNwbGF5Om5vbmVcO2ZpbHRlcjpwcm9naWQ6RFhJbWFnZVRyYW5zZm9ybS5NaWNyb3NvZnQuZHJvcFNoYWRvdyhDb2xvcj1EREREREQsb2ZmWD00LG9mZlk9NCxwb3NpdGl2ZT10cnVlKVw7Oz4+Pjs7Pjs+Pjt0PDtsPGk8Mj47aTw0Pjs+O2w8dDxwPHA8bDxUZXh0O05hdmlnYXRlVXJsOz47bDxMZWdhbCBJbmZvcm1hdGlvbjtqYXZhc2NyaXB0OnZvaWQod2luZG93Lm9wZW4oJ2h0dHA6Ly9yYWRhci9EaXNjbGFpbWVyL0Rpc2NsYWltZXIuYXNweCcswqBudWxsLMKgJ3N0YXR1cz1ubyxsb2NhdGlvbj1ubyxyZXNpemFibGU9bm8sd2lkdGg9NjAwcHgsaGVpZ2h0PTQ0MHB4LHRvb2xiYXI9bm8sbWVudWJhcj1ubycpKVw7Oz4+Oz47Oz47dDxwPHA8bDxUZXh0Oz47bDxDb25maWRlbnRpYWwgUHJvcHJpZXRhcnkgSW5mb3JtYXRpb24gb2YgUnVzc2VsbCBJbnZlc3RtZW50cyBub3QgdG8gYmUgZGlzdHJpYnV0ZWQgdG8gdGhpcmQgcGFydHkgd2l0aG91dCBleHByZXNzIHdyaXR0ZW4gY29uc2VudCBvZiBSdXNzZWxsIEludmVzdG1lbnRzLiBUaGlzIG1hdGVyaWFsIGlzIHN1YmplY3QgdG8gdGhlICJJbXBvcnRhbnQgTGVnYWwgSW5mb3JtYXRpb24iIGRpc2Nsb3N1cmUgY29udGFpbmVkIG9uIHRoZSBmaW5hbCBwYWdlIG9mIHRoaXMgcmVwb3J0LiBUaGF0IGRpc2Nsb3N1cmUgbXVzdCBiZSBjb25zaWRlcmVkIGFzIHBhcnQgb2YgdGhpcyByZXBvcnQuOz4+Oz47Oz47Pj47Pj47Pj47Pj47bDxQYWdlVGVtcGxhdGU6aGVhZGVyOmltZ0xvZ287UGFnZVRlbXBsYXRlOnVjQ29udGVudFJlc2VhcmNoOmltZ1JlZnJlc2g7UGFnZVRlbXBsYXRlOnVjQ29udGVudFJlc2VhcmNoOmRnQ29udGVudDpfY3RsMjpjaGtTZWxlY3RBbGw7UGFnZVRlbXBsYXRlOnVjQ29udGVudFJlc2VhcmNoOmRnQ29udGVudDpfY3RsMzpjaGtTZWxlY3Q7UGFnZVRlbXBsYXRlOnVjQ29udGVudFJlc2VhcmNoOmRnQ29udGVudDpfY3RsNDpjaGtTZWxlY3Q7UGFnZVRlbXBsYXRlOnVjQ29udGVudFJlc2VhcmNoOmRnQ29udGVudDpfY3RsNTpjaGtTZWxlY3Q7UGFnZVRlbXBsYXRlOnVjQ29udGVudFJlc2VhcmNoOmRnQ29udGVudDpfY3RsNjpjaGtTZWxlY3Q7UGFnZVRlbXBsYXRlOnVjQ29udGVudFJlc2VhcmNoOmRnQ29udGVudDpfY3RsNzpjaGtTZWxlY3Q7UGFnZVRlbXBsYXRlOnVjQ29udGVudFJlc2VhcmNoOmRnQ29udGVudDpfY3RsODpjaGtTZWxlY3Q7UGFnZVRlbXBsYXRlOnVjQ29udGVudFJlc2VhcmNoOmRnQ29udGVudDpfY3RsOTpjaGtTZWxlY3Q7UGFnZVRlbXBsYXRlOnVjQ29udGVudFJlc2VhcmNoOmRnQ29udGVudDpfY3RsMTA6Y2hrU2VsZWN0O1BhZ2VUZW1wbGF0ZTp1Y0NvbnRlbnRSZXNlYXJjaDpkZ0NvbnRlbnQ6X2N0bDExOmNoa1NlbGVjdDtQYWdlVGVtcGxhdGU6dWNDb250ZW50UmVzZWFyY2g6ZGdDb250ZW50Ol9jdGwxMjpjaGtTZWxlY3Q7Pj7qEeoHXKcT/rsUgStkg5pbOt82ng== 
+name=__VIEWSTATE>
+<SCRIPT language=javascript type=text/javascript>
+<!--
+	function __doPostBack(eventTarget, eventArgument) {
+		var theform;
+		if (window.navigator.appName.toLowerCase().indexOf("microsoft") > -1) {
+			theform = document.__aspnetForm;
+		}
+		else {
+			theform = document.forms["__aspnetForm"];
+		}
+		theform.__EVENTTARGET.value = eventTarget.split("$").join(":");
+		theform.__EVENTARGUMENT.value = eventArgument;
+		theform.submit();
+	}
+// -->
+</SCRIPT>
+
+<SCRIPT 
+src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/common.ashx" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/Russell.RADAR.Web.BasePage,Russell.RADAR.Web.ashx" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript>
+document.forms(0).attachEvent("onsubmit", setLocalDate);
+function setLocalDate(){
+var newDate = new Date();
+document.cookie = 'LocalDateOffset = ' + newDate.getTimezoneOffset().toString();
+}</SCRIPT>
+
+<SCRIPT 
+src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/Russell.RADAR.Web.UI.ProductBar,Russell.RADAR.Web.UI.ashx" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/Russell.RADAR.Web.UI.TabProduct,Russell.RADAR.Web.UI.ashx" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=javascript 
+src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/DropDownButton.js"></SCRIPT>
+
+<SCRIPT 
+language=javascript>window.attachEvent('onload', InitDropDownButtons);</SCRIPT>
+
+<SCRIPT language=javascript 
+src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/Dropdown.js"></SCRIPT>
+
+<SCRIPT 
+language=javascript>window.attachEvent('onload', InitDropDowns);</SCRIPT>
+ <INPUT id=PageTemplate_isDocRendered type=hidden value=false 
+name=PageTemplate:isDocRendered><INPUT id=PageTemplate_isPopupShown type=hidden 
+value=false name=PageTemplate:isPopupShown> <INPUT 
+id=PageTemplate_popupHasReturnedOnce type=hidden 
+name=PageTemplate:popupHasReturnedOnce> <INPUT id=popupReturn 
+onpropertychange=popupHasReturned(); type=hidden name=popupReturn> 
+<DIV id=container><!-- HEADER -->
+<DIV id=header style="HEIGHT: 100%">
+<TABLE id=menuNavigation style="MARGIN: 0px; HEIGHT: 50px" cellSpacing=0 
+cellPadding=0>
+  <TBODY>
+  <TR align=left>
+    <TD vAlign=top><INPUT id=PageTemplate_header_imgLogo tabIndex=-1 
+      type=image alt="" 
+      src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/logo_russell.gif" 
+      border=0 name=PageTemplate:header:imgLogo> </TD>
+    <TD align=right><A class=suivant id=PageTemplate_header_lnkHome 
+      tabIndex=-1 
+      href="javascript:__doPostBack('PageTemplate$header$lnkHome','')">Back to 
+      Search</A> | <A class=suivant id=PageTemplate_header_lnkInterAction 
+      tabIndex=-1 
+      href="javascript:__doPostBack('PageTemplate$header$lnkInterAction','')">Go 
+      to InterAction</A> | <A class=suivant 
+      id=PageTemplate_header_lnkMyPreferences tabIndex=-1 
+      href="javascript:__doPostBack('PageTemplate$header$lnkMyPreferences','')">My 
+      Preferences</A> | <A class=suivant id=PageTemplate_header_lnkMyContacts 
+      tabIndex=-1 
+      href="javascript:__doPostBack('PageTemplate$header$lnkMyContacts','')">My 
+      Contacts</A> | <A class=suivant id=PageTemplate_header_lnkHelp tabIndex=-1 
+      href="javascript:__doPostBack('PageTemplate$header$lnkHelp','')">Help</A>&nbsp;&nbsp; 
+    </TD></TR>
+  <TR>
+    <TD colSpan=2>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD vAlign=top align=right width="100%"><SPAN 
+            id=PageTemplate_header_ddbMaintenanceToolbar 
+            hidId="PageTemplate_header_ddbMaintenanceToolbar_hid" 
+            Imagepath="images"><IMG 
+            id=PageTemplate_header_ddbMaintenanceToolbar_image 
+            onclick="ShowHideButtonDiv('PageTemplate_header_ddbMaintenanceToolbar_div')" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/btn_maintenance_activities.gif" 
+            tooltip=""><INPUT id=PageTemplate_header_ddbMaintenanceToolbar_hid 
+            type=hidden 
+            name=PageTemplate:header:ddbMaintenanceToolbar:hid><INPUT 
+            id=PageTemplate_header_ddbMaintenanceToolbar_itemsField type=hidden 
+            value="#1~True@Manage User Access~~__2~True@Manage Domain Values~~#3~True@Corporate Actions" 
+            name=PageTemplate:header:ddbMaintenanceToolbar:itemsField><SPAN 
+            class=buttonddSous id=PageTemplate_header_ddbMaintenanceToolbar_div 
+            style="OVERFLOW-Y: auto; DISPLAY: none; Z-INDEX: 1000; WIDTH: 100%; POSITION: absolute" 
+            maxHeight="100%">
+            <TABLE class=buttonddSous 
+            id=PageTemplate_header_ddbMaintenanceToolbar_itemList cellSpacing=0 
+            cellPadding=0>
+              <TBODY></TBODY></TABLE></SPAN></SPAN></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV><!-- END HEADER -->
+<DIV id=NorthMenu>
+<DIV id=PageTemplate_ucManagerBar_panFullMode>
+<TABLE cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD>&nbsp; <A class=manager id=PageTemplate_ucManagerBar_lnkManager 
+      href="javascript:__doPostBack('PageTemplate$ucManagerBar$lnkManager','')">Morgan 
+      Stanley Investment Management Inc.</A> <SPAN class=managerLabel 
+      id=PageTemplate_ucManagerBar_lblManager>Morgan Stanley Investment 
+      Management Inc.</SPAN><IMG 
+      src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/arrow.gif"> 
+      <SPAN class=searchbold id=PageTemplate_ucManagerBar_lblProduct>Asia ex 
+      Japan Equities</SPAN> <BR>&nbsp; <SPAN class=search 
+      id=PageTemplate_ucManagerBar_lblAsset>Equity</SPAN><SPAN 
+      class=Search>|</SPAN> <SPAN class=search 
+      id=PageTemplate_ucManagerBar_lblGeo>Asia ex Japan</SPAN><SPAN 
+      class=Search>|</SPAN> <SPAN class=search 
+      id=PageTemplate_ucManagerBar_lblStyle>-</SPAN><SPAN class=Search>|</SPAN> 
+      <SPAN class=search id=PageTemplate_ucManagerBar_lblSubStyle>-</SPAN></TD>
+    <TD class=CreateEditProduct id=PageTemplate_ucManagerBar_cellEditProduct 
+    vAlign=top width=130><IMG id=PageTemplate_ucManagerBar_imgEditProductArrow 
+      src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/arrow.gif"> 
+      <A class=CreateEditProduct id=PageTemplate_ucManagerBar_lnkEditProduct 
+      href="javascript:__doPostBack('PageTemplate$ucManagerBar$lnkEditProduct','')">Edit 
+      this product</A></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV id=ProductInfo><INPUT id=PageTemplate_ucProductBar_hidLatestFinding 
+type=hidden name=PageTemplate:ucProductBar:hidLatestFinding> 
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD width=130>
+      <TABLE class=rank cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD><IMG id=PageTemplate_ucProductBar_ucRank_imgRank alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/2.gif" 
+            border=0> </TD></TR>
+        <TR>
+          <TD><BR>Effective <SPAN 
+            id=PageTemplate_ucProductBar_lblAsOfDate>8/1/2005</SPAN></TD></TR></TBODY></TABLE></TD>
+    <TD style="WIDTH: 10px">&nbsp;</TD>
+    <TD>
+      <DIV style="MARGIN-TOP: 4px">
+      <TABLE 
+      style="BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none" 
+      cellSpacing=1 cellPadding=0 border=0>
+        <TBODY>
+        <TR id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container 
+        RightImageSelected="../images/right_tab_sel.gif" 
+        LeftImageSelected="../images/left_tab_sel.gif" 
+        tabStripId="PageTemplate_ucProductBar_ucTabProduct_tab1" 
+        selectedIndex="0" LeftImageHover="../images/left_tab.gif" 
+        RightImageHover="../images/right_tab.gif" autoPostBack="False" 
+        contentHolderId="PageTemplate_ucProductBar_productBarPanel" 
+        RightImage="../images/right_tab.gif" selectedClass="SelectedProductTab" 
+        defaultClass="ProductTab" hoverClass="ProductTabHover" 
+        LeftImage="../images/left_tab.gif">
+          <TD>
+            <TABLE class=SelectedProductTab 
+            id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T0 
+            onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucProductBar_ucTabProduct_tab1_Container');" 
+            style="BORDER-COLLAPSE: collapse" 
+            onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucProductBar_ucTabProduct_tab1_Container',0);" 
+            onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucProductBar_ucTabProduct_tab1_Container');" 
+            cellSpacing=0 cellPadding=0 border=0 
+            rightImageId="PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T0_RightImage" 
+            leftImageId="PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T0_LeftImage" 
+            clientSideCommand="FillProductInformationTab();">
+              <TBODY>
+              <TR>
+                <TD><IMG class=LeftImage 
+                  id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T0_LeftImage 
+                  alt="" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/left_tab_sel.gif" 
+                  border=0></TD>
+                <TD class=Text><NOBR>Product Information</NOBR></TD>
+                <TD><IMG class=RightImage 
+                  id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T0_RightImage 
+                  alt="" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/right_tab_sel.gif" 
+                  border=0></TD></TR></TBODY></TABLE></TD>
+          <TD>
+            <TABLE class=ProductTab 
+            id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T1 
+            onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucProductBar_ucTabProduct_tab1_Container');" 
+            style="BORDER-COLLAPSE: collapse" 
+            onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucProductBar_ucTabProduct_tab1_Container',1);" 
+            onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucProductBar_ucTabProduct_tab1_Container');" 
+            cellSpacing=0 cellPadding=0 border=0 
+            rightImageId="PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T1_RightImage" 
+            leftImageId="PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T1_LeftImage" 
+            clientSideCommand="FillLastMeetingTab();">
+              <TBODY>
+              <TR>
+                <TD><IMG class=LeftImage 
+                  id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T1_LeftImage 
+                  alt="" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/left_tab.gif" 
+                  border=0></TD>
+                <TD class=Text><NOBR>Latest Findings</NOBR></TD>
+                <TD><IMG class=RightImage 
+                  id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T1_RightImage 
+                  alt="" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/right_tab.gif" 
+                  border=0></TD></TR></TBODY></TABLE></TD>
+          <TD>
+            <TABLE class=ProductTab 
+            id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T2 
+            onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucProductBar_ucTabProduct_tab1_Container');" 
+            style="BORDER-COLLAPSE: collapse" 
+            onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucProductBar_ucTabProduct_tab1_Container',2);" 
+            onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucProductBar_ucTabProduct_tab1_Container');" 
+            cellSpacing=0 cellPadding=0 border=0 
+            rightImageId="PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T2_RightImage" 
+            leftImageId="PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T2_LeftImage" 
+            clientSideCommand="FillRankHistoryTab();">
+              <TBODY>
+              <TR>
+                <TD><IMG class=LeftImage 
+                  id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T2_LeftImage 
+                  alt="" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/left_tab.gif" 
+                  border=0></TD>
+                <TD class=Text><NOBR>Rank History</NOBR></TD>
+                <TD><IMG class=RightImage 
+                  id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T2_RightImage 
+                  alt="" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/right_tab.gif" 
+                  border=0></TD></TR></TBODY></TABLE></TD>
+          <TD>
+            <TABLE class=ProductTab 
+            id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T3 
+            onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucProductBar_ucTabProduct_tab1_Container');" 
+            style="BORDER-COLLAPSE: collapse" 
+            onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucProductBar_ucTabProduct_tab1_Container',3);" 
+            onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucProductBar_ucTabProduct_tab1_Container');" 
+            cellSpacing=0 cellPadding=0 border=0 
+            rightImageId="PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T3_RightImage" 
+            leftImageId="PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T3_LeftImage" 
+            clientSideCommand="FillProductIdentifierTab();">
+              <TBODY>
+              <TR>
+                <TD><IMG class=LeftImage 
+                  id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T3_LeftImage 
+                  alt="" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/left_tab.gif" 
+                  border=0></TD>
+                <TD class=Text><NOBR>Product Identifiers</NOBR></TD>
+                <TD><IMG class=RightImage 
+                  id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T3_RightImage 
+                  alt="" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/right_tab.gif" 
+                  border=0></TD></TR></TBODY></TABLE></TD>
+          <TD>
+            <TABLE class=ProductTab 
+            id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T4 
+            onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucProductBar_ucTabProduct_tab1_Container');" 
+            style="BORDER-COLLAPSE: collapse" 
+            onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucProductBar_ucTabProduct_tab1_Container',4);" 
+            onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucProductBar_ucTabProduct_tab1_Container');" 
+            cellSpacing=0 cellPadding=0 border=0 
+            rightImageId="PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T4_RightImage" 
+            leftImageId="PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T4_LeftImage" 
+            clientSideCommand="FillContactsTab();">
+              <TBODY>
+              <TR>
+                <TD><IMG class=LeftImage 
+                  id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T4_LeftImage 
+                  alt="" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/left_tab.gif" 
+                  border=0></TD>
+                <TD class=Text><NOBR>Contacts</NOBR></TD>
+                <TD><IMG class=RightImage 
+                  id=PageTemplate_ucProductBar_ucTabProduct_tab1_Container_T4_RightImage 
+                  alt="" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/right_tab.gif" 
+                  border=0></TD></TR></TBODY></TABLE></TD>
+          <TD style="WIDTH: 100%"></TD></TR></TBODY></TABLE></DIV>
+      <DIV id=PageTemplate_ucProductBar_productBarPanel>
+      <DIV id=PageTemplate_ucProductBar_panProductInfo>
+      <TABLE class=topTab id=pvProdInfoTable cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD class=product2><B>Team Location:</B>&nbsp;[Loading...]</TD>
+          <TD class=product2><B>Product AUM:</B>&nbsp;[Loading...]</TD></TR>
+        <TR>
+          <TD class=product2><B>Russell Fund/Client:</B>&nbsp;[Loading...]</TD>
+          <TD class=product2><B>Target Excess 
+        Return:</B>&nbsp;[Loading...]</TD></TR>
+        <TR>
+          <TD class=product2><B>Developing Manager:</B>&nbsp;[Loading...]</TD>
+          <TD class=product2><B>Target Tracking 
+        Error:</B>&nbsp;[Loading...]</TD></TR>
+        <TR>
+          <TD class=product2><B>Product Offering 
+          Status:</B>&nbsp;[Loading...]</TD>
+          <TD class=product2><B>Forecast Period:</B>&nbsp;[Loading...]</TD></TR>
+        <TR>
+          <TD class=product2><B>Primary Russell 
+          Analyst:</B>&nbsp;[Loading...]</TD>
+          <TD class=product2><B>Russell-Assigned 
+            Benchmark:</B>&nbsp;[Loading...]</TD></TR></TBODY></TABLE></DIV>
+      <DIV id=PageTemplate_ucProductBar_panLatestFindings style="DISPLAY: none">
+      <TABLE class=topTab id=pvLastMeetingTable cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD class=product2><B>Last Research Meeting</B> </TD></TR>
+        <TR>
+          <TD class=product2><B>Location:</B>&nbsp;[Loading...] </TD></TR>
+        <TR>
+          <TD class=product2><B>Date:</B>&nbsp;[Loading...] </TD></TR>
+        <TR>
+          <TD class=product2><B>Author:</B>&nbsp;[Loading...] </TD></TR>
+        <TR>
+          <TD class=product2>&nbsp; </TD></TR>
+        <TR>
+          <TD class=product2>&nbsp; </TD></TR></TBODY></TABLE></DIV>
+      <DIV id=PageTemplate_ucProductBar_panRankHistory style="DISPLAY: none">
+      <TABLE class=topTab cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD class=product2 width="20%"><B>Rank History At-A-Glance</B> 
+</TD></TR>
+        <TR>
+          <TD class=productRank align=left>
+            <TABLE id=PageTemplate_ucProductBar_ucRankHistory_dtlSample 
+            style="WIDTH: 500px; BORDER-COLLAPSE: collapse" cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD class=productRank>
+                  <TABLE>
+                    <TBODY>
+                    <TR>
+                      <TD class=productRankCentered><SPAN 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl0_lblSpacer>&nbsp;&nbsp;</SPAN> 
+                      </TD>
+                      <TD class=productRankCentered><IMG 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl0_imgRank 
+                        alt="" 
+                        src="C:\Documents and Settings\jguillot\My Documents\Content List\RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files\2(1).gif" 
+                        border=0><BR><NOBR><A 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl0_lnkDate 
+                        href="javascript:__doPostBack('PageTemplate$ucProductBar$ucRankHistory$dtlSample$_ctl0$lnkDate','')">8/1/2005</A> 
+                        <SPAN 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl0_lblDate></SPAN></NOBR></TD></TR></TBODY></TABLE></TD>
+                <TD class=productRank>
+                  <TABLE>
+                    <TBODY>
+                    <TR>
+                      <TD class=productRankCentered><IMG 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl1_imgArrow 
+                        alt="" 
+                        src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/img_fleche.jpg" 
+                        border=0> </TD>
+                      <TD class=productRankCentered><IMG 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl1_imgRank 
+                        alt="" 
+                        src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/3.gif" 
+                        border=0><BR><NOBR><A 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl1_lnkDate 
+                        href="javascript:__doPostBack('PageTemplate$ucProductBar$ucRankHistory$dtlSample$_ctl1$lnkDate','')">2/18/2005</A> 
+                        <SPAN 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl1_lblDate></SPAN></NOBR></TD></TR></TBODY></TABLE></TD>
+                <TD class=productRank>
+                  <TABLE>
+                    <TBODY>
+                    <TR>
+                      <TD class=productRankCentered><IMG 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl2_imgArrow 
+                        alt="" 
+                        src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/img_fleche.jpg" 
+                        border=0> </TD>
+                      <TD class=productRankCentered><IMG 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl2_imgRank 
+                        alt="" 
+                        src="C:\Documents and Settings\jguillot\My Documents\Content List\RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files\2(1).gif" 
+                        border=0><BR><NOBR><A 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl2_lnkDate 
+                        href="javascript:__doPostBack('PageTemplate$ucProductBar$ucRankHistory$dtlSample$_ctl2$lnkDate','')"></A><SPAN 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl2_lblDate>10/24/2001</SPAN> 
+                        </NOBR></TD></TR></TBODY></TABLE></TD>
+                <TD class=productRank>
+                  <TABLE>
+                    <TBODY>
+                    <TR>
+                      <TD class=productRankCentered><IMG 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl3_imgArrow 
+                        alt="" 
+                        src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/img_fleche.jpg" 
+                        border=0> </TD>
+                      <TD class=productRankCentered><IMG 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl3_imgRank 
+                        alt="" 
+                        src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/1.gif" 
+                        border=0><BR><NOBR><A 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl3_lnkDate 
+                        href="javascript:__doPostBack('PageTemplate$ucProductBar$ucRankHistory$dtlSample$_ctl3$lnkDate','')">2/2/2000</A> 
+                        <SPAN 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl3_lblDate></SPAN></NOBR></TD></TR></TBODY></TABLE></TD>
+                <TD class=productRank>
+                  <TABLE>
+                    <TBODY>
+                    <TR>
+                      <TD class=productRankCentered><IMG 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl4_imgArrow 
+                        alt="" 
+                        src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/img_fleche.jpg" 
+                        border=0> </TD>
+                      <TD class=productRankCentered><IMG 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl4_imgRank 
+                        alt="" 
+                        src="C:\Documents and Settings\jguillot\My Documents\Content List\RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files\2(1).gif" 
+                        border=0><BR><NOBR><A 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl4_lnkDate 
+                        href="javascript:__doPostBack('PageTemplate$ucProductBar$ucRankHistory$dtlSample$_ctl4$lnkDate','')"></A><SPAN 
+                        id=PageTemplate_ucProductBar_ucRankHistory_dtlSample__ctl4_lblDate>3/10/1999</SPAN> 
+                        </NOBR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+      <DIV id=PageTemplate_ucProductBar_panProductIdentifier 
+      style="DISPLAY: none">
+      <TABLE class=topTab id=pvProductIdTable cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD class=product2><B>Performance Rep Account:</B>&nbsp;[Loading...] 
+          </TD></TR>
+        <TR>
+          <TD class=product2><B>Profile Rep Account:</B>&nbsp;[Loading...] 
+        </TD></TR>
+        <TR>
+          <TD class=product2><B>Russell-Assigned 
+            Benchmark:</B>&nbsp;[Loading...] </TD></TR>
+        <TR>
+          <TD class=product2><B>Product ID:</B>&nbsp;[Loading...] </TD></TR>
+        <TR>
+          <TD class=product2>&nbsp; </TD></TR>
+        <TR>
+          <TD class=product2>&nbsp; </TD></TR></TBODY></TABLE></DIV>
+      <DIV id=PageTemplate_ucProductBar_panContacts style="DISPLAY: none">
+      <TABLE class=topTab id=pvContactsTable cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD class=product2 width="60%" colSpan=2><B>Product Contact:</B></TD>
+          <TD class=product2 width="40%"></TD></TR>
+        <TR>
+          <TD class=product2 width="65%" colSpan=2>&nbsp;[Loading...]</TD>
+          <TD class=product2 vAlign=top align=left width="45%" 
+            rowSpan=4>&nbsp;[Loading...]</TD></TR>
+        <TR>
+          <TD class=product2 width="1%"></TD>
+          <TD class=product2 width="39%"><B>Business 
+            Phone:</B>&nbsp;[Loading...]</TD></TR>
+        <TR>
+          <TD class=product2></TD>
+          <TD class=product2><B>Mobile Phone:</B>&nbsp;[Loading...]</TD></TR>
+        <TR>
+          <TD class=product2></TD>
+          <TD class=product2><B>Email:</B>&nbsp;[Loading...]</TD></TR>
+        <TR>
+          <TD class=product2 colSpan=2></TD>
+          <TD class=product2></TD></TR></TBODY></TABLE></DIV></DIV></TD>
+    <TD style="WIDTH: 15px">&nbsp;</TD></TR></TBODY></TABLE>
+<SCRIPT language=javascript>
+
+		var selectedIndex = "0";		
+		switch(selectedIndex)
+		{
+			case "0": ProductBar.GetProductInformationTabContent(FillProductInformationTabReturn); break;
+			case "1": ProductBar.GetLastMeetingTabContent(FillLastMeetingTabReturn); break;
+			case "2": break; //Already rendered server-side
+			case "3": ProductBar.GetProductIdentifierTabContent(FillProductIdentifierTabReturn); break;
+			case "4": ProductBar.GetContactsTabContent(FillContactsTabReturn); break;
+		}
+		
+		//Product Information Tab
+		function FillProductInformationTab()
+		{
+			TabProduct.SetSessionForTab('0',ReturnForSelectedTab)
+			if(!pvProdInfoTable.isLoaded)
+			{			
+				ProductBar.GetProductInformationTabContent(FillProductInformationTabReturn);
+			}
+		}
+		
+		function FillRankHistoryTab(){
+			TabProduct.SetSessionForTab('2',ReturnForSelectedTab);
+		}
+		
+		function FillProductInformationTabReturn(retVal)
+		{
+			if(retVal.value != null)
+				pvProdInfoTable.outerHTML = retVal.value;
+			pvProdInfoTable.isLoaded = true;
+		}
+
+		//Last Meeting Tab
+		function FillLastMeetingTab()
+		{
+			TabProduct.SetSessionForTab('1',ReturnForSelectedTab)
+			if(!pvLastMeetingTable.isLoaded)
+			{			
+				ProductBar.GetLastMeetingTabContent(FillLastMeetingTabReturn);
+			}
+		}
+		function FillLastMeetingTabReturn(retVal)
+		{		
+			if(retVal.value != null)
+				pvLastMeetingTable.outerHTML = retVal.value;
+			pvLastMeetingTable.isLoaded = true;
+		}
+		
+		//Product Identifiers Tab
+		function FillProductIdentifierTab()
+		{
+			TabProduct.SetSessionForTab('3',ReturnForSelectedTab)
+			if(!pvProductIdTable.isLoaded)
+			{			
+				ProductBar.GetProductIdentifierTabContent(FillProductIdentifierTabReturn);
+			}
+		}
+		function FillProductIdentifierTabReturn(retVal)
+		{		
+			if(retVal.value != null)
+				pvProductIdTable.outerHTML = retVal.value;
+			pvProductIdTable.isLoaded = true;
+		}
+		
+		//Contacts Tab
+		function FillContactsTab()
+		{
+			TabProduct.SetSessionForTab('4',ReturnForSelectedTab)
+			if(!pvContactsTable.isLoaded)
+			{			
+				ProductBar.GetContactsTabContent(FillContactsTabReturn);
+			}
+		}
+		function FillContactsTabReturn(retVal)
+		{		
+			if(retVal.value != null)
+				pvContactsTable.outerHTML = retVal.value;
+			pvContactsTable.isLoaded = true;
+		}
+		
+		function ReturnForSelectedTab(){
+		}
+	
+	</SCRIPT>
+</DIV>
+<DIV id=tabContent_div 
+style="BORDER-TOP: #666666 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #666666 1px solid">
+<TABLE 
+style="BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none" 
+cellSpacing=1 cellPadding=0 border=0>
+  <TBODY>
+  <TR id=PageTemplate_ucTabContent_tabContentType_Container 
+  RightImageSelected="../images/selected_tab_right_icon.gif" 
+  LeftImageSelected="../images/selected_tab_left_icon.gif" 
+  tabStripId="PageTemplate_ucTabContent_tabContentType" selectedIndex="0" 
+  LeftImageHover="../images/hover_tab_left_icon.gif" 
+  RightImageHover="../images/hover_tab_right_icon.gif" autoPostBack="True" 
+  contentHolderId="PageTemplate_contentPanel" 
+  RightImage="../images/tab_right_icon.gif" 
+  selectedClass="SelectedContentTypeTab" defaultClass="ContentTypeTab" 
+  hoverClass="ContentTypeTabHover" LeftImage="../images/tab_left_icon.gif">
+    <TD>
+      <TABLE class=SelectedContentTypeTab 
+      id=PageTemplate_ucTabContent_tabContentType_Container_T0 
+      onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      style="BORDER-COLLAPSE: collapse" 
+      onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucTabContent_tabContentType_Container',0);" 
+      onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      cellSpacing=0 cellPadding=0 border=0 
+      rightImageId="PageTemplate_ucTabContent_tabContentType_Container_T0_RightImage" 
+      leftImageId="PageTemplate_ucTabContent_tabContentType_Container_T0_LeftImage" 
+      clientSideCommand="if(window.initProgress)initProgress();">
+        <TBODY>
+        <TR>
+          <TD><IMG class=LeftImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T0_LeftImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/selected_tab_left_icon.gif" 
+            border=0></TD>
+          <TD class=Text><NOBR>Product Research</NOBR></TD>
+          <TD><IMG class=RightImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T0_RightImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/selected_tab_right_icon.gif" 
+            border=0></TD></TR></TBODY></TABLE></TD>
+    <TD>
+      <TABLE class=ContentTypeTab 
+      id=PageTemplate_ucTabContent_tabContentType_Container_T1 
+      onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      style="BORDER-COLLAPSE: collapse" 
+      onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucTabContent_tabContentType_Container',1);" 
+      onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      cellSpacing=0 cellPadding=0 border=0 
+      rightImageId="PageTemplate_ucTabContent_tabContentType_Container_T1_RightImage" 
+      leftImageId="PageTemplate_ucTabContent_tabContentType_Container_T1_LeftImage" 
+      clientSideCommand="if(window.initProgress)initProgress();">
+        <TBODY>
+        <TR>
+          <TD><IMG class=LeftImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T1_LeftImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_left_icon.gif" 
+            border=0></TD>
+          <TD class=Text><NOBR>Findings</NOBR></TD>
+          <TD><IMG class=RightImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T1_RightImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_right_icon.gif" 
+            border=0></TD></TR></TBODY></TABLE></TD>
+    <TD>
+      <TABLE class=ContentTypeTab 
+      id=PageTemplate_ucTabContent_tabContentType_Container_T2 
+      onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      style="BORDER-COLLAPSE: collapse" 
+      onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucTabContent_tabContentType_Container',2);" 
+      onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      cellSpacing=0 cellPadding=0 border=0 
+      rightImageId="PageTemplate_ucTabContent_tabContentType_Container_T2_RightImage" 
+      leftImageId="PageTemplate_ucTabContent_tabContentType_Container_T2_LeftImage" 
+      clientSideCommand="if(window.initProgress)initProgress();">
+        <TBODY>
+        <TR>
+          <TD><IMG class=LeftImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T2_LeftImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_left_icon.gif" 
+            border=0></TD>
+          <TD class=Text><NOBR>Opinion</NOBR></TD>
+          <TD><IMG class=RightImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T2_RightImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_right_icon.gif" 
+            border=0></TD></TR></TBODY></TABLE></TD>
+    <TD>
+      <TABLE class=ContentTypeTab 
+      id=PageTemplate_ucTabContent_tabContentType_Container_T3 
+      onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      style="BORDER-COLLAPSE: collapse" 
+      onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucTabContent_tabContentType_Container',3);" 
+      onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      cellSpacing=0 cellPadding=0 border=0 
+      rightImageId="PageTemplate_ucTabContent_tabContentType_Container_T3_RightImage" 
+      leftImageId="PageTemplate_ucTabContent_tabContentType_Container_T3_LeftImage" 
+      clientSideCommand="if(window.initProgress)initProgress();">
+        <TBODY>
+        <TR>
+          <TD><IMG class=LeftImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T3_LeftImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_left_icon.gif" 
+            border=0></TD>
+          <TD class=Text><NOBR>Investment Approach</NOBR></TD>
+          <TD><IMG class=RightImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T3_RightImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_right_icon.gif" 
+            border=0></TD></TR></TBODY></TABLE></TD>
+    <TD>
+      <TABLE class=ContentTypeTab 
+      id=PageTemplate_ucTabContent_tabContentType_Container_T4 
+      onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      style="BORDER-COLLAPSE: collapse" 
+      onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucTabContent_tabContentType_Container',4);" 
+      onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      cellSpacing=0 cellPadding=0 border=0 
+      rightImageId="PageTemplate_ucTabContent_tabContentType_Container_T4_RightImage" 
+      leftImageId="PageTemplate_ucTabContent_tabContentType_Container_T4_LeftImage" 
+      clientSideCommand="if(window.initProgress)initProgress();">
+        <TBODY>
+        <TR>
+          <TD><IMG class=LeftImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T4_LeftImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_left_icon.gif" 
+            border=0></TD>
+          <TD class=Text><NOBR>Manager Update</NOBR></TD>
+          <TD><IMG class=RightImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T4_RightImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_right_icon.gif" 
+            border=0></TD></TR></TBODY></TABLE></TD>
+    <TD>
+      <TABLE class=ContentTypeTab 
+      id=PageTemplate_ucTabContent_tabContentType_Container_T5 
+      onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      style="BORDER-COLLAPSE: collapse" 
+      onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucTabContent_tabContentType_Container',5);" 
+      onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      cellSpacing=0 cellPadding=0 border=0 
+      rightImageId="PageTemplate_ucTabContent_tabContentType_Container_T5_RightImage" 
+      leftImageId="PageTemplate_ucTabContent_tabContentType_Container_T5_LeftImage" 
+      clientSideCommand="if(window.initProgress)initProgress();">
+        <TBODY>
+        <TR>
+          <TD><IMG class=LeftImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T5_LeftImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_left_icon.gif" 
+            border=0></TD>
+          <TD class=Text><NOBR>Agenda</NOBR></TD>
+          <TD><IMG class=RightImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T5_RightImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_right_icon.gif" 
+            border=0></TD></TR></TBODY></TABLE></TD>
+    <TD>
+      <TABLE class=ContentTypeTab 
+      id=PageTemplate_ucTabContent_tabContentType_Container_T6 
+      onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      style="BORDER-COLLAPSE: collapse" 
+      onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucTabContent_tabContentType_Container',6);" 
+      onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      cellSpacing=0 cellPadding=0 border=0 
+      rightImageId="PageTemplate_ucTabContent_tabContentType_Container_T6_RightImage" 
+      leftImageId="PageTemplate_ucTabContent_tabContentType_Container_T6_LeftImage" 
+      clientSideCommand="if(window.initProgress)initProgress();">
+        <TBODY>
+        <TR>
+          <TD><IMG class=LeftImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T6_LeftImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_left_icon.gif" 
+            border=0></TD>
+          <TD class=Text><NOBR>Flash Report</NOBR></TD>
+          <TD><IMG class=RightImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T6_RightImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_right_icon.gif" 
+            border=0></TD></TR></TBODY></TABLE></TD>
+    <TD>
+      <TABLE class=ContentTypeTab 
+      id=PageTemplate_ucTabContent_tabContentType_Container_T7 
+      onmouseover="if(window.TabOnMouseOver)TabOnMouseOver(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      style="BORDER-COLLAPSE: collapse" 
+      onclick="if(window.TabOnClick)TabOnClick(this,'PageTemplate_ucTabContent_tabContentType_Container',7);" 
+      onmouseout="if(window.TabOnMouseOut)TabOnMouseOut(this, 'PageTemplate_ucTabContent_tabContentType_Container');" 
+      cellSpacing=0 cellPadding=0 border=0 
+      rightImageId="PageTemplate_ucTabContent_tabContentType_Container_T7_RightImage" 
+      leftImageId="PageTemplate_ucTabContent_tabContentType_Container_T7_LeftImage" 
+      clientSideCommand="if(window.initProgress)initProgress();">
+        <TBODY>
+        <TR>
+          <TD><IMG class=LeftImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T7_LeftImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_left_icon.gif" 
+            border=0></TD>
+          <TD class=Text><NOBR>Sounding Board</NOBR></TD>
+          <TD><IMG class=RightImage 
+            id=PageTemplate_ucTabContent_tabContentType_Container_T7_RightImage 
+            alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/tab_right_icon.gif" 
+            border=0></TD></TR></TBODY></TABLE></TD>
+    <TD style="WIDTH: 100%"></TD></TR></TBODY></TABLE></DIV>
+<DIV id=PageTemplate_contentPanel>
+<DIV id=PageTemplate_panContentResearch>
+<SCRIPT language=javascript>	
+	//Function for select all checkbox behavior
+	function SelectAll(){		
+		var getOut = 0;		
+		var selectAllCheck = document.getElementById('PageTemplate_ucContentResearch_dgContent__ctl2_chkSelectAll');		
+		var selectCheck = selectAllCheck.id.replace(/__ctl(\d)*_chkSelectAll/ig, '');			
+		var itemCount = SetItemCount(selectCheck);
+		while(getOut != 1){			
+			var curSelect = document.getElementById(selectCheck + '__ctl' + itemCount + '_chkSelect');
+			hidden = document.getElementById('PageTemplate_ucContentResearch_selectedItems');
+			if(curSelect==null){						
+				getOut=1;
+			}
+			else{
+				if (curSelect.disabled==false){
+					curSelect.checked=selectAllCheck.checked;
+				}				
+				itemCount++;
+			}	
+			if(selectAllCheck.checked){
+			hidden.value='all';
+			}
+			else{
+				hidden.value='none';
+			}		
+		}
+	}
+	
+	function DeselectAll(){
+		var getOut = 0;		
+		var selectAllCheck = document.getElementById('PageTemplate_ucContentResearch_dgContent__ctl2_chkSelectAll');		
+		selectAllCheck.checked = false;
+		hidden = document.getElementById('PageTemplate_ucContentResearch_selectedItems');
+		hidden.value='';
+	}
+	
+	function SetItemCount(selectCheck){
+		var getOut = 0;
+		var itemCount = 0
+		while(getOut != 1){
+			var curSelect = document.getElementById(selectCheck + '__ctl' + itemCount + '_chkSelect');
+			if(curSelect!=null){
+				return itemCount
+			}
+			else{
+				itemCount++;
+			}
+			
+			if (itemCount > 100){
+				getOut = 1;
+			}
+		}
+	}
+</SCRIPT>
+<INPUT id=PageTemplate_ucContentResearch_selectedItems type=hidden 
+name=PageTemplate:ucContentResearch:selectedItems> 
+<DIV id=content>
+<DIV id=ProductNav>
+<TABLE id=Table1 style="WIDTH: 100%" cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR id=buttonRow>
+    <TD vAlign=top>
+      <DIV id=PageTemplate_ucContentResearch_panTitle>
+      <H1>Product Research</H1></DIV></TD>
+    <TD>
+      <DIV align=right><SPAN id=PageTemplate_ucContentResearch_ddbOutput 
+      hidId="PageTemplate_ucContentResearch_ddbOutput_hid" 
+      Imagepath="images"><IMG id=PageTemplate_ucContentResearch_ddbOutput_image 
+      onclick="ShowHideButtonDiv('PageTemplate_ucContentResearch_ddbOutput_div')" 
+      src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/btn_Output.gif" 
+      tooltip=""><INPUT id=PageTemplate_ucContentResearch_ddbOutput_hid 
+      type=hidden name=PageTemplate:ucContentResearch:ddbOutput:hid><INPUT 
+      id=PageTemplate_ucContentResearch_ddbOutput_itemsField type=hidden 
+      value="#1~True@Print~~__2~True@Create A PDF~~#3~True@Create Product Packet" 
+      name=PageTemplate:ucContentResearch:ddbOutput:itemsField><SPAN 
+      class=buttonddSous id=PageTemplate_ucContentResearch_ddbOutput_div 
+      style="OVERFLOW-Y: auto; DISPLAY: none; Z-INDEX: 1000; WIDTH: 100%; POSITION: absolute" 
+      maxHeight="100%">
+      <TABLE class=buttonddSous 
+      id=PageTemplate_ucContentResearch_ddbOutput_itemList cellSpacing=0 
+      cellPadding=0>
+        <TBODY></TBODY></TABLE></SPAN></SPAN><SPAN 
+      id=PageTemplate_ucContentResearch_ddbContentType 
+      hidId="PageTemplate_ucContentResearch_ddbContentType_hid" 
+      Imagepath="images"><IMG 
+      id=PageTemplate_ucContentResearch_ddbContentType_image 
+      onclick="ShowHideButtonDiv('PageTemplate_ucContentResearch_ddbContentType_div')" 
+      src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/btn_create_content_dd.gif" 
+      tooltip="Content Type"><INPUT 
+      id=PageTemplate_ucContentResearch_ddbContentType_hid type=hidden 
+      name=PageTemplate:ucContentResearch:ddbContentType:hid><INPUT 
+      id=PageTemplate_ucContentResearch_ddbContentType_itemsField type=hidden 
+      value="#AGND~False@Agenda~~__FNOTE~False@Findings - Note~~#FPM~False@Findings - Portfolio Management~~__FR~False@Findings - Research~~#FLR~False@Flash Report~~__IAPP~False@Investment Approach~~#OPIN~False@Opinion~~__SBRD~False@Sounding Board" 
+      name=PageTemplate:ucContentResearch:ddbContentType:itemsField><SPAN 
+      class=buttonddSous id=PageTemplate_ucContentResearch_ddbContentType_div 
+      style="OVERFLOW-Y: auto; DISPLAY: none; Z-INDEX: 1000; WIDTH: 100%; POSITION: absolute" 
+      maxHeight="144">
+      <TABLE class=buttonddSous 
+      id=PageTemplate_ucContentResearch_ddbContentType_itemList cellSpacing=0 
+      cellPadding=0>
+        <TBODY></TBODY></TABLE></SPAN></SPAN><INPUT 
+      id=PageTemplate_ucContentResearch_imgRefresh type=image 
+      alt="Refresh content list and product information" 
+      src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/btn_refresh.gif" 
+      border=0 name=PageTemplate:ucContentResearch:imgRefresh> </DIV></TD></TR>
+  <TR class=thentete>
+    <TD vAlign=top colSpan=2>&nbsp;<SPAN 
+      id=PageTemplate_ucContentResearch_lblNbItems>48</SPAN>&nbsp;Items 
+  </TD></TR></TBODY></TABLE>
+<TABLE class=current2 id=PageTemplate_ucContentResearch_dgContent 
+style="WIDTH: 100%; BORDER-COLLAPSE: collapse" cellSpacing=0 border=0>
+  <TBODY>
+  <TR class=thentete>
+    <TD class="borderright center">
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: center" vAlign=top width=55><IMG height=1 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/pixel.gif" 
+            width=25> Select All </TD></TR>
+        <TR>
+          <TD style="MARGIN: 0px; TEXT-ALIGN: center" 
+            vAlign=bottom>&nbsp;<INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_chkSelectAll 
+            onclick=SelectAll(); type=checkbox 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:chkSelectAll> 
+        </TD></TR></TBODY></TABLE></TD>
+    <TD style="HEIGHT: 100%"><IMG height=1 
+      src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/pixel.gif" 
+      width=8> </TD>
+    <TD style="HEIGHT: 100%">
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top><IMG height=1 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/pixel.gif" 
+            width=179> <SPAN 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDContentType 
+            hidId="PageTemplate_ucContentResearch_dgContent__ctl2_DropDContentType_hid" 
+            maxWidth><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDContentType_hid 
+            type=hidden value=All 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDContentType:hid><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDContentType_itemsField 
+            type=hidden 
+            value=All~~Agenda~~Findings&amp;nbsp;-&amp;nbsp;Research~~Investment&amp;nbsp;Approach~~Manager&amp;nbsp;Update~~Opinion 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDContentType:itemsField>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDContentType_fakedd>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDContentType_headerDiv 
+            onclick="ShowHideDiv('PageTemplate_ucContentResearch_dgContent__ctl2_DropDContentType_div')">
+            <TABLE class=fakedd cellSpacing=0 cellPadding=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV 
+                  style="OVERFLOW-Y: hidden; OVERFLOW-X: hidden; CURSOR: hand; HEIGHT: 17px"><SPAN 
+                  class=choice 
+                  id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDContentType_lblChoice 
+                  title=All>All</SPAN></DIV></TD>
+                <TD><IMG style="CURSOR: hand" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/arrowBtn.gif"></TD></TR></TBODY></TABLE></DIV></DIV>
+            <DIV class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDContentType_div 
+            style="OVERFLOW-Y: auto; DISPLAY: none; Z-INDEX: 1000; POSITION: absolute" 
+            maxHeight="200">
+            <TABLE class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDContentType_itemList 
+            cellSpacing=0 cellPadding=0>
+              <TBODY></TBODY></TABLE></DIV></SPAN></TD></TR>
+        <TR>
+          <TD vAlign=bottom><A 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_lnkContent 
+            href="javascript:__doPostBack('PageTemplate$ucContentResearch$dgContent$_ctl2$lnkContent','')">Content 
+            Type</A> </TD></TR></TBODY></TABLE></TD>
+    <TD class="borderright center" style="WIDTH: 19%; HEIGHT: 100%">
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top><IMG height=1 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/pixel.gif" 
+            width=46> <SPAN 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDEffectiveDate 
+            hidId="PageTemplate_ucContentResearch_dgContent__ctl2_DropDEffectiveDate_hid" 
+            maxWidth><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDEffectiveDate_hid 
+            type=hidden value=All 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDEffectiveDate:hid><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDEffectiveDate_itemsField 
+            type=hidden 
+            value=All~~1/30/1996~~6/18/1996~~6/25/1996~~7/9/1996~~11/13/1996~~12/23/1996~~6/3/1997~~6/9/1997~~8/5/1997~~9/25/1997~~3/17/1998~~3/18/1998~~3/23/1998~~4/28/1998~~4/30/1998~~5/7/1998~~6/18/1998~~7/21/1998~~9/17/1998~~11/16/1998~~4/27/1999~~11/11/1999~~1/9/2000~~1/14/2000~~1/19/2000~~2/1/2000~~2/2/2000~~4/4/2000~~6/13/2000~~9/20/2000~~11/7/2000~~3/20/2001~~10/22/2001~~4/8/2002~~7/13/2004~~11/4/2004~~2/18/2005~~5/13/2005~~6/30/2005~~7/18/2005~~8/1/2005~~2/8/2006~~7/13/2006~~11/16/2006 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDEffectiveDate:itemsField>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDEffectiveDate_fakedd>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDEffectiveDate_headerDiv 
+            onclick="ShowHideDiv('PageTemplate_ucContentResearch_dgContent__ctl2_DropDEffectiveDate_div')">
+            <TABLE class=fakedd cellSpacing=0 cellPadding=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV 
+                  style="OVERFLOW-Y: hidden; OVERFLOW-X: hidden; CURSOR: hand; HEIGHT: 17px"><SPAN 
+                  class=choice 
+                  id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDEffectiveDate_lblChoice 
+                  title=All>All</SPAN></DIV></TD>
+                <TD><IMG style="CURSOR: hand" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/arrowBtn.gif"></TD></TR></TBODY></TABLE></DIV></DIV>
+            <DIV class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDEffectiveDate_div 
+            style="OVERFLOW-Y: auto; DISPLAY: none; Z-INDEX: 1000; POSITION: absolute" 
+            maxHeight="200">
+            <TABLE class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDEffectiveDate_itemList 
+            cellSpacing=0 cellPadding=0>
+              <TBODY></TBODY></TABLE></DIV></SPAN></TD></TR>
+        <TR>
+          <TD vAlign=bottom noWrap><A 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_lnkDate 
+            style="WIDTH: 50px" 
+            href="javascript:__doPostBack('PageTemplate$ucContentResearch$dgContent$_ctl2$lnkDate','')">Effective 
+            date</A> <IMG 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_imgDate alt="" 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/downArrow.gif" 
+            border=0> </TD></TR></TBODY></TABLE></TD>
+    <TD class="borderright center" style="WIDTH: 13%; HEIGHT: 100%">
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top><IMG height=1 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/pixel.gif" 
+            width=121> <SPAN 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDPurpose 
+            hidId="PageTemplate_ucContentResearch_dgContent__ctl2_DropDPurpose_hid" 
+            maxWidth><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDPurpose_hid 
+            type=hidden value=All 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDPurpose:hid><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDPurpose_itemsField 
+            type=hidden value=All~~-~~Product&amp;nbsp;Review 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDPurpose:itemsField>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDPurpose_fakedd>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDPurpose_headerDiv 
+            onclick="ShowHideDiv('PageTemplate_ucContentResearch_dgContent__ctl2_DropDPurpose_div')">
+            <TABLE class=fakedd cellSpacing=0 cellPadding=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV 
+                  style="OVERFLOW-Y: hidden; OVERFLOW-X: hidden; CURSOR: hand; HEIGHT: 17px"><SPAN 
+                  class=choice 
+                  id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDPurpose_lblChoice 
+                  title=All>All</SPAN></DIV></TD>
+                <TD><IMG style="CURSOR: hand" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/arrowBtn.gif"></TD></TR></TBODY></TABLE></DIV></DIV>
+            <DIV class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDPurpose_div 
+            style="OVERFLOW-Y: auto; DISPLAY: none; Z-INDEX: 1000; POSITION: absolute" 
+            maxHeight="200">
+            <TABLE class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDPurpose_itemList 
+            cellSpacing=0 cellPadding=0>
+              <TBODY></TBODY></TABLE></DIV></SPAN></TD></TR>
+        <TR>
+          <TD vAlign=bottom><A 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_lnkPurpose 
+            href="javascript:__doPostBack('PageTemplate$ucContentResearch$dgContent$_ctl2$lnkPurpose','')">Purpose</A> 
+          </TD></TR></TBODY></TABLE></TD>
+    <TD class="borderright center" style="WIDTH: 13%">
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top><IMG height=1 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/pixel.gif" 
+            width=92> <SPAN 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDOutcome 
+            hidId="PageTemplate_ucContentResearch_dgContent__ctl2_DropDOutcome_hid" 
+            maxWidth><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDOutcome_hid 
+            type=hidden value=All 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDOutcome:hid><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDOutcome_itemsField 
+            type=hidden value=All~~-~~Rank(s)&amp;nbsp;Maintained 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDOutcome:itemsField>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDOutcome_fakedd>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDOutcome_headerDiv 
+            onclick="ShowHideDiv('PageTemplate_ucContentResearch_dgContent__ctl2_DropDOutcome_div')">
+            <TABLE class=fakedd cellSpacing=0 cellPadding=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV 
+                  style="OVERFLOW-Y: hidden; OVERFLOW-X: hidden; CURSOR: hand; HEIGHT: 17px"><SPAN 
+                  class=choice 
+                  id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDOutcome_lblChoice 
+                  title=All>All</SPAN></DIV></TD>
+                <TD><IMG style="CURSOR: hand" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/arrowBtn.gif"></TD></TR></TBODY></TABLE></DIV></DIV>
+            <DIV class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDOutcome_div 
+            style="OVERFLOW-Y: auto; DISPLAY: none; Z-INDEX: 1000; POSITION: absolute" 
+            maxHeight="200">
+            <TABLE class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDOutcome_itemList 
+            cellSpacing=0 cellPadding=0>
+              <TBODY></TBODY></TABLE></DIV></SPAN></TD></TR>
+        <TR>
+          <TD vAlign=bottom><A 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_lnkOutcome 
+            href="javascript:__doPostBack('PageTemplate$ucContentResearch$dgContent$_ctl2$lnkOutcome','')">Outcome</A> 
+          </TD></TR></TBODY></TABLE></TD>
+    <TD class="borderright center" style="WIDTH: 13%; HEIGHT: 100%">
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top><IMG height=1 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/pixel.gif" 
+            width=84> <SPAN 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDAuthor 
+            hidId="PageTemplate_ucContentResearch_dgContent__ctl2_DropDAuthor_hid" 
+            maxWidth><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDAuthor_hid 
+            type=hidden value=All 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDAuthor:hid><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDAuthor_itemsField 
+            type=hidden 
+            value=All~~Allan,&amp;nbsp;Graeme~~Clancy,&amp;nbsp;Michael~~Galindo,&amp;nbsp;Gustavo~~Grant,&amp;nbsp;Justin~~Gunning,&amp;nbsp;Pete~~Gunning,&amp;nbsp;Peter~~Husvaeg,&amp;nbsp;Kathrine~~Lundy,&amp;nbsp;Ian~~Paris,&amp;nbsp;Mark~~Skala,&amp;nbsp;Ann~~Thomas,&amp;nbsp;Nicholas~~Vincent,&amp;nbsp;Scott~~Watson,&amp;nbsp;Jo 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDAuthor:itemsField>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDAuthor_fakedd>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDAuthor_headerDiv 
+            onclick="ShowHideDiv('PageTemplate_ucContentResearch_dgContent__ctl2_DropDAuthor_div')">
+            <TABLE class=fakedd cellSpacing=0 cellPadding=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV 
+                  style="OVERFLOW-Y: hidden; OVERFLOW-X: hidden; CURSOR: hand; HEIGHT: 17px"><SPAN 
+                  class=choice 
+                  id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDAuthor_lblChoice 
+                  title=All>All</SPAN></DIV></TD>
+                <TD><IMG style="CURSOR: hand" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/arrowBtn.gif"></TD></TR></TBODY></TABLE></DIV></DIV>
+            <DIV class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDAuthor_div 
+            style="OVERFLOW-Y: auto; DISPLAY: none; Z-INDEX: 1000; POSITION: absolute" 
+            maxHeight="200">
+            <TABLE class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDAuthor_itemList 
+            cellSpacing=0 cellPadding=0>
+              <TBODY></TBODY></TABLE></DIV></SPAN></TD></TR>
+        <TR>
+          <TD vAlign=bottom><A 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_lnkAuthor 
+            href="javascript:__doPostBack('PageTemplate$ucContentResearch$dgContent$_ctl2$lnkAuthor','')">Author</A> 
+          </TD></TR></TBODY></TABLE></TD>
+    <TD class="borderright center" style="WIDTH: 13%; HEIGHT: 100%">
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: left" vAlign=top><IMG height=1 
+            src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/pixel.gif" 
+            width=73> <SPAN 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDStatus 
+            hidId="PageTemplate_ucContentResearch_dgContent__ctl2_DropDStatus_hid" 
+            maxWidth><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDStatus_hid 
+            type=hidden value=All 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDStatus:hid><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDStatus_itemsField 
+            type=hidden value=All~~Draft~~Final~~Pre-99 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl2:DropDStatus:itemsField>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDStatus_fakedd>
+            <DIV class=fakedd 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDStatus_headerDiv 
+            onclick="ShowHideDiv('PageTemplate_ucContentResearch_dgContent__ctl2_DropDStatus_div')">
+            <TABLE class=fakedd cellSpacing=0 cellPadding=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <DIV 
+                  style="OVERFLOW-Y: hidden; OVERFLOW-X: hidden; CURSOR: hand; HEIGHT: 17px"><SPAN 
+                  class=choice 
+                  id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDStatus_lblChoice 
+                  title=All>All</SPAN></DIV></TD>
+                <TD><IMG style="CURSOR: hand" 
+                  src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/arrowBtn.gif"></TD></TR></TBODY></TABLE></DIV></DIV>
+            <DIV class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDStatus_div 
+            style="OVERFLOW-Y: auto; DISPLAY: none; Z-INDEX: 1000; POSITION: absolute" 
+            maxHeight="200">
+            <TABLE class=fakeddSous 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_DropDStatus_itemList 
+            cellSpacing=0 cellPadding=0>
+              <TBODY></TBODY></TABLE></DIV></SPAN></TD></TR>
+        <TR>
+          <TD style="TEXT-ALIGN: left" vAlign=bottom><A 
+            id=PageTemplate_ucContentResearch_dgContent__ctl2_lnkState 
+            href="javascript:__doPostBack('PageTemplate$ucContentResearch$dgContent$_ctl2$lnkState','')">Status</A> 
+          </TD></TR></TBODY></TABLE></TD></TR>
+  <TR class=trResult>
+    <TD>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: center" vAlign=top><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl3_chkSelect 
+            onclick=DeselectAll(); type=checkbox 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl3:chkSelect> 
+        </TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+    <TD><A id=PageTemplate_ucContentResearch_dgContent__ctl3_lnkContentType 
+      href="http://radar/authoring/manageContent.aspx?pid=8566&amp;cid=54808&amp;lid=ENG&amp;ctc=AGND" 
+      languagecode="ENG" contentid="54808" ctCode="AGND">Agenda</A> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl3_lblEffDate>11/16/2006</SPAN> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl3_lblPurpose>Product 
+      Review</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl3_lblOutcome>-</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl3_lblAuthor>Thomas, 
+      Nicholas</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl3_lblState>Final</SPAN> 
+  </TD></TR>
+  <TR class=trResultWhite>
+    <TD>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: center" vAlign=top><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl4_chkSelect 
+            onclick=DeselectAll(); type=checkbox 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl4:chkSelect> 
+        </TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+    <TD><A id=PageTemplate_ucContentResearch_dgContent__ctl4_lnkContentType 
+      href="http://radar/authoring/manageContent.aspx?pid=8566&amp;cid=56042&amp;lid=ENG&amp;ctc=FR" 
+      languagecode="ENG" contentid="56042" ctCode="FR">Findings - Research</A> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl4_lblEffDate>11/16/2006</SPAN> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl4_lblPurpose>Product 
+      Review</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl4_lblOutcome>Rank(s) 
+      Maintained</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl4_lblAuthor>Thomas, 
+      Nicholas</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl4_lblState>Final</SPAN> 
+  </TD></TR>
+  <TR class=trResult>
+    <TD>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: center" vAlign=top><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl5_chkSelect 
+            onclick=DeselectAll(); type=checkbox 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl5:chkSelect> 
+        </TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+    <TD><A id=PageTemplate_ucContentResearch_dgContent__ctl5_lnkContentType 
+      href="http://radar/authoring/manageContent.aspx?pid=8566&amp;cid=53049&amp;lid=ENG&amp;ctc=FR" 
+      languagecode="ENG" contentid="53049" ctCode="FR">Findings - Research</A> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl5_lblEffDate>7/13/2006</SPAN> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl5_lblPurpose>Product 
+      Review</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl5_lblOutcome>-</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl5_lblAuthor>Husvaeg, 
+      Kathrine</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl5_lblState>Final</SPAN> 
+  </TD></TR>
+  <TR class=trResultWhite>
+    <TD>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: center" vAlign=top><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl6_chkSelect 
+            onclick=DeselectAll(); type=checkbox 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl6:chkSelect> 
+        </TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+    <TD><A id=PageTemplate_ucContentResearch_dgContent__ctl6_lnkContentType 
+      href="http://radar/authoring/manageContent.aspx?pid=8566&amp;cid=52170&amp;lid=ENG&amp;ctc=FR" 
+      languagecode="ENG" contentid="52170" ctCode="FR">Findings - Research</A> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl6_lblEffDate>2/8/2006</SPAN> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl6_lblPurpose>Product 
+      Review</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl6_lblOutcome>-</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl6_lblAuthor>Galindo, 
+      Gustavo</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl6_lblState>Final</SPAN> 
+  </TD></TR>
+  <TR class=trResult>
+    <TD>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: center" vAlign=top><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl7_chkSelect 
+            onclick=DeselectAll(); type=checkbox 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl7:chkSelect> 
+        </TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+    <TD><A id=PageTemplate_ucContentResearch_dgContent__ctl7_lnkContentType 
+      href="http://radar/authoring/manageContent.aspx?pid=8566&amp;cid=11315&amp;lid=ENG&amp;ctc=OPIN" 
+      languagecode="ENG" contentid="11315" ctCode="OPIN">Opinion</A> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl7_lblEffDate>8/1/2005</SPAN> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl7_lblPurpose>-</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl7_lblOutcome>-</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl7_lblAuthor>Husvaeg, 
+      Kathrine</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl7_lblState>Final</SPAN> 
+  </TD></TR>
+  <TR class=trResultWhite>
+    <TD>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: center" vAlign=top><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl8_chkSelect 
+            onclick=DeselectAll(); type=checkbox 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl8:chkSelect> 
+        </TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+    <TD><A id=PageTemplate_ucContentResearch_dgContent__ctl8_lnkContentType 
+      href="http://radar/authoring/manageContent.aspx?pid=8566&amp;cid=51060&amp;lid=ENG&amp;ctc=FR" 
+      languagecode="ENG" contentid="51060" ctCode="FR">Findings - Research</A> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl8_lblEffDate>7/18/2005</SPAN> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl8_lblPurpose>Product 
+      Review</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl8_lblOutcome>-</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl8_lblAuthor>Vincent, 
+      Scott</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl8_lblState>Final</SPAN> 
+  </TD></TR>
+  <TR class=trResult>
+    <TD>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: center" vAlign=top><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl9_chkSelect 
+            onclick=DeselectAll(); type=checkbox 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl9:chkSelect> 
+        </TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+    <TD><A id=PageTemplate_ucContentResearch_dgContent__ctl9_lnkContentType 
+      href="http://radar/authoring/manageContent.aspx?pid=8566&amp;cid=50952&amp;lid=ENG&amp;ctc=FR" 
+      languagecode="ENG" contentid="50952" ctCode="FR">Findings - Research</A> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl9_lblEffDate>6/30/2005</SPAN> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl9_lblPurpose>Product 
+      Review</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl9_lblOutcome>Rank(s) 
+      Maintained</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl9_lblAuthor>Paris, 
+      Mark</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl9_lblState>Final</SPAN> 
+  </TD></TR>
+  <TR class=trResultWhite>
+    <TD>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: center" vAlign=top><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl10_chkSelect 
+            onclick=DeselectAll(); type=checkbox 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl10:chkSelect> 
+        </TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+    <TD><A id=PageTemplate_ucContentResearch_dgContent__ctl10_lnkContentType 
+      href="http://radar/authoring/manageContent.aspx?pid=8566&amp;cid=50952&amp;lid=JPN&amp;ctc=FR" 
+      languagecode="JPN" contentid="50952" ctCode="FR">Findings - Research 
+      (JPN)</A> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl10_lblEffDate>6/30/2005</SPAN> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl10_lblPurpose>Product 
+      Review</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl10_lblOutcome>Rank(s) 
+      Maintained</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl10_lblAuthor>Paris, 
+      Mark</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl10_lblState>Final</SPAN> 
+    </TD></TR>
+  <TR class=trResult>
+    <TD>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: center" vAlign=top><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl11_chkSelect 
+            onclick=DeselectAll(); type=checkbox 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl11:chkSelect> 
+        </TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+    <TD><A id=PageTemplate_ucContentResearch_dgContent__ctl11_lnkContentType 
+      href="http://radar/authoring/manageContent.aspx?pid=8566&amp;cid=51084&amp;lid=ENG&amp;ctc=FR" 
+      languagecode="ENG" contentid="51084" ctCode="FR">Findings - Research</A> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl11_lblEffDate>5/13/2005</SPAN> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl11_lblPurpose>Product 
+      Review</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl11_lblOutcome>-</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl11_lblAuthor>Thomas, 
+      Nicholas</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl11_lblState>Final</SPAN> 
+    </TD></TR>
+  <TR class=trResultWhite>
+    <TD>
+      <TABLE height="100%" cellSpacing=0 cellPadding=0>
+        <TBODY>
+        <TR>
+          <TD style="TEXT-ALIGN: center" vAlign=top><INPUT 
+            id=PageTemplate_ucContentResearch_dgContent__ctl12_chkSelect 
+            onclick=DeselectAll(); type=checkbox 
+            name=PageTemplate:ucContentResearch:dgContent:_ctl12:chkSelect> 
+        </TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+    <TD><A id=PageTemplate_ucContentResearch_dgContent__ctl12_lnkContentType 
+      href="http://radar/authoring/manageContent.aspx?pid=8566&amp;cid=7510&amp;lid=ENG&amp;ctc=OPIN" 
+      languagecode="ENG" contentid="7510" ctCode="OPIN">Opinion</A> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl12_lblEffDate>2/18/2005</SPAN> 
+    </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl12_lblPurpose>-</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl12_lblOutcome>-</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl12_lblAuthor>Lundy, 
+      Ian</SPAN> </TD>
+    <TD><SPAN 
+      id=PageTemplate_ucContentResearch_dgContent__ctl12_lblState>Final</SPAN> 
+    </TD></TR>
+  <TR>
+    <TD colSpan=8></TD></TR></TBODY></TABLE><BR></DIV>
+<HR>
+
+<DIV id=contentdata><BR>&nbsp; <SPAN class=pager 
+id=PageTemplate_ucContentResearch_ucPager_rpPager__ctl0_lblPage 
+style="FONT-WEIGHT: bold">1</SPAN> &nbsp; <A class=pager 
+id=PageTemplate_ucContentResearch_ucPager_rpPager__ctl2_lnkPage 
+href="javascript:__doPostBack('PageTemplate$ucContentResearch$ucPager$rpPager$_ctl2$lnkPage','')">2</A> 
+&nbsp; <A class=pager 
+id=PageTemplate_ucContentResearch_ucPager_rpPager__ctl4_lnkPage 
+href="javascript:__doPostBack('PageTemplate$ucContentResearch$ucPager$rpPager$_ctl4$lnkPage','')">3</A> 
+&nbsp; <A class=pager 
+id=PageTemplate_ucContentResearch_ucPager_rpPager__ctl6_lnkPage 
+href="javascript:__doPostBack('PageTemplate$ucContentResearch$ucPager$rpPager$_ctl6$lnkPage','')">4</A> 
+&nbsp; <A class=pager 
+id=PageTemplate_ucContentResearch_ucPager_rpPager__ctl8_lnkPage 
+href="javascript:__doPostBack('PageTemplate$ucContentResearch$ucPager$rpPager$_ctl8$lnkPage','')">5</A> 
+&nbsp; &nbsp; <A class=pager 
+id=PageTemplate_ucContentResearch_ucPager_lnkShowAll 
+href="javascript:__doPostBack('PageTemplate$ucContentResearch$ucPager$lnkShowAll','')">Show 
+All</A> </DIV></DIV></DIV></DIV><IFRAME id=PageTemplate_Progresscontrol1 
+style="DISPLAY: none; FILTER: progid:DXImageTransform.Microsoft.dropShadow(Color=DDDDDD,offX=4,offY=4,positive=true); WIDTH: 230px; HEIGHT: 200px" 
+src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/progressPage.htm" 
+waittimeout="500" disablePage="True">
+	</IFRAME><IFRAME 
+id=PageTemplate_Progresscontrol1_DisableFrame 
+style="DISPLAY: none; Z-INDEX: 500; FILTER: progid:DXImageTransform.Microsoft.Alpha(opacity=0); LEFT: 0px; WIDTH: 100%; POSITION: absolute; TOP: 0px; HEIGHT: 100%" 
+src="about:blank" frameBorder=0>
+
+	</IFRAME></IFRAME><!--Footer--><SPAN 
+id=PageTemplate_footer_lblSpacing></SPAN>
+<TABLE id=footer cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR>
+    <TD><A id=PageTemplate_footer_legalInfoHyperLink tabIndex=-1 
+      href="javascript:void(window.open('http://radar/Disclaimer/Disclaimer.aspx',&nbsp;null,&nbsp;'status=no,location=no,resizable=no,width=600px,height=440px,toolbar=no,menubar=no'));">Legal 
+      Information</A> </TD>
+    <TD>
+      <P align=right>Version 2.0.00 </P></TD></TR>
+  <TR>
+    <TD><SPAN id=PageTemplate_footer_disclaimerLabel>Confidential Proprietary 
+      Information of Russell Investments not to be distributed to third party 
+      without express written consent of Russell Investments. This material is 
+      subject to the "Important Legal Information" disclosure contained on the 
+      final page of this report. That disclosure must be considered as part of 
+      this report.</SPAN> </TD></TR>
+  <TR>
+    <TD class=footerLogo align=right><IMG id=PageTemplate_footer_imgLogo 
+      alt="" 
+      src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/logo_russell.gif" 
+      border=0> </TD></TR></TBODY></TABLE>
+<SCRIPT language=javascript 
+src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/webtrends_v8.js"></SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="" width=1 border=0 name=DCSIMG></NOSCRIPT>
+<SCRIPT>
+dcsVar();
+
+//START - Webtrends variables set at the server
+
+DCS.dcsuri="/authoring/manageContent.aspx";
+DCSext.Office="ADMN";
+DCSext.Terminal_services_access="Other";
+DCSext.UserID="JGuillot";
+
+//END - Webtrends variables set at the server
+
+dcsMeta();
+dcsFunc("dcsAdv");
+dcsTag("tac-app062.prod.ds.russell.com", "dcsnnzisc100000gwrrebeipt_5l2d");
+</SCRIPT>
+ <!--END Footer--></DIV>
+<SCRIPT language=javascript>
+var progressCtrl = document.getElementById("PageTemplate_Progresscontrol1");
+var disableFrame = document.getElementById("PageTemplate_Progresscontrol1_DisableFrame");
+var cancelProgress = false;
+var inProgress = false;
+var timerID;document.attachEvent("onstop", stopProgress);
+function stopProgress(){
+timerID = window.setInterval("startCounter()", 100);}
+function startCounter(){
+   if(((document.readyState == 'complete') && (inProgress == true))){
+     haltCounter();   
+     endProgress();  }
+}
+function haltCounter(){
+      clearTimeout(timerID);   
+}
+function initProgress(){
+   if(!inProgress && !cancelProgress && document.readyState == 'complete'){
+      inProgress = true;
+      window.setTimeout(showProgress, 500);
+   }
+}
+function showProgress(){
+   if(inProgress){
+      progressCtrl.parentElement.removeChild(progressCtrl);
+      document.body.appendChild(progressCtrl);
+      disableFrame.parentElement.removeChild(disableFrame);
+      document.body.appendChild(disableFrame);
+      progressCtrl.src = progressCtrl.src;
+      progressCtrl.style.zIndex = 1000;
+      progressCtrl.style.position = "absolute";
+      progressCtrl.style.left = (document.body.clientWidth - progressCtrl.style.posWidth) / 2 + document.body.scrollLeft;
+      progressCtrl.style.top = (document.body.clientHeight - progressCtrl.style.posHeight) / 2 + document.body.scrollTop;
+      progressCtrl.style.display = "";
+      progressCtrl.focus();
+      document.body.disabled = true;
+      disableFrame.style.display = "";
+   }
+}
+function endProgress(){
+   inProgress = false;
+   document.body.disabled = false;
+   disableFrame.style.display = "none";
+   progressCtrl.style.display = "none";
+}
+document.forms(0).attachEvent('onsubmit', initProgress);
+</SCRIPT>
+
+<SCRIPT 
+src="RADAR  Morgan Stanley Investment Management Inc_  Asia ex Japan Equities  Product Research_files/TabStrip.js" 
+type=text/javascript></SCRIPT>
+</FORM>
+<SCRIPT language=javascript>
+		
+		function popupHasReturned()
+		{			
+			
+			if (document.readyState != 'complete') return;
+			if(this.initProgress)
+				initProgress();
+			
+			var hid;
+			hid = document.getElementById('PageTemplate_popupHasReturnedOnce');				
+			if(hid.value == ''){
+				hid.value='true';													
+				document.forms(0).submit();
+			}			
+		}
+	
+		//Prevents double-clicks from submitting the form 2 times
+		document.forms(0).attachEvent("onsubmit", checkFormSubmitting);
+		function checkFormSubmitting()
+		{			
+			var newSession = BasePage.SetIsRefreshing();
+				
+			if((newSession.value == null))
+			{	
+				window.location.href = virtualPath + '/index.aspx?sessionend=true';
+				return false;
+			}
+			else
+			{
+				var submit = !isFormSubmitting();
+				window.event.returnValue = submit;
+				return submit;
+			}
+		}
+		
+		function isFormSubmitting()
+		{
+			return (document.readyState != 'complete');
+		}
+			
+		</SCRIPT>
+</BODY></HTML>

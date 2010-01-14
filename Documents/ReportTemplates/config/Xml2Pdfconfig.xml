@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<section name="svg">
+		<property-group name="pdf">
+			<property name="fit" value="false"/>
+			<property name="ignore" value="false"/>
+		</property-group>
+	</section>
+	<section name="xhtml">
+		<property-group name="pdf">
+			<property name="bookmarks" value="true"/>
+		</property-group>
+		<property-group name="css">
+			<property name="mediaType" value="screen"/>
+		</property-group>
+		<property-group name="page">
+			<property name="crop-top" value="15px"/>
+			<property name="crop-right" value="10px"/>
+			<property name="width" value="21cm"/>
+			<property name="height" value="29.7cm"/>
+			<property name="crop-bottom" value="15px"/>
+			<property name="crop-left" value="10px"/>
+		</property-group>
+	</section>
+	<section name="font">
+		<property-group name="default">
+			<property name="variant" value="normal"/>
+			<property name="weight" value="normal"/>
+			<property name="style" value="normal"/>
+			<property name="family" value="Times, serif"/>
+			<property name="size" value="10pt"/>
+		</property-group>
+		<property-group name="selection">
+			<property name="use-pseudo" value="true"/>
+		</property-group>
+	</section>
+	<section name="pdf-output">
+		<property-group name="fonts">
+			<property name="type1" value="false"/>
+			<property name="subsets" value="true"/>
+			<property name="embed" value="true"/>
+		</property-group>
+	</section>
+	<section name="word">
+		<property-group name="pdf">
+			<property name="bookmarks" value="true"/>
+		</property-group>
+	</section>
+	<section name="fo">
+		<property-group name="hyphenation">
+			<property name="country" value="US"/>
+			<property name="language" value="en"/>
+			<property name="path" value="\Resources\"/>
+			<property name="delimeters" value="true"/>
+		</property-group>
+		<property-group name="inline">
+			<property name="thick" value="10pt"/>
+			<property name="medium" value="5pt"/>
+			<property name="margin" value="10pt"/>
+			<property name="thin" value="1pt"/>
+		</property-group>
+		<property-group name="block">
+			<property name="thick" value="10pt"/>
+			<property name="medium" value="5pt"/>
+			<property name="margin" value="10pt"/>
+			<property name="thin" value="1pt"/>
+		</property-group>
+		<property-group name="debug"/>
+		<property-group name="image">
+			<property name="maxDpi" value="300"/>
+		</property-group>
+		<property-group name="page">
+			<property name="crop-top" value="0cm"/>
+			<property name="crop-right" value="0cm"/>
+			<property name="width" value="21cm"/>
+			<property name="height" value="29.7cm"/>
+			<property name="crop-bottom" value="0cm"/>
+			<property name="crop-left" value="0cm"/>
+		</property-group>
+	</section>
+	<section name="mathml">
+		<property-group name="fonts">
+			<property name="script" value="Euclid Math One"/>
+			<property name="fraktur" value="Euclid Fraktur"/>
+			<property name="double-struck" value="Euclid Math Two"/>
+		</property-group>
+	</section>
+</config>
