@@ -3,7 +3,8 @@
 
   <property name="dir.bin" value="Bin" />
   <property name="dir.published" value="Published" />
-  <property name="db.sqlite.path" value="${project::get-base-directory()}\Data\radar.db" />
+  <property name="db.sqlite.dir" value="${project::get-base-directory()}\Data" />
+  <property name="db.sqlite.path" value="${db.sqlite.dir}\radar.db" />
 
   <property name="now" value="${datetime::now()}" readonly="true" />
   <property name="elapsedSecondsToday" value="${(datetime::get-hour(now) * 3600 + datetime::get-minute(now) * 60 + datetime::get-second(now)) / 10}" readonly="true" />
@@ -68,7 +69,12 @@
   </target>
 
   <target name="create-sqlite-db" description="drop and recreate a new sqlite db using NHibernate schema generation" depends="build">
-    <if test="${file::exists(db.sqlite.path)}">
+    
+	<if test="${not directory::exists(db.sqlite.dir)}">
+      <mkdir dir="${db.sqlite.dir}" />
+    </if>
+	
+	<if test="${file::exists(db.sqlite.path)}">
       <delete file="${db.sqlite.path}" />
     </if>
     
