@@ -33,7 +33,7 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
             }
 
             literalDiscussion.Text = document.Discussion;
-            literalInvestmentStaff.Text = document.InvestmentStaff;
+            literalInvestmentStaff.Text = document.InvestmentStaff.Content;
         }
     }
 }

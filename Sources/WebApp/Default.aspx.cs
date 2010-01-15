@@ -51,7 +51,7 @@ namespace Russell.RADAR.POC.WebApp
                 uow.Commit();
             }
 
-            Response.Redirect(string.Format("~/OpinionDocuments/Edit.aspx?id={0}", newDoc.Id));
+            Response.Redirect(string.Format("~/OpinionDocuments/EditDocument.aspx?id={0}", newDoc.Id));
         }
 
         public void Publish_Click(object sender, EventArgs e)

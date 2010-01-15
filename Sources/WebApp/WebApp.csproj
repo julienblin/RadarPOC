@@ -715,6 +715,13 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="OpinionDocuments\Components\SectionEditor.ascx.cs">
+      <DependentUpon>SectionEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OpinionDocuments\Components\SectionEditor.ascx.designer.cs">
+      <DependentUpon>SectionEditor.ascx</DependentUpon>
+    </Compile>
     <Compile Include="OpinionDocuments\EditDocument.aspx.cs">
       <DependentUpon>EditDocument.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -779,7 +786,9 @@
     <Content Include="images\3%281%29.gif" />
     <Content Include="images\3.gif" />
     <Content Include="images\btn_Output.gif" />
+    <Content Include="javascripts\jquery-1.3.2.min.js" />
     <Content Include="MasterPage.Master" />
+    <Content Include="OpinionDocuments\Components\SectionEditor.ascx" />
     <Content Include="OpinionDocuments\EditDocument.aspx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

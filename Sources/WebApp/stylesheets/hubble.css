@@ -284,7 +284,7 @@ SPAN.info {
 	DISPLAY: block; MARGIN: 0px auto; WIDTH: 100%
 }
 #contentData {
-	PADDING-RIGHT: 15px; DISPLAY: block; PADDING-LEFT: 15px; FONT-SIZE: 11px; PADDING-BOTTOM: 15px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
+	PADDING-RIGHT: 15px; DISPLAY: block; PADDING-LEFT: 15px; FONT-SIZE: 11px; PADDING-BOTTOM: 15px; MARGIN: 0px; WIDTH: 95%; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
 }
 #contentData UL {
 	LIST-STYLE-POSITION: outside; MARGIN: 10px 0px 10px 40px; LIST-STYLE-TYPE: square
@@ -362,16 +362,25 @@ TABLE.outblack TD {
 	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px
 }
 .bordure1 {
-	PADDING-RIGHT: 4px! important; PADDING-LEFT: 4px! important; PADDING-BOTTOM: 4px! important; BORDER-LEFT: #000 1px solid; PADDING-TOP: 4px! important; BACKGROUND-COLOR: #eeeeee
+	padding: 4px;
+	BORDER-LEFT: #000 1px solid; 	BACKGROUND-COLOR: #eeeeee
 }
 .bordure2 {
-	PADDING-RIGHT: 4px! important; PADDING-LEFT: 4px! important; PADDING-BOTTOM: 4px! important; PADDING-TOP: 4px! important; BORDER-BOTTOM: #000 1px solid; BACKGROUND-COLOR: #eeeeee
+	padding: 4px;
+	BORDER-BOTTOM: #000 1px solid; 	BACKGROUND-COLOR: #eeeeee
 }
 .bordure3 {
-	BORDER-RIGHT: #000 1px solid; PADDING-RIGHT: 4px! important; PADDING-LEFT: 4px! important; PADDING-BOTTOM: 4px! important; PADDING-TOP: 4px! important; BORDER-BOTTOM: #000 1px solid; BACKGROUND-COLOR: #eeeeee
+	padding: 4px;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	BACKGROUND-COLOR: #eeeeee
 }
 .bordure4 {
-	BORDER-RIGHT: #000 1px solid; PADDING-RIGHT: 4px! important; PADDING-LEFT: 4px! important; PADDING-BOTTOM: 4px! important; BORDER-LEFT: #000 1px solid; PADDING-TOP: 4px! important; BORDER-BOTTOM: #000 1px solid; BACKGROUND-COLOR: #eeeeee
+	padding: 4px;
+	border-right: 1px solid #000;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+	BACKGROUND-COLOR: #eeeeee
 }
 .bordure5 {
 	PADDING-LEFT: 4px! important

@@ -20,82 +20,84 @@
                 </tr>
             </tbody>
         </table>
-        <asp:Repeater ID="repeaterDocuments" runat="server">
-            <HeaderTemplate>
-                <table class="current2">
-                    <thead>
-                        <tr>
-                            <td>
-                                <b>Id</b>
-                            </td>
-                            <td>
-                                <b>Type</b>
-                            </td>
-                            <td width="100%">
-                                <b>State</b>
-                            </td>
-                            <td colspan="4">
-                                <b>Actions</b>
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-            </HeaderTemplate>
-            <ItemTemplate>
-                <tr class="trResult">
-                    <td>
-                        <%# DataBinder.Eval(Container.DataItem, "Id") %>
-                    </td>
-                    <td>
-                        <%# DataBinder.Eval(Container.DataItem, "DocumentType")%>
-                    </td>
-                    <td>
-                        <%# DataBinder.Eval(Container.DataItem, "State")%>
-                    </td>
-                    <td>
-                        <asp:HyperLink ID="HyperLink1" runat="server" Text='Edit' NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/EditDocument.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
-                    </td>
-                    <td>
-                        <asp:HyperLink ID="HyperLink2" runat="server" Text="Print-HTML" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintHTML.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
-                    </td>
-                    <td>
-                        <asp:HyperLink ID="HyperLink3" runat="server" Text="Print-Word" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintPDF.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
-                    </td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton1" runat="server" Text="Delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "Id")%>'
-                            OnClick="Delete_Click" />
-                    </td>
-                </tr>
-            </ItemTemplate>
-            <AlternatingItemTemplate>
-                <tr class="trResultWhite">
-                    <td>
-                        <%# DataBinder.Eval(Container.DataItem, "Id") %>
-                    </td>
-                    <td>
-                        <%# DataBinder.Eval(Container.DataItem, "DocumentType")%>
-                    </td>
-                    <td>
-                        <%# DataBinder.Eval(Container.DataItem, "State")%>
-                    </td>
-                    <td>
-                        <asp:HyperLink ID="HyperLink4" runat="server" Text='Edit' NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/EditDocument.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
-                    </td>
-                    <td>
-                        <asp:HyperLink ID="HyperLink5" runat="server" Text="Print-HTML" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintHTML.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
-                    </td>
-                    <td>
-                        <asp:HyperLink ID="HyperLink6" runat="server" Text="Print-Word" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintPDF.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
-                    </td>
-                    <td>
-                        <asp:LinkButton ID="LinkButton2" runat="server" Text="Delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "Id")%>'
-                            OnClick="Delete_Click" />
-                    </td>
-                </tr>
-            </AlternatingItemTemplate>
-            <FooterTemplate>
-                </tbody> </table>
-            </FooterTemplate>
-        </asp:Repeater>
+        <div id="content">
+            <asp:Repeater ID="repeaterDocuments" runat="server">
+                <HeaderTemplate>
+                    <table class="current2">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <b>Id</b>
+                                </td>
+                                <td>
+                                    <b>Type</b>
+                                </td>
+                                <td width="100%">
+                                    <b>State</b>
+                                </td>
+                                <td colspan="4">
+                                    <b>Actions</b>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr class="trResult">
+                        <td>
+                            <%# DataBinder.Eval(Container.DataItem, "Id") %>
+                        </td>
+                        <td>
+                            <%# DataBinder.Eval(Container.DataItem, "DocumentType")%>
+                        </td>
+                        <td>
+                            <%# DataBinder.Eval(Container.DataItem, "State")%>
+                        </td>
+                        <td>
+                            <asp:HyperLink ID="HyperLink1" runat="server" Text='Edit' NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/EditDocument.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
+                        </td>
+                        <td>
+                            <asp:HyperLink ID="HyperLink2" runat="server" Text="Print-HTML" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintHTML.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
+                        </td>
+                        <td>
+                            <asp:HyperLink ID="HyperLink3" runat="server" Text="Print-Word" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintPDF.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
+                        </td>
+                        <td>
+                            <asp:LinkButton ID="LinkButton1" runat="server" Text="Delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "Id")%>'
+                                OnClick="Delete_Click" />
+                        </td>
+                    </tr>
+                </ItemTemplate>
+                <AlternatingItemTemplate>
+                    <tr class="trResultWhite">
+                        <td>
+                            <%# DataBinder.Eval(Container.DataItem, "Id") %>
+                        </td>
+                        <td>
+                            <%# DataBinder.Eval(Container.DataItem, "DocumentType")%>
+                        </td>
+                        <td>
+                            <%# DataBinder.Eval(Container.DataItem, "State")%>
+                        </td>
+                        <td>
+                            <asp:HyperLink ID="HyperLink4" runat="server" Text='Edit' NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/EditDocument.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
+                        </td>
+                        <td>
+                            <asp:HyperLink ID="HyperLink5" runat="server" Text="Print-HTML" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintHTML.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
+                        </td>
+                        <td>
+                            <asp:HyperLink ID="HyperLink6" runat="server" Text="Print-Word" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintPDF.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
+                        </td>
+                        <td>
+                            <asp:LinkButton ID="LinkButton2" runat="server" Text="Delete" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "Id")%>'
+                                OnClick="Delete_Click" />
+                        </td>
+                    </tr>
+                </AlternatingItemTemplate>
+                <FooterTemplate>
+                    </tbody> </table>
+                </FooterTemplate>
+            </asp:Repeater>
+        </div>
     </div>
 </asp:Content>

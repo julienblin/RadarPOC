@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
     CodeBehind="EditDocument.aspx.cs" Inherits="Russell.RADAR.POC.WebApp.OpinionDocuments.EditDocument"
     Title="RadarPOC" %>
+<%@ Register Src="~/OpinionDocuments/Components/SectionEditor.ascx" TagPrefix="radar" TagName="SectionEditor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div id="ProductNav">
@@ -38,34 +39,26 @@
                 </tr>
             </tbody>
         </table>
-        <h3>
-            Discussion</h3>
-        <p class="Normal-P">
-            We recommend that mutual clients actively evaluate replacement managers. Morgan
-            Stanley Investment Management’s (MSIM’s) Asia ex Japan equity product is based on
-            fundamental bottom-up research within a top-down country and sector/thematic overlay.
-            MSIM’s approach emphasises bottom-up stock selection as the primary source of added
-            value with the team seeking to identify stocks with attractive growth prospects.
-            This approach can lead to significant bets against the index at sector and stock
-            level. Under the leadership of Ashutosh Sinha we have observed a bias towards smaller
-            companies in portfolios. We expect the product to perform in line with its benchmark
-            over 3-5 years within a tracking error of 5%-6% relative to the MSCI Far East Free
-            ex Japan index.
-        </p>
-        <h3>
-            Investment Staff
-            <img src="/images/3(1).gif" /></h3>
-        <p class="Normal-P">
-            We recommend that mutual clients actively evaluate replacement managers. Morgan
-            Stanley Investment Management’s (MSIM’s) Asia ex Japan equity product is based on
-            fundamental bottom-up research within a top-down country and sector/thematic overlay.
-            MSIM’s approach emphasises bottom-up stock selection as the primary source of added
-            value with the team seeking to identify stocks with attractive growth prospects.
-            This approach can lead to significant bets against the index at sector and stock
-            level. Under the leadership of Ashutosh Sinha we have observed a bias towards smaller
-            companies in portfolios. We expect the product to perform in line with its benchmark
-            over 3-5 years within a tracking error of 5%-6% relative to the MSCI Far East Free
-            ex Japan index.
-        </p>
+        <radar:SectionEditor id="sectionInvestementStaff" Title="Investment Staff" runat="server" />
+        <radar:SectionEditor id="SectionOrganizationalStability" Title="Organizational Stability" runat="server" />
+        <radar:SectionEditor id="SectionAssetAllocation" Title="Asset Allocation" runat="server" />
+        <radar:SectionEditor id="SectionResearch" Title="Research" runat="server" />
+        <radar:SectionEditor id="SectionCountrySelection" Title="Country Selection" runat="server" />
+        <radar:SectionEditor id="SectionPortfolioConstruction" Title="Portfolio Construction" runat="server" />
+        <radar:SectionEditor id="SectionCurrencyManagement" Title="Currency Management" runat="server" />
+        <radar:SectionEditor id="SectionImplementation" Title="Implementation" runat="server" />
+        <radar:SectionEditor id="SectionSecuritySelection" Title="Security Selection" runat="server" />
+        <radar:SectionEditor id="SectionSellDiscipline" Title="Sell Discipline" runat="server" />
+        <br />
+        <div>
+            <asp:Button ID="buttonOk" Text="Save" runat="server" />
+            <asp:Button ID="buttonCancel" Text="Cancel" runat="server" />
+        </div>
     </div>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="ScriptsPlaceHolder" runat="server">
+    <script type="text/javascript">
+        $(".makeckeditor").ckeditor();
+    </script>
+
 </asp:Content>
