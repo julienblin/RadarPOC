@@ -15,7 +15,7 @@ namespace Russell.RADAR.POC.PublishingServices
         /// <returns></returns>
         public static string ToCompleteXHTML(this string input)
         {
-            return string.Format("<html><head/><body>{0}</body></html>", input);
+            return string.Format("<html><head/><body><div style=\"font-family: Arial; font-size: 11pt;\">{0}</div></body></html>", input);
         }
     }
 }
