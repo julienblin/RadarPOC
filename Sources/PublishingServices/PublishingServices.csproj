@@ -59,8 +59,10 @@
     </Compile>
     <Compile Include="IPublishingService.cs" />
     <Compile Include="OpenXMLPublishingService.cs" />
-    <Compile Include="OpinionDocumentGenerator.cs" />
+    <Compile Include="OpinionDocumentGenerator-Generated.cs" />
+    <Compile Include="OpinionDocumentGenerator-Added.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj">

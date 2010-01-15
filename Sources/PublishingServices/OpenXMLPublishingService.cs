@@ -18,32 +18,8 @@ namespace Russell.RADAR.POC.PublishingServices
             byte[] result = null;
             using (var stream = new MemoryStream())
             {
-                using (WordprocessingDocument package = WordprocessingDocument.Create(stream, WordprocessingDocumentType.Document))
-                {
-                    var mainDoc = package.AddMainDocumentPart();
-
-                    var altChunk = new AltChunk();
-                    altChunk.Id = "AltChunkId1";
-
-                    var altChunkPart = package.MainDocumentPart.AddAlternativeFormatImportPart(AlternativeFormatImportPartType.Xhtml, altChunk.Id);
-                    using (var altChunkStream = altChunkPart.GetStream())
-                    using (var stringStream = new StreamWriter(altChunkStream))
-                    {
-                        stringStream.Write("<html><head/><body>" + opDoc.Discussion + "</body></html>");
-                    }
-
-                    package.MainDocumentPart.Document =
-                        new Document(
-                            new Body(
-                                new Paragraph(
-                                    new Run(
-                                        new Text("")
-                                    ),
-                                    altChunk
-                                )
-                            )
-                        );
-                }
+                OpinionDocumentGenerator docGenerator = new OpinionDocumentGenerator();
+                docGenerator.CreatePackage(stream, opDoc);
 
                 result = stream.ToArray();
             }
