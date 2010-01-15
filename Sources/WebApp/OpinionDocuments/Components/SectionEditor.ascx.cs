@@ -10,25 +10,45 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using Russell.RADAR.POC.Entities;
 
 namespace Russell.RADAR.POC.WebApp.OpinionDocuments.Components
 {
     public partial class SectionEditor : System.Web.UI.UserControl
     {
-        public Label Label
-        {
-            get { return labelSection; }
-        }
-
-        public TextBox TextBox
-        {
-            get { return textBoxSection; }
-        }
-
         public string Title
         {
             get { return labelSection.Text; }
             set { labelSection.Text = value; }
+        }
+
+        public OpinionDocumentSection Section { get; set; }
+
+        public int GetRank()
+        {
+            return ddlRank.SelectedIndex + 1;
+        }
+
+        public string GetContent()
+        {
+            return textBoxSection.Text;
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            if (!Page.IsPostBack)
+            {
+                ddlRank.DataSource = new int[] { 1, 2, 3, 4, 5 };
+                ddlRank.DataBind();
+
+                if (Section != null)
+                {
+                    textBoxSection.Text = Section.Content;
+                    ddlRank.SelectedIndex = Section.Rank - 1;
+                }
+            }
         }
     }
 }

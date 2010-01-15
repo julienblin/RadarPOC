@@ -23,13 +23,40 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments {
         protected global::System.Web.UI.WebControls.ImageButton linkOutput;
         
         /// <summary>
-        /// sectionInvestementStaff control.
+        /// ddlOverallRank control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Russell.RADAR.POC.WebApp.OpinionDocuments.Components.SectionEditor sectionInvestementStaff;
+        protected global::System.Web.UI.WebControls.DropDownList ddlOverallRank;
+        
+        /// <summary>
+        /// textBoxOverall control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxOverall;
+        
+        /// <summary>
+        /// textBoxDiscussion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxDiscussion;
+        
+        /// <summary>
+        /// SectionInvestementStaff control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Russell.RADAR.POC.WebApp.OpinionDocuments.Components.SectionEditor SectionInvestementStaff;
         
         /// <summary>
         /// SectionOrganizationalStability control.

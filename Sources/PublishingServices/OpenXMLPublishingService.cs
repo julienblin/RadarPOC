@@ -43,28 +43,12 @@ namespace Russell.RADAR.POC.PublishingServices
                                 )
                             )
                         );
-
-                    SetPackageProperties(package);
                 }
 
                 result = stream.ToArray();
             }
 
             return result;
-        }
-
-        private void SetPackageProperties(OpenXmlPackage package)
-        {
-            package.PackageProperties.Creator = "ppelletier";
-            package.PackageProperties.Title = "Product to review";
-            package.PackageProperties.Subject = "";
-            package.PackageProperties.Keywords = "";
-            package.PackageProperties.Description = "";
-            package.PackageProperties.Revision = "2";
-            package.PackageProperties.Created = System.Xml.XmlConvert.ToDateTime("2010-01-14T15:51:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
-            package.PackageProperties.Modified = System.Xml.XmlConvert.ToDateTime("2010-01-14T15:51:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
-            package.PackageProperties.LastModifiedBy = "Julien Blin";
-            package.PackageProperties.LastPrinted = System.Xml.XmlConvert.ToDateTime("2006-09-26T13:33:00Z", System.Xml.XmlDateTimeSerializationMode.RoundtripKind);
         }
     }
 }

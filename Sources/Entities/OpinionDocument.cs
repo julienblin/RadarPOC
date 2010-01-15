@@ -7,6 +7,21 @@ namespace Russell.RADAR.POC.Entities
 {
     public class OpinionDocument : Document
     {
+        public OpinionDocument()
+        {
+            OverallEvaluation = new OpinionDocumentSection();
+            InvestmentStaff = new OpinionDocumentSection();
+            OrganizationalStability = new OpinionDocumentSection();
+            AssetAllocation = new OpinionDocumentSection();
+            Research = new OpinionDocumentSection();
+            CountrySelection = new OpinionDocumentSection();
+            PortfolioConstruction = new OpinionDocumentSection();
+            CurrencyManagement = new OpinionDocumentSection();
+            Implementation = new OpinionDocumentSection();
+            SecuritySelection = new OpinionDocumentSection();
+            SellDiscipline = new OpinionDocumentSection();
+        }
+
         public virtual OpinionDocumentSection OverallEvaluation { get; set; }
         public virtual string Discussion { get; set; }
         public virtual OpinionDocumentSection InvestmentStaff { get; set; }

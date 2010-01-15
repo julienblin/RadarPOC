@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
     CodeBehind="EditDocument.aspx.cs" Inherits="Russell.RADAR.POC.WebApp.OpinionDocuments.EditDocument"
-    Title="RadarPOC" %>
+    Title="RadarPOC" ValidateRequest="false" %>
 <%@ Register Src="~/OpinionDocuments/Components/SectionEditor.ascx" TagPrefix="radar" TagName="SectionEditor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
@@ -25,21 +25,13 @@
     </div>
     <div id="contentData">
         <h3>
-            Overall Evaluation</h3>
-        <table class="current" cellspacing="0" cellpadding="0">
-            <tbody>
-                <tr>
-                    <td width="5%">
-                        <img src="/images/2(2).gif" border="0">
-                    </td>
-                    <td valign="top">
-                        <span id="PageTemplate_ucOpinionContent_lblRankDescription">We recommend that mutual
-                            clients actively evaluate replacement managers.</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <radar:SectionEditor id="sectionInvestementStaff" Title="Investment Staff" runat="server" />
+            Overall Evaluation&nbsp;&nbsp;<asp:DropDownList ID="ddlOverallRank" runat="server" /></h3>
+        <asp:TextBox ID="textBoxOverall" TextMode="MultiLine" Rows="10" Width="100%" runat="server" />
+        
+        <h3>Discussion</h3>
+        <asp:TextBox ID="textBoxDiscussion" TextMode="MultiLine" Rows="10" Columns="120" CssClass="makeckeditor" runat="server" />
+        
+        <radar:SectionEditor id="SectionInvestementStaff" Title="Investment Staff" runat="server" />
         <radar:SectionEditor id="SectionOrganizationalStability" Title="Organizational Stability" runat="server" />
         <radar:SectionEditor id="SectionAssetAllocation" Title="Asset Allocation" runat="server" />
         <radar:SectionEditor id="SectionResearch" Title="Research" runat="server" />

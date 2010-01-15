@@ -23,6 +23,15 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments.Components {
         protected global::System.Web.UI.WebControls.Label labelSection;
         
         /// <summary>
+        /// ddlRank control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlRank;
+        
+        /// <summary>
         /// textBoxSection control.
         /// </summary>
         /// <remarks>

@@ -7,7 +7,13 @@ namespace Russell.RADAR.POC.Entities
 {
     public class OpinionDocumentSection
     {
-        public virtual int Rank { get; set; }
+        int rank = 1;
+        public virtual int Rank
+        {
+            get { return rank;  }
+            set { rank = value;  }
+        }
+
         public virtual string Content { get; set; }
     }
 }
