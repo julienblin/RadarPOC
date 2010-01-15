@@ -1,17 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
+using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Xml.Linq;
 using Russell.RADAR.POC.Infrastructure.NH;
-using Russell.RADAR.POC.WebApp;
 using Russell.RADAR.POC.AuthoringServices;
 using Russell.RADAR.POC.Entities;
 
-namespace WebApp
+namespace Russell.RADAR.POC.WebApp
 {
-    public partial class _Default : BasePage
+    public partial class Default : BasePage
     {
         protected override void OnInitComplete(EventArgs e)
         {

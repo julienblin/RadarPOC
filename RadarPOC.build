@@ -11,8 +11,13 @@
   <property name="version" value="${datetime::get-year(now) - 2000}.${datetime::get-month(now)}.${datetime::get-day(now)}.${elapsedSecondsToday}" readonly="true" />
 
   <target name="clean">
-    <delete>
+    <delete failonerror="false">
       <fileset basedir="${dir.bin}">
+        <include name="**/*" />
+      </fileset>
+    </delete>
+	<delete failonerror="false">
+      <fileset basedir="Sources\WebApp\bin">
         <include name="**/*" />
       </fileset>
     </delete>

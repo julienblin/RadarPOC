@@ -39,7 +39,11 @@ namespace Russell.RADAR.POC.WebApp.Sessions
 
         public void Dispose()
         {
-            HttpContext.Current.Items[UnitOfWork.SESSION_CONTEXT_KEY] = null;
+            var currentSession = (ISession)HttpContext.Current.Items[UnitOfWork.SESSION_CONTEXT_KEY];
+            if (currentSession != null)
+            {
+                HttpContext.Current.Items[UnitOfWork.SESSION_CONTEXT_KEY] = null;
+            }
         }
     }
 }

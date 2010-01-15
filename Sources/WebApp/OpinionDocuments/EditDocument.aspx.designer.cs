@@ -8,27 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Russell.RADAR.POC.WebApp {
+namespace Russell.RADAR.POC.WebApp.OpinionDocuments {
     
     
-    public partial class Default {
+    public partial class EditDocument {
         
         /// <summary>
-        /// linkNewOpinionDocument control.
+        /// linkOutput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton linkNewOpinionDocument;
-        
-        /// <summary>
-        /// repeaterDocuments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeaterDocuments;
+        protected global::System.Web.UI.WebControls.ImageButton linkOutput;
     }
 }
