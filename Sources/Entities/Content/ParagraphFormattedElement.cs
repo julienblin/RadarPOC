@@ -23,5 +23,12 @@ namespace Russell.RADAR.POC.Entities.Content
             );
             return result;
         }
+
+        public override object Clone()
+        {
+            var clone = new ParagraphFormattedElement();
+            clone.DeepCopyChildren(Children);
+            return clone;
+        }
     }
 }

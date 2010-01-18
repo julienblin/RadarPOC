@@ -20,7 +20,10 @@ namespace Russell.RADAR.POC.Entities.Content
 
         public object DeepCopy(object value)
         {
-            return value;
+            if (value == null)
+                return null;
+
+            return ((FormattedContent)value).Clone();
         }
 
         public object Disassemble(object value)
@@ -68,8 +71,7 @@ namespace Russell.RADAR.POC.Entities.Content
 
         bool IUserType.Equals(object x, object y)
         {
-            //TODO : Optimize NHibernate change tracking by providing a reliable Equals !
-            return false;
+            return ((FormattedContent)x).ToXHTML().Equals(((FormattedContent)y).ToXHTML());
         } 
     }
 }

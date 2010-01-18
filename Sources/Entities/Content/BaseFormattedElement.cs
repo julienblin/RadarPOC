@@ -26,5 +26,16 @@ namespace Russell.RADAR.POC.Entities.Content
                 action(child);
             }
         }
+
+        public abstract object Clone();
+
+        protected void DeepCopyChildren(IEnumerable<IFormattedElement> otherChildren)
+        {
+            Children.Clear();
+            foreach (var child in otherChildren)
+            {
+                Children.Add((IFormattedElement)child.Clone());
+            }
+        }
     }
 }

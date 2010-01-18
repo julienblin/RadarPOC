@@ -6,7 +6,7 @@ using DocumentFormat.OpenXml;
 
 namespace Russell.RADAR.POC.Entities.Content
 {
-    public interface IFormattedElement
+    public interface IFormattedElement : ICloneable
     {
         void ToXHTML(StringBuilder builder);
         OpenXmlElement ToOpenXmlElement();

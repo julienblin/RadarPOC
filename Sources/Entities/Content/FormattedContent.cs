@@ -70,5 +70,12 @@ namespace Russell.RADAR.POC.Entities.Content
             ForEachChild(x => result.Add(x.ToOpenXmlElement()));
             return result;
         }
+
+        public override object Clone()
+        {
+            var clone = new FormattedContent();
+            clone.DeepCopyChildren(Children);
+            return clone;
+        }
     }
 }

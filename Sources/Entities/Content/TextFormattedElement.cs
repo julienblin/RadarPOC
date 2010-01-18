@@ -29,5 +29,12 @@ namespace Russell.RADAR.POC.Entities.Content
         {
             return new DocumentFormat.OpenXml.Wordprocessing.Text(Content);
         }
+
+        public override object Clone()
+        {
+            var clone = new TextFormattedElement(Content);
+            clone.DeepCopyChildren(Children);
+            return clone;
+        }
     }
 }
