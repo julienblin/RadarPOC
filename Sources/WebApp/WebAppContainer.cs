@@ -19,6 +19,7 @@ namespace Russell.RADAR.POC.WebApp
     public class WebAppContainer : WindsorContainer
     {
         public WebAppContainer()
+            : base(new XmlInterpreter())
         {
             RegisterFacilities();
             RegisterNHibernate();
@@ -43,8 +44,7 @@ namespace Russell.RADAR.POC.WebApp
         private void RegisterServices()
         {
             Register(
-                Component.For<IAuthoringService>().ImplementedBy<NHAuthoringService>(),
-                Component.For<IPublishingService>().ImplementedBy<OpenXMLPublishingService>()
+                Component.For<IAuthoringService>().ImplementedBy<NHAuthoringService>()
             );
         }
 

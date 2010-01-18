@@ -15,11 +15,20 @@ using W14 = DocumentFormat.OpenXml.Office2010.Word;
 using Ent = Russell.RADAR.POC.Entities;
 using System.IO;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace Russell.RADAR.POC.PublishingServices
 {
     public partial class OpinionDocumentGenerator
     {
+        static readonly Regex reImg = new Regex("<\\s*img.*(?:src\\s*=\\s*['|\"](?<src>[^('|\")]+)['|\"]\\s+).*(?:style\\s*=\\s*['|\"](?<style>[^('|\")]+)['|\"]\\s+).*/>", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+        private readonly string imgTagReplacement;
+
+        public OpinionDocumentGenerator(string imageBaseUrl)
+        {
+            imgTagReplacement = string.Format("$`<img src=\"{0}${{src}}\" style=\"${{style}}\" />$'", imageBaseUrl);
+        }
+
         private void AddAltChunks(MainDocumentPart mainDocumentPart)
         {
             CreateAltChunk(mainDocumentPart, opDoc.Discussion, "Discussion");
@@ -41,8 +50,14 @@ namespace Russell.RADAR.POC.PublishingServices
             using (var altChunkStream = altChunkPart.GetStream())
             using (var stringStream = new StreamWriter(altChunkStream))
             {
-                stringStream.Write(value.ToCompleteXHTML());
+                stringStream.Write(ToCompleteXHTML(value));
             }
+        }
+
+        private string ToCompleteXHTML(string input)
+        {
+            var imgsubs = reImg.Replace(input, imgTagReplacement);
+            return string.Format("<html><head/><body style=\"margin: 0; padding: 0;\"><div style=\"font-family: Arial; font-size: 11pt;\">{0}</div></body></html>", imgsubs);
         }
 
         private void AddTopicRatingImages(MainDocumentPart mainDocumentPart)

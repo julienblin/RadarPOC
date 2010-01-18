@@ -16,4 +16,6 @@ CKEDITOR.editorConfig = function( config )
         ['NumberedList','BulletedList'],
         ['Image','Table','SpecialChar']
     ];
+    
+    config.filebrowserImageBrowseUrl = '/javascripts/ckfinder/ckfinder.html?Type=Images';
 };

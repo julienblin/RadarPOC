@@ -29,7 +29,6 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
                 {
                     var authoringService = Resolve<IAuthoringService>();
                     document = (OpinionDocument)authoringService.Retrieve(Convert.ToInt32(Request.Params["id"]));
-                    uow.Commit();
                 }
             }
 

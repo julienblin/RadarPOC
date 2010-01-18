@@ -50,7 +50,13 @@
 </asp:Content>
 <asp:Content ContentPlaceHolderID="ScriptsPlaceHolder" runat="server">
     <script type="text/javascript">
-        $(".makeckeditor").ckeditor();
+        $(".makeckeditor").each(function(i, txtArea) {
+            CKEDITOR.replace($(txtArea).attr('name'), {
+                filebrowserBrowseUrl : '/javascripts/ckfinder/ckfinder.html',
+ 	            filebrowserImageBrowseUrl : '/javascripts/ckfinder/ckfinder.html?Type=Images',
+ 	            filebrowserImageUploadUrl : '/javascripts/ckfinder/core/connector/aspx/connector.aspx?command=QuickUpload&type=Images'
+            });
+        });
     </script>
 
 </asp:Content>
