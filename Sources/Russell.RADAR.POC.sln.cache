@@ -67,11 +67,11 @@
     <AspNetConfiguration>$(Configuration)</AspNetConfiguration>
   </PropertyGroup>
   <PropertyGroup>
-    <SolutionDir>C:\Users\Julien\Projects\RadarPOC\Sources\</SolutionDir>
+    <SolutionDir>D:\Projects\RadarPOC\Sources\</SolutionDir>
     <SolutionExt>.sln</SolutionExt>
     <SolutionFileName>Russell.RADAR.POC.sln</SolutionFileName>
     <SolutionName>Russell.RADAR.POC</SolutionName>
-    <SolutionPath>C:\Users\Julien\Projects\RadarPOC\Sources\Russell.RADAR.POC.sln</SolutionPath>
+    <SolutionPath>D:\Projects\RadarPOC\Sources\Russell.RADAR.POC.sln</SolutionPath>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == '' and '$(MSBuildToolsVersion)' == '2.0'">v2.0</TargetFrameworkVersion>

@@ -14,6 +14,7 @@ using M = DocumentFormat.OpenXml.Math;
 using W14 = DocumentFormat.OpenXml.Office2010.Word;
 using Ent = Russell.RADAR.POC.Entities;
 using System.IO;
+using System.Reflection;
 
 namespace Russell.RADAR.POC.PublishingServices
 {
@@ -44,7 +45,27 @@ namespace Russell.RADAR.POC.PublishingServices
             }
         }
 
-        private static Paragraph CreateTopicTitleParagraph(string topicTitle)
+        private void AddTopicRatingImages(MainDocumentPart mainDocumentPart)
+        {
+            AddTopicImage(mainDocumentPart, "0");
+            AddTopicImage(mainDocumentPart, "1");
+            AddTopicImage(mainDocumentPart, "2");
+            AddTopicImage(mainDocumentPart, "3");
+            AddTopicImage(mainDocumentPart, "4");
+            AddTopicImage(mainDocumentPart, "5");
+        }
+
+        private void AddTopicImage(MainDocumentPart mainDocumentPart, string imageName)
+        {
+            var imagePart = mainDocumentPart.AddImagePart(ImagePartType.Bmp, "imageTopic" + imageName);
+
+            using (var embeddedImageStream = GetType().Assembly.GetManifestResourceStream("Russell.RADAR.POC.PublishingServices.TopicImages." + imageName + ".bmp"))
+            {
+                imagePart.FeedData(embeddedImageStream);
+            }
+        }
+
+        private static Paragraph CreateTopicTitleParagraph(string topicTitle, string topicImageName)
         {
             Paragraph paragraph20 = new Paragraph() { RsidParagraphMarkRevision = "00233025", RsidParagraphAddition = "00F8047A", RsidParagraphProperties = "00DD5BAE", RsidRunAdditionDefault = "00F8047A", ParagraphId = "19CE1D53", TextId = "661746E5" };
 
@@ -125,28 +146,31 @@ namespace Russell.RADAR.POC.PublishingServices
 
             Pic.BlipFill blipFill11 = new Pic.BlipFill();
 
-            A.Blip blip11 = new A.Blip() { Embed = "rId10", CompressionState = A.BlipCompressionValues.Print };
+            if (!string.IsNullOrEmpty(topicImageName))
+            {
+                A.Blip blip11 = new A.Blip() { Embed = topicImageName, CompressionState = A.BlipCompressionValues.Print };
 
-            A.BlipExtensionList blipExtensionList11 = new A.BlipExtensionList();
+                A.BlipExtensionList blipExtensionList11 = new A.BlipExtensionList();
 
-            A.BlipExtension blipExtension11 = new A.BlipExtension() { Uri = "{28A0092B-C50C-407E-A947-70E740481C1C}" };
-            A14.UseLocalDpi useLocalDpi11 = new A14.UseLocalDpi() { Val = false };
+                A.BlipExtension blipExtension11 = new A.BlipExtension() { Uri = "{28A0092B-C50C-407E-A947-70E740481C1C}" };
+                A14.UseLocalDpi useLocalDpi11 = new A14.UseLocalDpi() { Val = false };
 
-            blipExtension11.Append(useLocalDpi11);
+                blipExtension11.Append(useLocalDpi11);
 
-            blipExtensionList11.Append(blipExtension11);
+                blipExtensionList11.Append(blipExtension11);
 
-            blip11.Append(blipExtensionList11);
-            A.SourceRectangle sourceRectangle11 = new A.SourceRectangle();
+                blip11.Append(blipExtensionList11);
+                A.SourceRectangle sourceRectangle11 = new A.SourceRectangle();
 
-            A.Stretch stretch11 = new A.Stretch();
-            A.FillRectangle fillRectangle11 = new A.FillRectangle();
+                A.Stretch stretch11 = new A.Stretch();
+                A.FillRectangle fillRectangle11 = new A.FillRectangle();
 
-            stretch11.Append(fillRectangle11);
+                stretch11.Append(fillRectangle11);
 
-            blipFill11.Append(blip11);
-            blipFill11.Append(sourceRectangle11);
-            blipFill11.Append(stretch11);
+                blipFill11.Append(blip11);
+                blipFill11.Append(sourceRectangle11);
+                blipFill11.Append(stretch11);
+            }
 
             Pic.ShapeProperties shapeProperties11 = new Pic.ShapeProperties() { BlackWhiteMode = A.BlackWhiteModeValues.Auto };
 

@@ -41,6 +41,7 @@ namespace Russell.RADAR.POC.PublishingServices
             GenerateMainDocumentPart1Content(mainDocumentPart1);
 
             AddAltChunks(mainDocumentPart1);
+            AddTopicRatingImages(mainDocumentPart1);
 
             ImagePart imagePart1 = mainDocumentPart1.AddNewPart<ImagePart>("image/gif", "rId8");
             GenerateImagePart1Content(imagePart1);
@@ -2464,37 +2465,37 @@ namespace Russell.RADAR.POC.PublishingServices
              * Here Goes the main generated template modifications *
              * *****************************************************/
 
-            Paragraph paragraphDiscussionTitle = CreateTopicTitleParagraph("DISCUSSION");
+            Paragraph paragraphDiscussionTitle = CreateTopicTitleParagraph("DISCUSSION", "imageTopic2");
             Paragraph paragraphDiscussionContent = CreateTopicContentParagraph("Discussion");
 
-            Paragraph paragraphInvestmentStaffTitle = CreateTopicTitleParagraph("INVESTMENT STAFF");
+            Paragraph paragraphInvestmentStaffTitle = CreateTopicTitleParagraph("INVESTMENT STAFF", string.Format("imageTopic{0}", opDoc.InvestmentStaff.Rank));
             Paragraph paragraphInvestmentStaffContent = CreateTopicContentParagraph("InvestmentStaff");
 
-            Paragraph paragraphOrganizationalStabilityTitle = CreateTopicTitleParagraph("ORGANIZATIONAL STABILITY");
+            Paragraph paragraphOrganizationalStabilityTitle = CreateTopicTitleParagraph("ORGANIZATIONAL STABILITY", string.Format("imageTopic{0}", opDoc.OrganizationalStability.Rank));
             Paragraph paragraphOrganizationalStabilityContent = CreateTopicContentParagraph("OrganizationalStability");
 
-            Paragraph paragraphAssetAllocationTitle = CreateTopicTitleParagraph("ASSET ALLOCATION");
+            Paragraph paragraphAssetAllocationTitle = CreateTopicTitleParagraph("ASSET ALLOCATION", string.Format("imageTopic{0}", opDoc.AssetAllocation.Rank));
             Paragraph paragraphAssetAllocationContent = CreateTopicContentParagraph("AssetAllocation");
 
-            Paragraph paragraphResearchTitle = CreateTopicTitleParagraph("RESEARCH");
+            Paragraph paragraphResearchTitle = CreateTopicTitleParagraph("RESEARCH", string.Format("imageTopic{0}", opDoc.Research.Rank));
             Paragraph paragraphResearchContent = CreateTopicContentParagraph("Research");
 
-            Paragraph paragraphCountrySelectionTitle = CreateTopicTitleParagraph("COUNTRY SELECTION");
+            Paragraph paragraphCountrySelectionTitle = CreateTopicTitleParagraph("COUNTRY SELECTION", string.Format("imageTopic{0}", opDoc.CountrySelection.Rank));
             Paragraph paragraphCountrySelectionContent = CreateTopicContentParagraph("CountrySelection");
 
-            Paragraph paragraphPortfolioConstructionTitle = CreateTopicTitleParagraph("PORTFOLIO CONSTRUCTION");
+            Paragraph paragraphPortfolioConstructionTitle = CreateTopicTitleParagraph("PORTFOLIO CONSTRUCTION", string.Format("imageTopic{0}", opDoc.PortfolioConstruction.Rank));
             Paragraph paragraphPortfolioConstructionContent = CreateTopicContentParagraph("PortfolioConstruction");
 
-            Paragraph paragraphCurrencyManagementTitle = CreateTopicTitleParagraph("CURRENCY MANAGEMENT");
+            Paragraph paragraphCurrencyManagementTitle = CreateTopicTitleParagraph("CURRENCY MANAGEMENT", string.Format("imageTopic{0}", opDoc.CurrencyManagement.Rank));
             Paragraph paragraphCurrencyManagementContent = CreateTopicContentParagraph("CurrencyManagement");
 
-            Paragraph paragraphImplementationTitle = CreateTopicTitleParagraph("IMPLEMENTATION");
+            Paragraph paragraphImplementationTitle = CreateTopicTitleParagraph("IMPLEMENTATION", string.Format("imageTopic{0}", opDoc.Implementation.Rank));
             Paragraph paragraphImplementationContent = CreateTopicContentParagraph("Implementation");
 
-            Paragraph paragraphSecuritySelectionTitle = CreateTopicTitleParagraph("SECURITY SELECTION");
+            Paragraph paragraphSecuritySelectionTitle = CreateTopicTitleParagraph("SECURITY SELECTION", string.Format("imageTopic{0}", opDoc.SecuritySelection.Rank));
             Paragraph paragraphSecuritySelectionContent = CreateTopicContentParagraph("SecuritySelection");
 
-            Paragraph paragraphSellDisciplineTitle = CreateTopicTitleParagraph("SELL DISCIPLINE");
+            Paragraph paragraphSellDisciplineTitle = CreateTopicTitleParagraph("SELL DISCIPLINE", string.Format("imageTopic{0}", opDoc.SellDiscipline.Rank));
             Paragraph paragraphSellDisciplinenContent = CreateTopicContentParagraph("SellDiscipline");
 
 
