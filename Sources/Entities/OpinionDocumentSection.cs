@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Russell.RADAR.POC.Entities.Content;
 
 namespace Russell.RADAR.POC.Entities
 {
@@ -14,6 +15,11 @@ namespace Russell.RADAR.POC.Entities
             set { rank = value;  }
         }
 
-        public virtual string Content { get; set; }
+        FormattedContent content = new FormattedContent();
+        public virtual FormattedContent Content
+        {
+            get { return content; }
+            set { content = value; }
+        }
     }
 }

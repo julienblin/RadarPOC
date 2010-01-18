@@ -41,10 +41,10 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
                 ddlOverallRank.DataSource = new int[] { 1, 2, 3, 4 };
                 ddlOverallRank.DataBind();
 
-                textBoxOverall.Text = doc.OverallEvaluation.Content;
+                textBoxOverall.Text = doc.OverallEvaluation.Content.ToXHTML();
                 ddlOverallRank.SelectedIndex = doc.OverallEvaluation.Rank - 1;
 
-                textBoxDiscussion.Text = doc.Discussion;
+                textBoxDiscussion.Text = doc.Discussion.ToXHTML();
 
                 SectionInvestementStaff.Section = doc.InvestmentStaff;
                 SectionOrganizationalStability.Section = doc.OrganizationalStability;
@@ -63,31 +63,31 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
         {
             using (var uow = UnitOfWork.Start())
             {
-                doc.OverallEvaluation.Content = textBoxOverall.Text;
+                doc.OverallEvaluation.Content.FromXHTML(textBoxOverall.Text);
                 doc.OverallEvaluation.Rank = ddlOverallRank.SelectedIndex + 1;
 
-                doc.Discussion = textBoxDiscussion.Text;
+                doc.Discussion.FromXHTML(textBoxDiscussion.Text);
 
                 doc.InvestmentStaff.Rank = SectionInvestementStaff.GetRank();
-                doc.InvestmentStaff.Content = SectionInvestementStaff.GetContent();
+                doc.InvestmentStaff.Content.FromXHTML(SectionInvestementStaff.GetContent());
                 doc.OrganizationalStability.Rank = SectionOrganizationalStability.GetRank();
-                doc.OrganizationalStability.Content = SectionOrganizationalStability.GetContent();
+                doc.OrganizationalStability.Content.FromXHTML(SectionOrganizationalStability.GetContent());
                 doc.AssetAllocation.Rank = SectionAssetAllocation.GetRank();
-                doc.AssetAllocation.Content = SectionAssetAllocation.GetContent();
+                doc.AssetAllocation.Content.FromXHTML(SectionAssetAllocation.GetContent());
                 doc.Research.Rank = SectionResearch.GetRank();
-                doc.Research.Content = SectionResearch.GetContent();
+                doc.Research.Content.FromXHTML(SectionResearch.GetContent());
                 doc.CountrySelection.Rank = SectionCountrySelection.GetRank();
-                doc.CountrySelection.Content = SectionCountrySelection.GetContent();
+                doc.CountrySelection.Content.FromXHTML(SectionCountrySelection.GetContent());
                 doc.PortfolioConstruction.Rank = SectionPortfolioConstruction.GetRank();
-                doc.PortfolioConstruction.Content = SectionPortfolioConstruction.GetContent();
+                doc.PortfolioConstruction.Content.FromXHTML(SectionPortfolioConstruction.GetContent());
                 doc.CurrencyManagement.Rank = SectionCurrencyManagement.GetRank();
-                doc.CurrencyManagement.Content = SectionCurrencyManagement.GetContent();
+                doc.CurrencyManagement.Content.FromXHTML(SectionCurrencyManagement.GetContent());
                 doc.Implementation.Rank = SectionImplementation.GetRank();
-                doc.Implementation.Content = SectionImplementation.GetContent();
+                doc.Implementation.Content.FromXHTML(SectionImplementation.GetContent());
                 doc.SecuritySelection.Rank = SectionSecuritySelection.GetRank();
-                doc.SecuritySelection.Content = SectionSecuritySelection.GetContent();
+                doc.SecuritySelection.Content.FromXHTML(SectionSecuritySelection.GetContent());
                 doc.SellDiscipline.Rank = SectionSellDiscipline.GetRank();
-                doc.SellDiscipline.Content = SectionSellDiscipline.GetContent();
+                doc.SellDiscipline.Content.FromXHTML(SectionSellDiscipline.GetContent());
                 uow.Commit();
             }
             Response.Redirect("~/Default.aspx");

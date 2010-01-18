@@ -45,7 +45,7 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments.Components
 
                 if (Section != null)
                 {
-                    textBoxSection.Text = Section.Content;
+                    textBoxSection.Text = Section.Content.ToXHTML();
                     ddlRank.SelectedIndex = Section.Rank - 1;
                 }
             }

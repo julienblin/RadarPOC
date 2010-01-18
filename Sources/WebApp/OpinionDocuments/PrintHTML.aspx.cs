@@ -32,8 +32,8 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
                 }
             }
 
-            literalDiscussion.Text = document.Discussion;
-            literalInvestmentStaff.Text = document.InvestmentStaff.Content;
+            literalDiscussion.Text = document.Discussion.ToXHTML();
+            literalInvestmentStaff.Text = document.InvestmentStaff.Content.ToXHTML();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Russell.RADAR.POC.Entities.Content;
 
 namespace Russell.RADAR.POC.Entities
 {
@@ -9,6 +10,7 @@ namespace Russell.RADAR.POC.Entities
     {
         public OpinionDocument()
         {
+            Discussion = new FormattedContent();
             OverallEvaluation = new OpinionDocumentSection();
             InvestmentStaff = new OpinionDocumentSection();
             OrganizationalStability = new OpinionDocumentSection();
@@ -23,7 +25,7 @@ namespace Russell.RADAR.POC.Entities
         }
 
         public virtual OpinionDocumentSection OverallEvaluation { get; set; }
-        public virtual string Discussion { get; set; }
+        public virtual FormattedContent Discussion { get; set; }
         public virtual OpinionDocumentSection InvestmentStaff { get; set; }
         public virtual OpinionDocumentSection OrganizationalStability { get; set; }
         public virtual OpinionDocumentSection AssetAllocation { get; set; }
