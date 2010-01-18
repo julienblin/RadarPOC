@@ -121,7 +121,8 @@ namespace Russell.RADAR.POC.PublishingServices
                 Drawing drawing11 = new Drawing();
 
                 Wp.Inline inline11 = new Wp.Inline() { DistanceFromTop = (UInt32Value)0U, DistanceFromBottom = (UInt32Value)0U, DistanceFromLeft = (UInt32Value)0U, DistanceFromRight = (UInt32Value)0U, EditId = "356B07CE" };
-                Wp.Extent extent11 = new Wp.Extent() { Cx = 838200L, Cy = 152400L };
+                //Wp.Extent extent11 = new Wp.Extent() { Cx = 838200L, Cy = 152400L };
+                Wp.Extent extent11 = new Wp.Extent() { Cx = 762000L, Cy = 200025L };
                 Wp.EffectExtent effectExtent11 = new Wp.EffectExtent() { LeftEdge = 0L, TopEdge = 0L, RightEdge = 0L, BottomEdge = 0L };
                 Wp.DocProperties docProperties11 = new Wp.DocProperties() { Id = (UInt32Value)11U, Name = "Image 11", Description = "rank_category_5" };
 
@@ -178,7 +179,8 @@ namespace Russell.RADAR.POC.PublishingServices
 
                 A.Transform2D transform2D11 = new A.Transform2D();
                 A.Offset offset11 = new A.Offset() { X = 0L, Y = 0L };
-                A.Extents extents11 = new A.Extents() { Cx = 838200L, Cy = 152400L };
+                //A.Extents extents11 = new A.Extents() { Cx = 838200L, Cy = 152400L };
+                A.Extents extents11 = new A.Extents() { Cx = 1000000L, Cy = 262500L };
 
                 transform2D11.Append(offset11);
                 transform2D11.Append(extents11);
