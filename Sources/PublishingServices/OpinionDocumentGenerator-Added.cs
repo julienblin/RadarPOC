@@ -115,39 +115,41 @@ namespace Russell.RADAR.POC.PublishingServices
             runProperties21.Append(fontSize9);
             runProperties21.Append(languages11);
 
-            Drawing drawing11 = new Drawing();
-
-            Wp.Inline inline11 = new Wp.Inline() { DistanceFromTop = (UInt32Value)0U, DistanceFromBottom = (UInt32Value)0U, DistanceFromLeft = (UInt32Value)0U, DistanceFromRight = (UInt32Value)0U, EditId = "356B07CE" };
-            Wp.Extent extent11 = new Wp.Extent() { Cx = 838200L, Cy = 152400L };
-            Wp.EffectExtent effectExtent11 = new Wp.EffectExtent() { LeftEdge = 0L, TopEdge = 0L, RightEdge = 0L, BottomEdge = 0L };
-            Wp.DocProperties docProperties11 = new Wp.DocProperties() { Id = (UInt32Value)11U, Name = "Image 11", Description = "rank_category_5" };
-
-            Wp.NonVisualGraphicFrameDrawingProperties nonVisualGraphicFrameDrawingProperties11 = new Wp.NonVisualGraphicFrameDrawingProperties();
-            A.GraphicFrameLocks graphicFrameLocks11 = new A.GraphicFrameLocks() { NoChangeAspect = true };
-
-            nonVisualGraphicFrameDrawingProperties11.Append(graphicFrameLocks11);
-
-            A.Graphic graphic11 = new A.Graphic();
-
-            A.GraphicData graphicData11 = new A.GraphicData() { Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture" };
-
-            Pic.Picture picture11 = new Pic.Picture();
-
-            Pic.NonVisualPictureProperties nonVisualPictureProperties11 = new Pic.NonVisualPictureProperties();
-            Pic.NonVisualDrawingProperties nonVisualDrawingProperties11 = new Pic.NonVisualDrawingProperties() { Id = (UInt32Value)0U, Name = "Image 11", Description = "rank_category_5" };
-
-            Pic.NonVisualPictureDrawingProperties nonVisualPictureDrawingProperties11 = new Pic.NonVisualPictureDrawingProperties();
-            A.PictureLocks pictureLocks11 = new A.PictureLocks() { NoChangeAspect = true, NoChangeArrowheads = true };
-
-            nonVisualPictureDrawingProperties11.Append(pictureLocks11);
-
-            nonVisualPictureProperties11.Append(nonVisualDrawingProperties11);
-            nonVisualPictureProperties11.Append(nonVisualPictureDrawingProperties11);
-
-            Pic.BlipFill blipFill11 = new Pic.BlipFill();
-
             if (!string.IsNullOrEmpty(topicImageName))
             {
+
+                Drawing drawing11 = new Drawing();
+
+                Wp.Inline inline11 = new Wp.Inline() { DistanceFromTop = (UInt32Value)0U, DistanceFromBottom = (UInt32Value)0U, DistanceFromLeft = (UInt32Value)0U, DistanceFromRight = (UInt32Value)0U, EditId = "356B07CE" };
+                Wp.Extent extent11 = new Wp.Extent() { Cx = 838200L, Cy = 152400L };
+                Wp.EffectExtent effectExtent11 = new Wp.EffectExtent() { LeftEdge = 0L, TopEdge = 0L, RightEdge = 0L, BottomEdge = 0L };
+                Wp.DocProperties docProperties11 = new Wp.DocProperties() { Id = (UInt32Value)11U, Name = "Image 11", Description = "rank_category_5" };
+
+                Wp.NonVisualGraphicFrameDrawingProperties nonVisualGraphicFrameDrawingProperties11 = new Wp.NonVisualGraphicFrameDrawingProperties();
+                A.GraphicFrameLocks graphicFrameLocks11 = new A.GraphicFrameLocks() { NoChangeAspect = true };
+
+                nonVisualGraphicFrameDrawingProperties11.Append(graphicFrameLocks11);
+
+                A.Graphic graphic11 = new A.Graphic();
+
+                A.GraphicData graphicData11 = new A.GraphicData() { Uri = "http://schemas.openxmlformats.org/drawingml/2006/picture" };
+
+                Pic.Picture picture11 = new Pic.Picture();
+
+                Pic.NonVisualPictureProperties nonVisualPictureProperties11 = new Pic.NonVisualPictureProperties();
+                Pic.NonVisualDrawingProperties nonVisualDrawingProperties11 = new Pic.NonVisualDrawingProperties() { Id = (UInt32Value)0U, Name = "Image 11", Description = "rank_category_5" };
+
+                Pic.NonVisualPictureDrawingProperties nonVisualPictureDrawingProperties11 = new Pic.NonVisualPictureDrawingProperties();
+                A.PictureLocks pictureLocks11 = new A.PictureLocks() { NoChangeAspect = true, NoChangeArrowheads = true };
+
+                nonVisualPictureDrawingProperties11.Append(pictureLocks11);
+
+                nonVisualPictureProperties11.Append(nonVisualDrawingProperties11);
+                nonVisualPictureProperties11.Append(nonVisualPictureDrawingProperties11);
+
+                Pic.BlipFill blipFill11 = new Pic.BlipFill();
+
+
                 A.Blip blip11 = new A.Blip() { Embed = topicImageName, CompressionState = A.BlipCompressionValues.Print };
 
                 A.BlipExtensionList blipExtensionList11 = new A.BlipExtensionList();
@@ -170,91 +172,93 @@ namespace Russell.RADAR.POC.PublishingServices
                 blipFill11.Append(blip11);
                 blipFill11.Append(sourceRectangle11);
                 blipFill11.Append(stretch11);
+
+
+                Pic.ShapeProperties shapeProperties11 = new Pic.ShapeProperties() { BlackWhiteMode = A.BlackWhiteModeValues.Auto };
+
+                A.Transform2D transform2D11 = new A.Transform2D();
+                A.Offset offset11 = new A.Offset() { X = 0L, Y = 0L };
+                A.Extents extents11 = new A.Extents() { Cx = 838200L, Cy = 152400L };
+
+                transform2D11.Append(offset11);
+                transform2D11.Append(extents11);
+
+                A.PresetGeometry presetGeometry11 = new A.PresetGeometry() { Preset = A.ShapeTypeValues.Rectangle };
+                A.AdjustValueList adjustValueList11 = new A.AdjustValueList();
+
+                presetGeometry11.Append(adjustValueList11);
+                A.NoFill noFill21 = new A.NoFill();
+
+                A.Outline outline11 = new A.Outline();
+                A.NoFill noFill22 = new A.NoFill();
+
+                outline11.Append(noFill22);
+
+                A.ShapePropertiesExtensionList shapePropertiesExtensionList11 = new A.ShapePropertiesExtensionList();
+
+                A.ShapePropertiesExtension shapePropertiesExtension21 = new A.ShapePropertiesExtension() { Uri = "{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}" };
+
+                A14.HiddenFillProperties hiddenFillProperties11 = new A14.HiddenFillProperties();
+
+                A.SolidFill solidFill21 = new A.SolidFill();
+
+                A.RgbColorModelHex rgbColorModelHex21 = new A.RgbColorModelHex() { Val = "FFFFFF", MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "" } };
+
+                solidFill21.Append(rgbColorModelHex21);
+
+                hiddenFillProperties11.Append(solidFill21);
+
+                shapePropertiesExtension21.Append(hiddenFillProperties11);
+
+                A.ShapePropertiesExtension shapePropertiesExtension22 = new A.ShapePropertiesExtension() { Uri = "{91240B29-F687-4F45-9708-019B960494DF}" };
+
+                A14.HiddenLineProperties hiddenLineProperties11 = new A14.HiddenLineProperties() { Width = 9525 };
+
+                A.SolidFill solidFill22 = new A.SolidFill();
+
+                A.RgbColorModelHex rgbColorModelHex22 = new A.RgbColorModelHex() { Val = "000000", MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "" } };
+
+                solidFill22.Append(rgbColorModelHex22);
+                A.Miter miter11 = new A.Miter() { Limit = 800000 };
+                A.HeadEnd headEnd11 = new A.HeadEnd();
+                A.TailEnd tailEnd11 = new A.TailEnd();
+
+                hiddenLineProperties11.Append(solidFill22);
+                hiddenLineProperties11.Append(miter11);
+                hiddenLineProperties11.Append(headEnd11);
+                hiddenLineProperties11.Append(tailEnd11);
+
+                shapePropertiesExtension22.Append(hiddenLineProperties11);
+
+                shapePropertiesExtensionList11.Append(shapePropertiesExtension21);
+                shapePropertiesExtensionList11.Append(shapePropertiesExtension22);
+
+                shapeProperties11.Append(transform2D11);
+                shapeProperties11.Append(presetGeometry11);
+                shapeProperties11.Append(noFill21);
+                shapeProperties11.Append(outline11);
+                shapeProperties11.Append(shapePropertiesExtensionList11);
+
+                picture11.Append(nonVisualPictureProperties11);
+                picture11.Append(blipFill11);
+                picture11.Append(shapeProperties11);
+
+                graphicData11.Append(picture11);
+
+                graphic11.Append(graphicData11);
+
+                inline11.Append(extent11);
+                inline11.Append(effectExtent11);
+                inline11.Append(docProperties11);
+                inline11.Append(nonVisualGraphicFrameDrawingProperties11);
+                inline11.Append(graphic11);
+
+                drawing11.Append(inline11);
+
+                run34.Append(runProperties21);
+                run34.Append(drawing11);
+
             }
-
-            Pic.ShapeProperties shapeProperties11 = new Pic.ShapeProperties() { BlackWhiteMode = A.BlackWhiteModeValues.Auto };
-
-            A.Transform2D transform2D11 = new A.Transform2D();
-            A.Offset offset11 = new A.Offset() { X = 0L, Y = 0L };
-            A.Extents extents11 = new A.Extents() { Cx = 838200L, Cy = 152400L };
-
-            transform2D11.Append(offset11);
-            transform2D11.Append(extents11);
-
-            A.PresetGeometry presetGeometry11 = new A.PresetGeometry() { Preset = A.ShapeTypeValues.Rectangle };
-            A.AdjustValueList adjustValueList11 = new A.AdjustValueList();
-
-            presetGeometry11.Append(adjustValueList11);
-            A.NoFill noFill21 = new A.NoFill();
-
-            A.Outline outline11 = new A.Outline();
-            A.NoFill noFill22 = new A.NoFill();
-
-            outline11.Append(noFill22);
-
-            A.ShapePropertiesExtensionList shapePropertiesExtensionList11 = new A.ShapePropertiesExtensionList();
-
-            A.ShapePropertiesExtension shapePropertiesExtension21 = new A.ShapePropertiesExtension() { Uri = "{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}" };
-
-            A14.HiddenFillProperties hiddenFillProperties11 = new A14.HiddenFillProperties();
-
-            A.SolidFill solidFill21 = new A.SolidFill();
-
-            A.RgbColorModelHex rgbColorModelHex21 = new A.RgbColorModelHex() { Val = "FFFFFF", MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "" } };
-
-            solidFill21.Append(rgbColorModelHex21);
-
-            hiddenFillProperties11.Append(solidFill21);
-
-            shapePropertiesExtension21.Append(hiddenFillProperties11);
-
-            A.ShapePropertiesExtension shapePropertiesExtension22 = new A.ShapePropertiesExtension() { Uri = "{91240B29-F687-4F45-9708-019B960494DF}" };
-
-            A14.HiddenLineProperties hiddenLineProperties11 = new A14.HiddenLineProperties() { Width = 9525 };
-
-            A.SolidFill solidFill22 = new A.SolidFill();
-
-            A.RgbColorModelHex rgbColorModelHex22 = new A.RgbColorModelHex() { Val = "000000", MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "" } };
-
-            solidFill22.Append(rgbColorModelHex22);
-            A.Miter miter11 = new A.Miter() { Limit = 800000 };
-            A.HeadEnd headEnd11 = new A.HeadEnd();
-            A.TailEnd tailEnd11 = new A.TailEnd();
-
-            hiddenLineProperties11.Append(solidFill22);
-            hiddenLineProperties11.Append(miter11);
-            hiddenLineProperties11.Append(headEnd11);
-            hiddenLineProperties11.Append(tailEnd11);
-
-            shapePropertiesExtension22.Append(hiddenLineProperties11);
-
-            shapePropertiesExtensionList11.Append(shapePropertiesExtension21);
-            shapePropertiesExtensionList11.Append(shapePropertiesExtension22);
-
-            shapeProperties11.Append(transform2D11);
-            shapeProperties11.Append(presetGeometry11);
-            shapeProperties11.Append(noFill21);
-            shapeProperties11.Append(outline11);
-            shapeProperties11.Append(shapePropertiesExtensionList11);
-
-            picture11.Append(nonVisualPictureProperties11);
-            picture11.Append(blipFill11);
-            picture11.Append(shapeProperties11);
-
-            graphicData11.Append(picture11);
-
-            graphic11.Append(graphicData11);
-
-            inline11.Append(extent11);
-            inline11.Append(effectExtent11);
-            inline11.Append(docProperties11);
-            inline11.Append(nonVisualGraphicFrameDrawingProperties11);
-            inline11.Append(graphic11);
-
-            drawing11.Append(inline11);
-
-            run34.Append(runProperties21);
-            run34.Append(drawing11);
 
             paragraph20.Append(paragraphProperties20);
             paragraph20.Append(run33);

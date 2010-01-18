@@ -2465,7 +2465,7 @@ namespace Russell.RADAR.POC.PublishingServices
              * Here Goes the main generated template modifications *
              * *****************************************************/
 
-            Paragraph paragraphDiscussionTitle = CreateTopicTitleParagraph("DISCUSSION", "imageTopic2");
+            Paragraph paragraphDiscussionTitle = CreateTopicTitleParagraph("DISCUSSION", null);
             Paragraph paragraphDiscussionContent = CreateTopicContentParagraph("Discussion");
 
             Paragraph paragraphInvestmentStaffTitle = CreateTopicTitleParagraph("INVESTMENT STAFF", string.Format("imageTopic{0}", opDoc.InvestmentStaff.Rank));
