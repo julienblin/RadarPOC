@@ -48,11 +48,23 @@ namespace Russell.RADAR.POC.WebApp
 
         private ISessionFactory ConfigureFluentNHibernate()
         {
-            return Fluently.Configure()
-                .Database(SQLiteConfiguration.Standard.ConnectionString(x => x.FromConnectionStringWithKey(@"Radar")))
-                .Mappings(m =>
-                    m.FluentMappings.AddFromAssemblyOf<Document>())
-                .BuildSessionFactory();
+            switch (ConfigurationManager.AppSettings["DbType"])
+            {
+                case "sqlite":
+                    return Fluently.Configure()
+                        .Database(SQLiteConfiguration.Standard.ConnectionString(x => x.FromConnectionStringWithKey(@"Radar")))
+                        .Mappings(m =>
+                            m.FluentMappings.AddFromAssemblyOf<Document>())
+                        .BuildSessionFactory();
+                case "sqlserver":
+                    return Fluently.Configure()
+                        .Database(MsSqlConfiguration.MsSql2000.ConnectionString(x => x.FromConnectionStringWithKey(@"Radar")))
+                        .Mappings(m =>
+                            m.FluentMappings.AddFromAssemblyOf<Document>())
+                        .BuildSessionFactory();
+                default:
+                    throw new NotSupportedException("Unknow dbtype: " + ConfigurationManager.AppSettings["DbType"]);
+            }
         }
     }
 }

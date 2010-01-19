@@ -5,6 +5,7 @@
   <property name="dir.published" value="Published" />
   <property name="db.sqlite.dir" value="${project::get-base-directory()}\Data" />
   <property name="db.sqlite.path" value="${db.sqlite.dir}\radar.db" />
+  <property name="db.sqlserver.ddl.path" value="${db.sqlite.dir}\sqlserver.ddl.sql" />
 
   <property name="now" value="${datetime::now()}" readonly="true" />
   <property name="elapsedSecondsToday" value="${(datetime::get-hour(now) * 3600 + datetime::get-minute(now) * 60 + datetime::get-second(now)) / 10}" readonly="true" />
@@ -16,7 +17,7 @@
         <include name="**/*" />
       </fileset>
     </delete>
-	<delete failonerror="false">
+    <delete failonerror="false">
       <fileset basedir="Sources\WebApp\bin">
         <include name="**/*" />
       </fileset>
@@ -74,15 +75,15 @@
   </target>
 
   <target name="create-sqlite-db" description="drop and recreate a new sqlite db using NHibernate schema generation" depends="build">
-    
-	<if test="${not directory::exists(db.sqlite.dir)}">
+
+    <if test="${not directory::exists(db.sqlite.dir)}">
       <mkdir dir="${db.sqlite.dir}" />
     </if>
-	
-	<if test="${file::exists(db.sqlite.path)}">
+
+    <if test="${file::exists(db.sqlite.path)}">
       <delete file="${db.sqlite.path}" />
     </if>
-    
+
     <script language="C#">
       <references>
         <include name="System.Data.dll" />
@@ -121,6 +122,58 @@
 
     <!-- Adjust config file settings -->
     <xmlpoke file="Sources\WebApp\Web.config" xpath="/configuration/connectionStrings/add[@name='Radar']/@connectionString" value="Data Source=${db.sqlite.path};Version=3;" />
+    <xmlpoke file="Sources\WebApp\Web.config" xpath="/configuration/appSettings/add[@key='DbType']/@value" value="sqlite" />
+
+  </target>
+
+  <target name="create-sqlserver-ddl-file" description="Create a SqlServer ddl schema creation in Data directory." depends="build">
+
+    <if test="${not directory::exists(db.sqlite.dir)}">
+      <mkdir dir="${db.sqlite.dir}" />
+    </if>
+
+    <if test="${file::exists(db.sqlserver.ddl.path)}">
+      <delete file="${db.sqlserver.ddl.path}" />
+    </if>
+
+    <script language="C#">
+      <references>
+        <include name="System.Data.dll" />
+        <include name="System.Data.OracleClient.dll" />
+        <include name="System.configuration.dll" />
+        <include name="System.Transactions.dll" />
+        <include name="System.Web" />
+        <include name="System.Core.dll"/>
+        <include name="Dependencies\SQLite-1.0.65\System.Data.SQLite.DLL" />
+        <include name="Dependencies\Log4net-1.2.10\log4net.dll" />
+        <include name="Dependencies\NHibernate-2.1.2.GA\Iesi.Collections.dll"/>
+        <include name="Dependencies\NHibernate-2.1.2.GA\Antlr3.Runtime.dll"/>
+        <include name="Dependencies\NHibernate-2.1.2.GA\NHibernate.dll" />
+        <include name="Dependencies\FluentNHibernate-1.0-RTM\FluentNHibernate.dll" />
+        <include name="${dir.bin}\Russell.RADAR.POC.Entities.dll" />
+      </references>
+      <code>
+        <![CDATA[
+		      public static void ScriptMain(Project project) {
+		        string dbFile = project.Properties["db.sqlserver.ddl.path"];
+            
+            NHibernate.Cfg.Configuration config = FluentNHibernate.Cfg.Fluently.Configure()
+                .Database(FluentNHibernate.Cfg.Db.MsSqlConfiguration.MsSql2000)
+                .Mappings(delegate(FluentNHibernate.Cfg.MappingConfiguration m)
+                        {
+                            m.FluentMappings.AddFromAssemblyOf<Russell.RADAR.POC.Entities.Document>();
+                        })
+                .BuildConfiguration();
+
+            NHibernate.Tool.hbm2ddl.SchemaExport schemaExport = new NHibernate.Tool.hbm2ddl.SchemaExport(config);
+            schemaExport.SetOutputFile(dbFile);
+            schemaExport.Execute(true, false, false);
+		      }
+	      ]]>
+      </code>
+    </script>
+
+    <echo message="DDL file outputed to ${db.sqlserver.ddl.path}." />
 
   </target>
 
