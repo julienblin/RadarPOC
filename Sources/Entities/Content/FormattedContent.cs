@@ -39,11 +39,21 @@ namespace Russell.RADAR.POC.Entities.Content
                     case "em":
                         createdNode = new ItalicFormattedContent();
                         break;
+                    case "ul":
+                        createdNode = new UnorderedListFormattedContent();
+                        break;
+                    case "ol":
+                        createdNode = new OrderedListFormattedContent();
+                        break;
+                    case "li":
+                        createdNode = new ListItemFormattedContent();
+                        break;
                     default:
                         createdNode = new TextFormattedElement(TrimText(HttpUtility.HtmlDecode(childNode.InnerText)));
                         break;
                 }
                 baseElement.Children.Add(createdNode);
+                createdNode.Parent = baseElement;
                 ParseRecursive(createdNode, childNode);
             }
         }
@@ -70,18 +80,15 @@ namespace Russell.RADAR.POC.Entities.Content
             ForEachChild(x => x.ToXHTML(builder));
         }
 
-        public override OpenXmlElement ToOpenXmlElement()
+        public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
         {
-            throw new NotImplementedException();
-        }
-
-        public IList<DocumentFormat.OpenXml.Wordprocessing.Paragraph> GetParagraphs()
-        {
-            var result = new List<DocumentFormat.OpenXml.Wordprocessing.Paragraph>();
+            var result = new List<OpenXmlElement>();
             ForEachChild(x =>
             {
                 if (x is ParagraphFormattedElement)
-                    result.Add((DocumentFormat.OpenXml.Wordprocessing.Paragraph)x.ToOpenXmlElement());
+                {
+                    result.AddRange(x.ToOpenXmlElements());
+                }
 
             });
             return result;

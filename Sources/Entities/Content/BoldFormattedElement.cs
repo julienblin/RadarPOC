@@ -15,7 +15,7 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.Append("</strong>");
         }
 
-        public override OpenXmlElement ToOpenXmlElement()
+        public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
         {
             var result = new DocumentFormat.OpenXml.Wordprocessing.Run();
             var runProperties = new DocumentFormat.OpenXml.Wordprocessing.RunProperties();
@@ -24,8 +24,8 @@ namespace Russell.RADAR.POC.Entities.Content
             runProperties.Append(boldProperty);
             result.Append(runProperties);
 
-            ForEachChild(x => result.Append(x.ToOpenXmlElement()));
-            return result;
+            ForEachChild(x => result.Append(x.ToOpenXmlElements()));
+            return new List<OpenXmlElement> { result };
         }
 
         public override object Clone()

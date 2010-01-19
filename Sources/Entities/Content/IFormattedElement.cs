@@ -9,8 +9,10 @@ namespace Russell.RADAR.POC.Entities.Content
     public interface IFormattedElement : ICloneable
     {
         void ToXHTML(StringBuilder builder);
-        OpenXmlElement ToOpenXmlElement();
+        IEnumerable<OpenXmlElement> ToOpenXmlElements();
 
         IList<IFormattedElement> Children { get; }
+
+        IFormattedElement Parent { get; set; }
     }
 }

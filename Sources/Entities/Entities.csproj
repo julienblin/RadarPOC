@@ -70,10 +70,14 @@
     </Compile>
     <Compile Include="Content\BaseFormattedElement.cs" />
     <Compile Include="Content\BoldFormattedElement.cs" />
+    <Compile Include="Content\OrderedListFormattedContent.cs" />
     <Compile Include="Content\FormattedContentUserType.cs" />
     <Compile Include="Content\ItalicFormattedContent.cs" />
+    <Compile Include="Content\ListFormattedContent.cs" />
+    <Compile Include="Content\ListItemFormattedContent.cs" />
     <Compile Include="Content\ParagraphFormattedElement.cs" />
     <Compile Include="Content\TextFormattedElement.cs" />
+    <Compile Include="Content\UnorderedListFormattedContent.cs" />
     <Compile Include="DocumentType.cs" />
     <Compile Include="Document.cs" />
     <Compile Include="DocumentMap.cs" />

@@ -16,21 +16,24 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.Append("</p>");
         }
 
-        public override OpenXmlElement ToOpenXmlElement()
+        public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
         {
             var result = new DocumentFormat.OpenXml.Wordprocessing.Paragraph();
-            ForEachChild(x => {
+            ForEachChild(x =>
+            {
                 if (x is TextFormattedElement)
                 {
                     result.Append(
-                        new DocumentFormat.OpenXml.Wordprocessing.Run(x.ToOpenXmlElement())
+                        new DocumentFormat.OpenXml.Wordprocessing.Run(x.ToOpenXmlElements())
                     );
 
-                } else {
-                    result.Append(x.ToOpenXmlElement());
+                }
+                else
+                {
+                    result.Append(x.ToOpenXmlElements());
                 }
             });
-            return result;
+            return new List<OpenXmlElement> { result };
         }
 
         public override object Clone()

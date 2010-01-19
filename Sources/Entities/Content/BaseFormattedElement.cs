@@ -10,7 +10,7 @@ namespace Russell.RADAR.POC.Entities.Content
     {
         public abstract void ToXHTML(StringBuilder builder);
 
-        public abstract OpenXmlElement ToOpenXmlElement();
+        public abstract IEnumerable<OpenXmlElement> ToOpenXmlElements();
 
         private List<IFormattedElement> children = new List<IFormattedElement>();
 
@@ -18,6 +18,8 @@ namespace Russell.RADAR.POC.Entities.Content
         {
             get { return children; }
         }
+
+        public IFormattedElement Parent { get; set; }
 
         protected void ForEachChild(Action<IFormattedElement> action)
         {

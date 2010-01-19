@@ -25,11 +25,11 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.Append(HttpUtility.HtmlEncode(Content));
         }
 
-        public override OpenXmlElement ToOpenXmlElement()
+        public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
         {
             var result = new DocumentFormat.OpenXml.Wordprocessing.Text(Content);
             result.Space = SpaceProcessingModeValues.Preserve;
-            return result;
+            return new List<OpenXmlElement> { result };
         }
 
         public override object Clone()

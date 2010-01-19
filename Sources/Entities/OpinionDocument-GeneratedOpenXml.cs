@@ -1794,39 +1794,39 @@ namespace Russell.RADAR.POC.Entities
             paragraph19.Append(paragraphProperties19);
 
             Paragraph paragraphDiscussionTitle = CreateTopicTitle("DISCUSSION", null);
-            IList<Paragraph> paragraphsDiscussionContent = CreateTopicText(Discussion);
+            var paragraphsDiscussionContent = CreateTopicText(Discussion);
 
             CustomXmlBlock customXmlBlock8 = new CustomXmlBlock() { Uri = "http://hubblereports.com/namespace", Element = "category" };
 
             Paragraph paragraphInvestmentStaffTitle = CreateTopicTitle("INVESTMENT STAFF", InvestmentStaff.Rank.ToString());
-            IList<Paragraph> paragraphsInvestmentStaffContent = CreateTopicText(InvestmentStaff.Content);
+            var paragraphsInvestmentStaffContent = CreateTopicText(InvestmentStaff.Content);
 
             Paragraph paragraphOrganizationalStabilityTitle = CreateTopicTitle("ORGANIZATIONAL STABILITY", OrganizationalStability.Rank.ToString());
-            IList<Paragraph> paragraphsOrganizationalStabilityContent = CreateTopicText(OrganizationalStability.Content);
+            var paragraphsOrganizationalStabilityContent = CreateTopicText(OrganizationalStability.Content);
 
             Paragraph paragraphAssetAllocationTitle = CreateTopicTitle("ASSET ALLOCATION", AssetAllocation.Rank.ToString());
-            IList<Paragraph> paragraphsAssetAllocationContent = CreateTopicText(AssetAllocation.Content);
+            var paragraphsAssetAllocationContent = CreateTopicText(AssetAllocation.Content);
 
             Paragraph paragraphResearchTitle = CreateTopicTitle("RESEARCH", Research.Rank.ToString());
-            IList<Paragraph> paragraphsResearchContent = CreateTopicText(Research.Content);
+            var paragraphsResearchContent = CreateTopicText(Research.Content);
 
             Paragraph paragraphCountrySelectionTitle = CreateTopicTitle("COUNTRY SELECTION", CountrySelection.Rank.ToString());
-            IList<Paragraph> paragraphsCountrySelectionContent = CreateTopicText(CountrySelection.Content);
+            var paragraphsCountrySelectionContent = CreateTopicText(CountrySelection.Content);
 
             Paragraph paragraphPortfolioConstructionTitle = CreateTopicTitle("PORTFOLIO CONSTRUCTION", PortfolioConstruction.Rank.ToString());
-            IList<Paragraph> paragraphsPortfolioConstructionContent = CreateTopicText(PortfolioConstruction.Content);
+            var paragraphsPortfolioConstructionContent = CreateTopicText(PortfolioConstruction.Content);
 
             Paragraph paragraphCurrencyManagementTitle = CreateTopicTitle("CURRENCY MANAGEMENT", CurrencyManagement.Rank.ToString());
-            IList<Paragraph> paragraphsCurrencyManagementContent = CreateTopicText(CurrencyManagement.Content);
+            var paragraphsCurrencyManagementContent = CreateTopicText(CurrencyManagement.Content);
 
             Paragraph paragraphImplementationTitle = CreateTopicTitle("IMPLEMENTATION", Implementation.Rank.ToString());
-            IList<Paragraph> paragraphsImplementationContent = CreateTopicText(Implementation.Content);
+            var paragraphsImplementationContent = CreateTopicText(Implementation.Content);
 
             Paragraph paragraphSecuritySelectionTitle = CreateTopicTitle("SECURITY SELECTION", SecuritySelection.Rank.ToString());
-            IList<Paragraph> paragraphsSecuritySelectionContent = CreateTopicText(SecuritySelection.Content);
+            var paragraphsSecuritySelectionContent = CreateTopicText(SecuritySelection.Content);
 
             Paragraph paragraphSellDisciplineTitle = CreateTopicTitle("SELL DISCIPLINE", SellDiscipline.Rank.ToString());
-            IList<Paragraph> paragraphsSellDisciplineContent = CreateTopicText(SellDiscipline.Content);
+            var paragraphsSellDisciplineContent = CreateTopicText(SellDiscipline.Content);
 
 
             Paragraph paragraph23 = new Paragraph() { RsidParagraphAddition = "00EE7B69", RsidParagraphProperties = "00C32704", RsidRunAdditionDefault = "00957E57" };
@@ -1970,19 +1970,22 @@ namespace Russell.RADAR.POC.Entities
             mainDocumentPart1.Document = document1;
         }
 
-        private static IList<Paragraph> CreateTopicText(FormattedContent formattedContent)
+        private static IEnumerable<OpenXmlElement> CreateTopicText(FormattedContent formattedContent)
         {
-            var formattedContentParagraphs = formattedContent.GetParagraphs();
+            var formattedContentParagraphs = formattedContent.ToOpenXmlElements();
 
             foreach (var para in formattedContentParagraphs)
             {
-                ParagraphProperties paragraphProperties22 = new ParagraphProperties();
-                ParagraphStyleId paragraphStyleId22 = new ParagraphStyleId() { Val = "StyleAfter0pt" };
-                SpacingBetweenLines spacingBetweenLines16 = new SpacingBetweenLines() { After = "360" };
+                if (!(para.GetType().IsSubclassOf(typeof(ListFormattedContent))))
+                {
+                    ParagraphProperties paragraphProperties22 = new ParagraphProperties();
+                    ParagraphStyleId paragraphStyleId22 = new ParagraphStyleId() { Val = "StyleAfter0pt" };
+                    SpacingBetweenLines spacingBetweenLines16 = new SpacingBetweenLines() { After = "360" };
 
-                paragraphProperties22.Append(paragraphStyleId22);
-                paragraphProperties22.Append(spacingBetweenLines16);
-                para.InsertAt(paragraphProperties22, 0);
+                    paragraphProperties22.Append(paragraphStyleId22);
+                    paragraphProperties22.Append(spacingBetweenLines16);
+                    para.InsertAt(paragraphProperties22, 0);
+                }
             }
 
             return formattedContentParagraphs;
@@ -5939,6 +5942,25 @@ namespace Russell.RADAR.POC.Entities
             style57.Append(styleParagraphProperties34);
             style57.Append(styleRunProperties46);
 
+            Style styleUnorderedList = new Style() { Type = StyleValues.Paragraph, StyleId = "UnorderedListStyle", CustomStyle = true };
+            StyleName styleNameUnorderedList = new StyleName() { Val = "UnorderedList Style" };
+            BasedOn basedOnUnorderedList = new BasedOn() { Val = "Normal" };
+
+            StyleParagraphProperties styleParagraphPropertiesUnorderedList = new StyleParagraphProperties();
+            SpacingBetweenLines spacingBetweenLinesUnorderedList = new SpacingBetweenLines() { After = "0" };
+
+            styleParagraphPropertiesUnorderedList.Append(spacingBetweenLinesUnorderedList);
+
+            StyleRunProperties styleRunPropertiesUnorderedList = new StyleRunProperties();
+            FontSizeComplexScript fontSizeComplexScriptUnorderedList = new FontSizeComplexScript() { Val = "20" };
+
+            styleRunPropertiesUnorderedList.Append(fontSizeComplexScriptUnorderedList);
+
+            styleUnorderedList.Append(styleNameUnorderedList);
+            styleUnorderedList.Append(basedOnUnorderedList);
+            styleUnorderedList.Append(styleParagraphPropertiesUnorderedList);
+            styleUnorderedList.Append(styleRunPropertiesUnorderedList);
+
             styles1.Append(docDefaults1);
             styles1.Append(latentStyles1);
             styles1.Append(style1);
@@ -5998,6 +6020,7 @@ namespace Russell.RADAR.POC.Entities
             styles1.Append(style55);
             styles1.Append(style56);
             styles1.Append(style57);
+            styles1.Append(styleUnorderedList);
 
             styleDefinitionsPart1.Styles = styles1;
         }
@@ -6005,7 +6028,8 @@ namespace Russell.RADAR.POC.Entities
         // Generates content of numberingDefinitionsPart1.
         private void GenerateNumberingDefinitionsPart1Content(NumberingDefinitionsPart numberingDefinitionsPart1)
         {
-            Numbering numbering1 = new Numbering();
+
+            /*Numbering numbering1 = new Numbering();
 
             AbstractNum abstractNum1 = new AbstractNum() { AbstractNumberId = 0 };
             Nsid nsid1 = new Nsid() { Val = "2BE110B5" };
@@ -6601,6 +6625,909 @@ namespace Russell.RADAR.POC.Entities
             numbering1.Append(abstractNum2);
             numbering1.Append(numberingInstance1);
             numbering1.Append(numberingInstance2);
+
+            numberingDefinitionsPart1.Numbering = numbering1;*/
+
+            Numbering numbering1 = new Numbering();
+
+            AbstractNum abstractNum1 = new AbstractNum() { AbstractNumberId = 0 };
+            Nsid nsid1 = new Nsid() { Val = "2BE110B5" };
+            MultiLevelType multiLevelType1 = new MultiLevelType() { Val = MultiLevelValues.Multilevel };
+            TemplateCode templateCode1 = new TemplateCode() { Val = "263EA1D2" };
+
+            Level level1 = new Level() { LevelIndex = 0 };
+            StartNumberingValue startNumberingValue1 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat1 = new NumberingFormat() { Val = NumberFormatValues.Decimal };
+            ParagraphStyleIdInLevel paragraphStyleIdInLevel1 = new ParagraphStyleIdInLevel() { Val = "NumberedList" };
+            LevelText levelText1 = new LevelText() { Val = "%1." };
+            LevelJustification levelJustification1 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties1 = new PreviousParagraphProperties();
+
+            Tabs tabs1 = new Tabs();
+            TabStop tabStop1 = new TabStop() { Val = TabStopValues.Number, Position = 360 };
+
+            tabs1.Append(tabStop1);
+            Indentation indentation1 = new Indentation() { Left = "360", Hanging = "360" };
+
+            previousParagraphProperties1.Append(tabs1);
+            previousParagraphProperties1.Append(indentation1);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties1 = new NumberingSymbolRunProperties();
+            RunFonts runFonts1 = new RunFonts() { Hint = FontTypeHintValues.Default };
+
+            numberingSymbolRunProperties1.Append(runFonts1);
+
+            level1.Append(startNumberingValue1);
+            level1.Append(numberingFormat1);
+            level1.Append(paragraphStyleIdInLevel1);
+            level1.Append(levelText1);
+            level1.Append(levelJustification1);
+            level1.Append(previousParagraphProperties1);
+            level1.Append(numberingSymbolRunProperties1);
+
+            Level level2 = new Level() { LevelIndex = 1 };
+            StartNumberingValue startNumberingValue2 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat2 = new NumberingFormat() { Val = NumberFormatValues.Decimal };
+            LevelText levelText2 = new LevelText() { Val = "%1.%2." };
+            LevelJustification levelJustification2 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties2 = new PreviousParagraphProperties();
+
+            Tabs tabs2 = new Tabs();
+            TabStop tabStop2 = new TabStop() { Val = TabStopValues.Number, Position = 792 };
+
+            tabs2.Append(tabStop2);
+            Indentation indentation2 = new Indentation() { Left = "792", Hanging = "432" };
+
+            previousParagraphProperties2.Append(tabs2);
+            previousParagraphProperties2.Append(indentation2);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties2 = new NumberingSymbolRunProperties();
+            RunFonts runFonts2 = new RunFonts() { Hint = FontTypeHintValues.Default };
+
+            numberingSymbolRunProperties2.Append(runFonts2);
+
+            level2.Append(startNumberingValue2);
+            level2.Append(numberingFormat2);
+            level2.Append(levelText2);
+            level2.Append(levelJustification2);
+            level2.Append(previousParagraphProperties2);
+            level2.Append(numberingSymbolRunProperties2);
+
+            Level level3 = new Level() { LevelIndex = 2 };
+            StartNumberingValue startNumberingValue3 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat3 = new NumberingFormat() { Val = NumberFormatValues.Decimal };
+            LevelText levelText3 = new LevelText() { Val = "%1.%2.%3." };
+            LevelJustification levelJustification3 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties3 = new PreviousParagraphProperties();
+
+            Tabs tabs3 = new Tabs();
+            TabStop tabStop3 = new TabStop() { Val = TabStopValues.Number, Position = 1224 };
+
+            tabs3.Append(tabStop3);
+            Indentation indentation3 = new Indentation() { Left = "1224", Hanging = "504" };
+
+            previousParagraphProperties3.Append(tabs3);
+            previousParagraphProperties3.Append(indentation3);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties3 = new NumberingSymbolRunProperties();
+            RunFonts runFonts3 = new RunFonts() { Hint = FontTypeHintValues.Default };
+
+            numberingSymbolRunProperties3.Append(runFonts3);
+
+            level3.Append(startNumberingValue3);
+            level3.Append(numberingFormat3);
+            level3.Append(levelText3);
+            level3.Append(levelJustification3);
+            level3.Append(previousParagraphProperties3);
+            level3.Append(numberingSymbolRunProperties3);
+
+            Level level4 = new Level() { LevelIndex = 3 };
+            StartNumberingValue startNumberingValue4 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat4 = new NumberingFormat() { Val = NumberFormatValues.Decimal };
+            LevelText levelText4 = new LevelText() { Val = "%1.%2.%3.%4." };
+            LevelJustification levelJustification4 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties4 = new PreviousParagraphProperties();
+
+            Tabs tabs4 = new Tabs();
+            TabStop tabStop4 = new TabStop() { Val = TabStopValues.Number, Position = 1728 };
+
+            tabs4.Append(tabStop4);
+            Indentation indentation4 = new Indentation() { Left = "1728", Hanging = "648" };
+
+            previousParagraphProperties4.Append(tabs4);
+            previousParagraphProperties4.Append(indentation4);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties4 = new NumberingSymbolRunProperties();
+            RunFonts runFonts4 = new RunFonts() { Hint = FontTypeHintValues.Default };
+
+            numberingSymbolRunProperties4.Append(runFonts4);
+
+            level4.Append(startNumberingValue4);
+            level4.Append(numberingFormat4);
+            level4.Append(levelText4);
+            level4.Append(levelJustification4);
+            level4.Append(previousParagraphProperties4);
+            level4.Append(numberingSymbolRunProperties4);
+
+            Level level5 = new Level() { LevelIndex = 4 };
+            StartNumberingValue startNumberingValue5 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat5 = new NumberingFormat() { Val = NumberFormatValues.Decimal };
+            LevelText levelText5 = new LevelText() { Val = "%1.%2.%3.%4.%5." };
+            LevelJustification levelJustification5 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties5 = new PreviousParagraphProperties();
+
+            Tabs tabs5 = new Tabs();
+            TabStop tabStop5 = new TabStop() { Val = TabStopValues.Number, Position = 2232 };
+
+            tabs5.Append(tabStop5);
+            Indentation indentation5 = new Indentation() { Left = "2232", Hanging = "792" };
+
+            previousParagraphProperties5.Append(tabs5);
+            previousParagraphProperties5.Append(indentation5);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties5 = new NumberingSymbolRunProperties();
+            RunFonts runFonts5 = new RunFonts() { Hint = FontTypeHintValues.Default };
+
+            numberingSymbolRunProperties5.Append(runFonts5);
+
+            level5.Append(startNumberingValue5);
+            level5.Append(numberingFormat5);
+            level5.Append(levelText5);
+            level5.Append(levelJustification5);
+            level5.Append(previousParagraphProperties5);
+            level5.Append(numberingSymbolRunProperties5);
+
+            Level level6 = new Level() { LevelIndex = 5 };
+            StartNumberingValue startNumberingValue6 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat6 = new NumberingFormat() { Val = NumberFormatValues.Decimal };
+            LevelText levelText6 = new LevelText() { Val = "%1.%2.%3.%4.%5.%6." };
+            LevelJustification levelJustification6 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties6 = new PreviousParagraphProperties();
+
+            Tabs tabs6 = new Tabs();
+            TabStop tabStop6 = new TabStop() { Val = TabStopValues.Number, Position = 2736 };
+
+            tabs6.Append(tabStop6);
+            Indentation indentation6 = new Indentation() { Left = "2736", Hanging = "936" };
+
+            previousParagraphProperties6.Append(tabs6);
+            previousParagraphProperties6.Append(indentation6);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties6 = new NumberingSymbolRunProperties();
+            RunFonts runFonts6 = new RunFonts() { Hint = FontTypeHintValues.Default };
+
+            numberingSymbolRunProperties6.Append(runFonts6);
+
+            level6.Append(startNumberingValue6);
+            level6.Append(numberingFormat6);
+            level6.Append(levelText6);
+            level6.Append(levelJustification6);
+            level6.Append(previousParagraphProperties6);
+            level6.Append(numberingSymbolRunProperties6);
+
+            Level level7 = new Level() { LevelIndex = 6 };
+            StartNumberingValue startNumberingValue7 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat7 = new NumberingFormat() { Val = NumberFormatValues.Decimal };
+            LevelText levelText7 = new LevelText() { Val = "%1.%2.%3.%4.%5.%6.%7." };
+            LevelJustification levelJustification7 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties7 = new PreviousParagraphProperties();
+
+            Tabs tabs7 = new Tabs();
+            TabStop tabStop7 = new TabStop() { Val = TabStopValues.Number, Position = 3240 };
+
+            tabs7.Append(tabStop7);
+            Indentation indentation7 = new Indentation() { Left = "3240", Hanging = "1080" };
+
+            previousParagraphProperties7.Append(tabs7);
+            previousParagraphProperties7.Append(indentation7);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties7 = new NumberingSymbolRunProperties();
+            RunFonts runFonts7 = new RunFonts() { Hint = FontTypeHintValues.Default };
+
+            numberingSymbolRunProperties7.Append(runFonts7);
+
+            level7.Append(startNumberingValue7);
+            level7.Append(numberingFormat7);
+            level7.Append(levelText7);
+            level7.Append(levelJustification7);
+            level7.Append(previousParagraphProperties7);
+            level7.Append(numberingSymbolRunProperties7);
+
+            Level level8 = new Level() { LevelIndex = 7 };
+            StartNumberingValue startNumberingValue8 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat8 = new NumberingFormat() { Val = NumberFormatValues.Decimal };
+            LevelText levelText8 = new LevelText() { Val = "%1.%2.%3.%4.%5.%6.%7.%8." };
+            LevelJustification levelJustification8 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties8 = new PreviousParagraphProperties();
+
+            Tabs tabs8 = new Tabs();
+            TabStop tabStop8 = new TabStop() { Val = TabStopValues.Number, Position = 3744 };
+
+            tabs8.Append(tabStop8);
+            Indentation indentation8 = new Indentation() { Left = "3744", Hanging = "1224" };
+
+            previousParagraphProperties8.Append(tabs8);
+            previousParagraphProperties8.Append(indentation8);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties8 = new NumberingSymbolRunProperties();
+            RunFonts runFonts8 = new RunFonts() { Hint = FontTypeHintValues.Default };
+
+            numberingSymbolRunProperties8.Append(runFonts8);
+
+            level8.Append(startNumberingValue8);
+            level8.Append(numberingFormat8);
+            level8.Append(levelText8);
+            level8.Append(levelJustification8);
+            level8.Append(previousParagraphProperties8);
+            level8.Append(numberingSymbolRunProperties8);
+
+            Level level9 = new Level() { LevelIndex = 8 };
+            StartNumberingValue startNumberingValue9 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat9 = new NumberingFormat() { Val = NumberFormatValues.Decimal };
+            LevelText levelText9 = new LevelText() { Val = "%1.%2.%3.%4.%5.%6.%7.%8.%9." };
+            LevelJustification levelJustification9 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties9 = new PreviousParagraphProperties();
+
+            Tabs tabs9 = new Tabs();
+            TabStop tabStop9 = new TabStop() { Val = TabStopValues.Number, Position = 4320 };
+
+            tabs9.Append(tabStop9);
+            Indentation indentation9 = new Indentation() { Left = "4320", Hanging = "1440" };
+
+            previousParagraphProperties9.Append(tabs9);
+            previousParagraphProperties9.Append(indentation9);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties9 = new NumberingSymbolRunProperties();
+            RunFonts runFonts9 = new RunFonts() { Hint = FontTypeHintValues.Default };
+
+            numberingSymbolRunProperties9.Append(runFonts9);
+
+            level9.Append(startNumberingValue9);
+            level9.Append(numberingFormat9);
+            level9.Append(levelText9);
+            level9.Append(levelJustification9);
+            level9.Append(previousParagraphProperties9);
+            level9.Append(numberingSymbolRunProperties9);
+
+            abstractNum1.Append(nsid1);
+            abstractNum1.Append(multiLevelType1);
+            abstractNum1.Append(templateCode1);
+            abstractNum1.Append(level1);
+            abstractNum1.Append(level2);
+            abstractNum1.Append(level3);
+            abstractNum1.Append(level4);
+            abstractNum1.Append(level5);
+            abstractNum1.Append(level6);
+            abstractNum1.Append(level7);
+            abstractNum1.Append(level8);
+            abstractNum1.Append(level9);
+
+            AbstractNum abstractNum2 = new AbstractNum() { AbstractNumberId = 1 };
+            Nsid nsid2 = new Nsid() { Val = "460E3EC6" };
+            MultiLevelType multiLevelType2 = new MultiLevelType() { Val = MultiLevelValues.Multilevel };
+            TemplateCode templateCode2 = new TemplateCode() { Val = "DD28C6DC" };
+
+            Level level10 = new Level() { LevelIndex = 0 };
+            StartNumberingValue startNumberingValue10 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat10 = new NumberingFormat() { Val = NumberFormatValues.Bullet };
+            LevelText levelText10 = new LevelText() { Val = "·" };
+            LevelJustification levelJustification10 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties10 = new PreviousParagraphProperties();
+
+            Tabs tabs10 = new Tabs();
+            TabStop tabStop10 = new TabStop() { Val = TabStopValues.Number, Position = 720 };
+
+            tabs10.Append(tabStop10);
+            Indentation indentation10 = new Indentation() { Left = "720", Hanging = "360" };
+
+            previousParagraphProperties10.Append(tabs10);
+            previousParagraphProperties10.Append(indentation10);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties10 = new NumberingSymbolRunProperties();
+            RunFonts runFonts10 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Symbol", HighAnsi = "Symbol" };
+            FontSize fontSize1 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties10.Append(runFonts10);
+            numberingSymbolRunProperties10.Append(fontSize1);
+
+            level10.Append(startNumberingValue10);
+            level10.Append(numberingFormat10);
+            level10.Append(levelText10);
+            level10.Append(levelJustification10);
+            level10.Append(previousParagraphProperties10);
+            level10.Append(numberingSymbolRunProperties10);
+
+            Level level11 = new Level() { LevelIndex = 1 };
+            StartNumberingValue startNumberingValue11 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat11 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText11 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification11 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties11 = new PreviousParagraphProperties();
+
+            Tabs tabs11 = new Tabs();
+            TabStop tabStop11 = new TabStop() { Val = TabStopValues.Number, Position = 1080 };
+
+            tabs11.Append(tabStop11);
+            Indentation indentation11 = new Indentation() { Left = "1080", Hanging = "360" };
+
+            previousParagraphProperties11.Append(tabs11);
+            previousParagraphProperties11.Append(indentation11);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties11 = new NumberingSymbolRunProperties();
+            RunFonts runFonts11 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize2 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties11.Append(runFonts11);
+            numberingSymbolRunProperties11.Append(fontSize2);
+
+            level11.Append(startNumberingValue11);
+            level11.Append(numberingFormat11);
+            level11.Append(levelText11);
+            level11.Append(levelJustification11);
+            level11.Append(previousParagraphProperties11);
+            level11.Append(numberingSymbolRunProperties11);
+
+            Level level12 = new Level() { LevelIndex = 2 };
+            StartNumberingValue startNumberingValue12 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat12 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText12 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification12 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties12 = new PreviousParagraphProperties();
+
+            Tabs tabs12 = new Tabs();
+            TabStop tabStop12 = new TabStop() { Val = TabStopValues.Number, Position = 1440 };
+
+            tabs12.Append(tabStop12);
+            Indentation indentation12 = new Indentation() { Left = "1440", Hanging = "360" };
+
+            previousParagraphProperties12.Append(tabs12);
+            previousParagraphProperties12.Append(indentation12);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties12 = new NumberingSymbolRunProperties();
+            RunFonts runFonts12 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize3 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties12.Append(runFonts12);
+            numberingSymbolRunProperties12.Append(fontSize3);
+
+            level12.Append(startNumberingValue12);
+            level12.Append(numberingFormat12);
+            level12.Append(levelText12);
+            level12.Append(levelJustification12);
+            level12.Append(previousParagraphProperties12);
+            level12.Append(numberingSymbolRunProperties12);
+
+            Level level13 = new Level() { LevelIndex = 3 };
+            StartNumberingValue startNumberingValue13 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat13 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText13 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification13 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties13 = new PreviousParagraphProperties();
+
+            Tabs tabs13 = new Tabs();
+            TabStop tabStop13 = new TabStop() { Val = TabStopValues.Number, Position = 1800 };
+
+            tabs13.Append(tabStop13);
+            Indentation indentation13 = new Indentation() { Left = "1800", Hanging = "360" };
+
+            previousParagraphProperties13.Append(tabs13);
+            previousParagraphProperties13.Append(indentation13);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties13 = new NumberingSymbolRunProperties();
+            RunFonts runFonts13 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize4 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties13.Append(runFonts13);
+            numberingSymbolRunProperties13.Append(fontSize4);
+
+            level13.Append(startNumberingValue13);
+            level13.Append(numberingFormat13);
+            level13.Append(levelText13);
+            level13.Append(levelJustification13);
+            level13.Append(previousParagraphProperties13);
+            level13.Append(numberingSymbolRunProperties13);
+
+            Level level14 = new Level() { LevelIndex = 4 };
+            StartNumberingValue startNumberingValue14 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat14 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText14 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification14 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties14 = new PreviousParagraphProperties();
+
+            Tabs tabs14 = new Tabs();
+            TabStop tabStop14 = new TabStop() { Val = TabStopValues.Number, Position = 2160 };
+
+            tabs14.Append(tabStop14);
+            Indentation indentation14 = new Indentation() { Left = "2160", Hanging = "360" };
+
+            previousParagraphProperties14.Append(tabs14);
+            previousParagraphProperties14.Append(indentation14);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties14 = new NumberingSymbolRunProperties();
+            RunFonts runFonts14 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize5 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties14.Append(runFonts14);
+            numberingSymbolRunProperties14.Append(fontSize5);
+
+            level14.Append(startNumberingValue14);
+            level14.Append(numberingFormat14);
+            level14.Append(levelText14);
+            level14.Append(levelJustification14);
+            level14.Append(previousParagraphProperties14);
+            level14.Append(numberingSymbolRunProperties14);
+
+            Level level15 = new Level() { LevelIndex = 5 };
+            StartNumberingValue startNumberingValue15 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat15 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText15 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification15 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties15 = new PreviousParagraphProperties();
+
+            Tabs tabs15 = new Tabs();
+            TabStop tabStop15 = new TabStop() { Val = TabStopValues.Number, Position = 2520 };
+
+            tabs15.Append(tabStop15);
+            Indentation indentation15 = new Indentation() { Left = "2520", Hanging = "360" };
+
+            previousParagraphProperties15.Append(tabs15);
+            previousParagraphProperties15.Append(indentation15);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties15 = new NumberingSymbolRunProperties();
+            RunFonts runFonts15 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize6 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties15.Append(runFonts15);
+            numberingSymbolRunProperties15.Append(fontSize6);
+
+            level15.Append(startNumberingValue15);
+            level15.Append(numberingFormat15);
+            level15.Append(levelText15);
+            level15.Append(levelJustification15);
+            level15.Append(previousParagraphProperties15);
+            level15.Append(numberingSymbolRunProperties15);
+
+            Level level16 = new Level() { LevelIndex = 6 };
+            StartNumberingValue startNumberingValue16 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat16 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText16 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification16 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties16 = new PreviousParagraphProperties();
+
+            Tabs tabs16 = new Tabs();
+            TabStop tabStop16 = new TabStop() { Val = TabStopValues.Number, Position = 2880 };
+
+            tabs16.Append(tabStop16);
+            Indentation indentation16 = new Indentation() { Left = "2880", Hanging = "360" };
+
+            previousParagraphProperties16.Append(tabs16);
+            previousParagraphProperties16.Append(indentation16);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties16 = new NumberingSymbolRunProperties();
+            RunFonts runFonts16 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize7 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties16.Append(runFonts16);
+            numberingSymbolRunProperties16.Append(fontSize7);
+
+            level16.Append(startNumberingValue16);
+            level16.Append(numberingFormat16);
+            level16.Append(levelText16);
+            level16.Append(levelJustification16);
+            level16.Append(previousParagraphProperties16);
+            level16.Append(numberingSymbolRunProperties16);
+
+            Level level17 = new Level() { LevelIndex = 7 };
+            StartNumberingValue startNumberingValue17 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat17 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText17 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification17 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties17 = new PreviousParagraphProperties();
+
+            Tabs tabs17 = new Tabs();
+            TabStop tabStop17 = new TabStop() { Val = TabStopValues.Number, Position = 3240 };
+
+            tabs17.Append(tabStop17);
+            Indentation indentation17 = new Indentation() { Left = "3240", Hanging = "360" };
+
+            previousParagraphProperties17.Append(tabs17);
+            previousParagraphProperties17.Append(indentation17);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties17 = new NumberingSymbolRunProperties();
+            RunFonts runFonts17 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize8 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties17.Append(runFonts17);
+            numberingSymbolRunProperties17.Append(fontSize8);
+
+            level17.Append(startNumberingValue17);
+            level17.Append(numberingFormat17);
+            level17.Append(levelText17);
+            level17.Append(levelJustification17);
+            level17.Append(previousParagraphProperties17);
+            level17.Append(numberingSymbolRunProperties17);
+
+            Level level18 = new Level() { LevelIndex = 8 };
+            StartNumberingValue startNumberingValue18 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat18 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText18 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification18 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties18 = new PreviousParagraphProperties();
+
+            Tabs tabs18 = new Tabs();
+            TabStop tabStop18 = new TabStop() { Val = TabStopValues.Number, Position = 3600 };
+
+            tabs18.Append(tabStop18);
+            Indentation indentation18 = new Indentation() { Left = "3600", Hanging = "360" };
+
+            previousParagraphProperties18.Append(tabs18);
+            previousParagraphProperties18.Append(indentation18);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties18 = new NumberingSymbolRunProperties();
+            RunFonts runFonts18 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize9 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties18.Append(runFonts18);
+            numberingSymbolRunProperties18.Append(fontSize9);
+
+            level18.Append(startNumberingValue18);
+            level18.Append(numberingFormat18);
+            level18.Append(levelText18);
+            level18.Append(levelJustification18);
+            level18.Append(previousParagraphProperties18);
+            level18.Append(numberingSymbolRunProperties18);
+
+            abstractNum2.Append(nsid2);
+            abstractNum2.Append(multiLevelType2);
+            abstractNum2.Append(templateCode2);
+            abstractNum2.Append(level10);
+            abstractNum2.Append(level11);
+            abstractNum2.Append(level12);
+            abstractNum2.Append(level13);
+            abstractNum2.Append(level14);
+            abstractNum2.Append(level15);
+            abstractNum2.Append(level16);
+            abstractNum2.Append(level17);
+            abstractNum2.Append(level18);
+
+            AbstractNum abstractNum3 = new AbstractNum() { AbstractNumberId = 2 };
+            Nsid nsid3 = new Nsid() { Val = "70913756" };
+            MultiLevelType multiLevelType3 = new MultiLevelType() { Val = MultiLevelValues.Multilevel };
+            TemplateCode templateCode3 = new TemplateCode() { Val = "624EA66A" };
+            AbstractNumDefinitionName abstractNumDefinitionName1 = new AbstractNumDefinitionName() { Val = "RussellSubbullet" };
+
+            Level level19 = new Level() { LevelIndex = 0 };
+            StartNumberingValue startNumberingValue19 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat19 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText19 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification19 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties19 = new PreviousParagraphProperties();
+
+            Tabs tabs19 = new Tabs();
+            TabStop tabStop19 = new TabStop() { Val = TabStopValues.Number, Position = 360 };
+
+            tabs19.Append(tabStop19);
+            Indentation indentation19 = new Indentation() { Left = "360", Hanging = "360" };
+
+            previousParagraphProperties19.Append(tabs19);
+            previousParagraphProperties19.Append(indentation19);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties19 = new NumberingSymbolRunProperties();
+            RunFonts runFonts19 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize10 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties19.Append(runFonts19);
+            numberingSymbolRunProperties19.Append(fontSize10);
+
+            level19.Append(startNumberingValue19);
+            level19.Append(numberingFormat19);
+            level19.Append(levelText19);
+            level19.Append(levelJustification19);
+            level19.Append(previousParagraphProperties19);
+            level19.Append(numberingSymbolRunProperties19);
+
+            Level level20 = new Level() { LevelIndex = 1 };
+            StartNumberingValue startNumberingValue20 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat20 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText20 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification20 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties20 = new PreviousParagraphProperties();
+
+            Tabs tabs20 = new Tabs();
+            TabStop tabStop20 = new TabStop() { Val = TabStopValues.Number, Position = 720 };
+
+            tabs20.Append(tabStop20);
+            Indentation indentation20 = new Indentation() { Left = "720", Hanging = "360" };
+
+            previousParagraphProperties20.Append(tabs20);
+            previousParagraphProperties20.Append(indentation20);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties20 = new NumberingSymbolRunProperties();
+            RunFonts runFonts20 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize11 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties20.Append(runFonts20);
+            numberingSymbolRunProperties20.Append(fontSize11);
+
+            level20.Append(startNumberingValue20);
+            level20.Append(numberingFormat20);
+            level20.Append(levelText20);
+            level20.Append(levelJustification20);
+            level20.Append(previousParagraphProperties20);
+            level20.Append(numberingSymbolRunProperties20);
+
+            Level level21 = new Level() { LevelIndex = 2 };
+            StartNumberingValue startNumberingValue21 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat21 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText21 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification21 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties21 = new PreviousParagraphProperties();
+
+            Tabs tabs21 = new Tabs();
+            TabStop tabStop21 = new TabStop() { Val = TabStopValues.Number, Position = 1080 };
+
+            tabs21.Append(tabStop21);
+            Indentation indentation21 = new Indentation() { Left = "1080", Hanging = "360" };
+
+            previousParagraphProperties21.Append(tabs21);
+            previousParagraphProperties21.Append(indentation21);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties21 = new NumberingSymbolRunProperties();
+            RunFonts runFonts21 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize12 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties21.Append(runFonts21);
+            numberingSymbolRunProperties21.Append(fontSize12);
+
+            level21.Append(startNumberingValue21);
+            level21.Append(numberingFormat21);
+            level21.Append(levelText21);
+            level21.Append(levelJustification21);
+            level21.Append(previousParagraphProperties21);
+            level21.Append(numberingSymbolRunProperties21);
+
+            Level level22 = new Level() { LevelIndex = 3 };
+            StartNumberingValue startNumberingValue22 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat22 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText22 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification22 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties22 = new PreviousParagraphProperties();
+
+            Tabs tabs22 = new Tabs();
+            TabStop tabStop22 = new TabStop() { Val = TabStopValues.Number, Position = 1440 };
+
+            tabs22.Append(tabStop22);
+            Indentation indentation22 = new Indentation() { Left = "1440", Hanging = "360" };
+
+            previousParagraphProperties22.Append(tabs22);
+            previousParagraphProperties22.Append(indentation22);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties22 = new NumberingSymbolRunProperties();
+            RunFonts runFonts22 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize13 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties22.Append(runFonts22);
+            numberingSymbolRunProperties22.Append(fontSize13);
+
+            level22.Append(startNumberingValue22);
+            level22.Append(numberingFormat22);
+            level22.Append(levelText22);
+            level22.Append(levelJustification22);
+            level22.Append(previousParagraphProperties22);
+            level22.Append(numberingSymbolRunProperties22);
+
+            Level level23 = new Level() { LevelIndex = 4 };
+            StartNumberingValue startNumberingValue23 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat23 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText23 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification23 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties23 = new PreviousParagraphProperties();
+
+            Tabs tabs23 = new Tabs();
+            TabStop tabStop23 = new TabStop() { Val = TabStopValues.Number, Position = 1800 };
+
+            tabs23.Append(tabStop23);
+            Indentation indentation23 = new Indentation() { Left = "1800", Hanging = "360" };
+
+            previousParagraphProperties23.Append(tabs23);
+            previousParagraphProperties23.Append(indentation23);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties23 = new NumberingSymbolRunProperties();
+            RunFonts runFonts23 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize14 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties23.Append(runFonts23);
+            numberingSymbolRunProperties23.Append(fontSize14);
+
+            level23.Append(startNumberingValue23);
+            level23.Append(numberingFormat23);
+            level23.Append(levelText23);
+            level23.Append(levelJustification23);
+            level23.Append(previousParagraphProperties23);
+            level23.Append(numberingSymbolRunProperties23);
+
+            Level level24 = new Level() { LevelIndex = 5 };
+            StartNumberingValue startNumberingValue24 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat24 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText24 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification24 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties24 = new PreviousParagraphProperties();
+
+            Tabs tabs24 = new Tabs();
+            TabStop tabStop24 = new TabStop() { Val = TabStopValues.Number, Position = 2160 };
+
+            tabs24.Append(tabStop24);
+            Indentation indentation24 = new Indentation() { Left = "2160", Hanging = "360" };
+
+            previousParagraphProperties24.Append(tabs24);
+            previousParagraphProperties24.Append(indentation24);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties24 = new NumberingSymbolRunProperties();
+            RunFonts runFonts24 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize15 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties24.Append(runFonts24);
+            numberingSymbolRunProperties24.Append(fontSize15);
+
+            level24.Append(startNumberingValue24);
+            level24.Append(numberingFormat24);
+            level24.Append(levelText24);
+            level24.Append(levelJustification24);
+            level24.Append(previousParagraphProperties24);
+            level24.Append(numberingSymbolRunProperties24);
+
+            Level level25 = new Level() { LevelIndex = 6 };
+            StartNumberingValue startNumberingValue25 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat25 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText25 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification25 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties25 = new PreviousParagraphProperties();
+
+            Tabs tabs25 = new Tabs();
+            TabStop tabStop25 = new TabStop() { Val = TabStopValues.Number, Position = 2520 };
+
+            tabs25.Append(tabStop25);
+            Indentation indentation25 = new Indentation() { Left = "2520", Hanging = "360" };
+
+            previousParagraphProperties25.Append(tabs25);
+            previousParagraphProperties25.Append(indentation25);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties25 = new NumberingSymbolRunProperties();
+            RunFonts runFonts25 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize16 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties25.Append(runFonts25);
+            numberingSymbolRunProperties25.Append(fontSize16);
+
+            level25.Append(startNumberingValue25);
+            level25.Append(numberingFormat25);
+            level25.Append(levelText25);
+            level25.Append(levelJustification25);
+            level25.Append(previousParagraphProperties25);
+            level25.Append(numberingSymbolRunProperties25);
+
+            Level level26 = new Level() { LevelIndex = 7 };
+            StartNumberingValue startNumberingValue26 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat26 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText26 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification26 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties26 = new PreviousParagraphProperties();
+
+            Tabs tabs26 = new Tabs();
+            TabStop tabStop26 = new TabStop() { Val = TabStopValues.Number, Position = 2880 };
+
+            tabs26.Append(tabStop26);
+            Indentation indentation26 = new Indentation() { Left = "2880", Hanging = "360" };
+
+            previousParagraphProperties26.Append(tabs26);
+            previousParagraphProperties26.Append(indentation26);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties26 = new NumberingSymbolRunProperties();
+            RunFonts runFonts26 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize17 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties26.Append(runFonts26);
+            numberingSymbolRunProperties26.Append(fontSize17);
+
+            level26.Append(startNumberingValue26);
+            level26.Append(numberingFormat26);
+            level26.Append(levelText26);
+            level26.Append(levelJustification26);
+            level26.Append(previousParagraphProperties26);
+            level26.Append(numberingSymbolRunProperties26);
+
+            Level level27 = new Level() { LevelIndex = 8 };
+            StartNumberingValue startNumberingValue27 = new StartNumberingValue() { Val = 1 };
+            NumberingFormat numberingFormat27 = new NumberingFormat() { Val = NumberFormatValues.None };
+            LevelText levelText27 = new LevelText() { Val = "n" };
+            LevelJustification levelJustification27 = new LevelJustification() { Val = LevelJustificationValues.Left };
+
+            PreviousParagraphProperties previousParagraphProperties27 = new PreviousParagraphProperties();
+
+            Tabs tabs27 = new Tabs();
+            TabStop tabStop27 = new TabStop() { Val = TabStopValues.Number, Position = 3240 };
+
+            tabs27.Append(tabStop27);
+            Indentation indentation27 = new Indentation() { Left = "3240", Hanging = "360" };
+
+            previousParagraphProperties27.Append(tabs27);
+            previousParagraphProperties27.Append(indentation27);
+
+            NumberingSymbolRunProperties numberingSymbolRunProperties27 = new NumberingSymbolRunProperties();
+            RunFonts runFonts27 = new RunFonts() { Hint = FontTypeHintValues.Default, Ascii = "Wingdings", HighAnsi = "Wingdings" };
+            FontSize fontSize18 = new FontSize() { Val = "16" };
+
+            numberingSymbolRunProperties27.Append(runFonts27);
+            numberingSymbolRunProperties27.Append(fontSize18);
+
+            level27.Append(startNumberingValue27);
+            level27.Append(numberingFormat27);
+            level27.Append(levelText27);
+            level27.Append(levelJustification27);
+            level27.Append(previousParagraphProperties27);
+            level27.Append(numberingSymbolRunProperties27);
+
+            abstractNum3.Append(nsid3);
+            abstractNum3.Append(multiLevelType3);
+            abstractNum3.Append(templateCode3);
+            abstractNum3.Append(abstractNumDefinitionName1);
+            abstractNum3.Append(level19);
+            abstractNum3.Append(level20);
+            abstractNum3.Append(level21);
+            abstractNum3.Append(level22);
+            abstractNum3.Append(level23);
+            abstractNum3.Append(level24);
+            abstractNum3.Append(level25);
+            abstractNum3.Append(level26);
+            abstractNum3.Append(level27);
+
+            NumberingInstance numberingInstance1 = new NumberingInstance() { NumberID = 1 };
+            AbstractNumId abstractNumId1 = new AbstractNumId() { Val = 2 };
+
+            numberingInstance1.Append(abstractNumId1);
+
+            NumberingInstance numberingInstance2 = new NumberingInstance() { NumberID = 2 };
+            AbstractNumId abstractNumId2 = new AbstractNumId() { Val = 0 };
+
+            numberingInstance2.Append(abstractNumId2);
+
+            NumberingInstance numberingInstance3 = new NumberingInstance() { NumberID = 3 };
+            AbstractNumId abstractNumId3 = new AbstractNumId() { Val = 1 };
+
+            numberingInstance3.Append(abstractNumId3);
+
+            numbering1.Append(abstractNum1);
+            numbering1.Append(abstractNum2);
+            numbering1.Append(abstractNum3);
+            numbering1.Append(numberingInstance1);
+            numbering1.Append(numberingInstance2);
+            numbering1.Append(numberingInstance3);
 
             numberingDefinitionsPart1.Numbering = numbering1;
         }
