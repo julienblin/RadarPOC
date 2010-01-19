@@ -763,10 +763,6 @@
       <Project>{23487C87-98E1-4263-B8EA-6430D452F690}</Project>
       <Name>Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PublishingServices\PublishingServices.csproj">
-      <Project>{4AA2A902-20B4-4E1C-9E33-A0CDE89BFFAC}</Project>
-      <Name>PublishingServices</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="javascripts\ckeditor\ckeditor.pack" />
