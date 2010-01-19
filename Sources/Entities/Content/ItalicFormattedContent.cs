@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DocumentFormat.OpenXml;
 
 namespace Russell.RADAR.POC.Entities.Content
 {
@@ -14,7 +15,7 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.Append("</em>");
         }
 
-        public override DocumentFormat.OpenXml.OpenXmlElement ToOpenXmlElement()
+        public override OpenXmlElement ToOpenXmlElement()
         {
             var result = new DocumentFormat.OpenXml.Wordprocessing.Run();
             var runProperties = new DocumentFormat.OpenXml.Wordprocessing.RunProperties();

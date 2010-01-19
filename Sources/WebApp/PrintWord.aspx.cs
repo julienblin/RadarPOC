@@ -13,13 +13,13 @@ using System.Xml.Linq;
 using Russell.RADAR.POC.Entities;
 using Russell.RADAR.POC.Infrastructure.NH;
 using Russell.RADAR.POC.AuthoringServices;
-using Russell.RADAR.POC.PublishingServices;
+using System.IO;
 
-namespace Russell.RADAR.POC.WebApp.OpinionDocuments
+namespace Russell.RADAR.POC.WebApp
 {
-    public partial class PrintPDF : BasePage
+    public partial class PrintWord : BasePage
     {
-        public OpinionDocument document;
+        public Document document;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,16 +28,18 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
                 using (IUnitOfWork uow = UnitOfWork.Start())
                 {
                     var authoringService = Resolve<IAuthoringService>();
-                    document = (OpinionDocument)authoringService.Retrieve(Convert.ToInt32(Request.Params["id"]));
+                    document = authoringService.Retrieve(Convert.ToInt32(Request.Params["id"]));
                 }
             }
 
-            var publishingService = Resolve<IPublishingService>();
-
             Response.ContentType = @"application/msword";
-            Response.AddHeader("Content-Disposition", "attachment; filename=GeneratedOpinionDocument.docx");
+            Response.AddHeader("Content-Disposition", "attachment; filename=GeneratedDocument.docx");
 
-            Response.BinaryWrite(publishingService.Publish(document));
+            using (var memStream = new MemoryStream())
+            {
+                document.StreamOpenXMLDocument(memStream);
+                Response.BinaryWrite(memStream.ToArray());
+            }
 
             Response.Flush();
             Response.End();

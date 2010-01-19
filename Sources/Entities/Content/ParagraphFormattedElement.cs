@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
+using DocumentFormat.OpenXml;
 
 namespace Russell.RADAR.POC.Entities.Content
 {
@@ -15,12 +16,20 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.Append("</p>");
         }
 
-        public override DocumentFormat.OpenXml.OpenXmlElement ToOpenXmlElement()
+        public override OpenXmlElement ToOpenXmlElement()
         {
             var result = new DocumentFormat.OpenXml.Wordprocessing.Paragraph();
-            ForEachChild(x => 
-                result.Append(x.ToOpenXmlElement())
-            );
+            ForEachChild(x => {
+                if (x is TextFormattedElement)
+                {
+                    result.Append(
+                        new DocumentFormat.OpenXml.Wordprocessing.Run(x.ToOpenXmlElement())
+                    );
+
+                } else {
+                    result.Append(x.ToOpenXmlElement());
+                }
+            });
             return result;
         }
 

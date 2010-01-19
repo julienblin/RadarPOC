@@ -54,18 +54,6 @@ namespace Russell.RADAR.POC.WebApp
             Response.Redirect(string.Format("~/OpinionDocuments/EditDocument.aspx?id={0}", newDoc.Id));
         }
 
-        public void Publish_Click(object sender, EventArgs e)
-        {
-            using (IUnitOfWork uow = UnitOfWork.Start())
-            {
-                var authoringService = Resolve<IAuthoringService>();
-                Document doc = authoringService.Retrieve(Convert.ToInt32(((LinkButton)sender).CommandArgument));
-                authoringService.Publish(doc);
-                uow.Commit();
-            }
-            LoadDocuments();
-        }
-
         public void Delete_Click(object sender, EventArgs e)
         {
             using (IUnitOfWork uow = UnitOfWork.Start())

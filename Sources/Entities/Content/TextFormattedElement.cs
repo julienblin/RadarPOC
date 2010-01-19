@@ -27,7 +27,9 @@ namespace Russell.RADAR.POC.Entities.Content
 
         public override OpenXmlElement ToOpenXmlElement()
         {
-            return new DocumentFormat.OpenXml.Wordprocessing.Text(Content);
+            var result = new DocumentFormat.OpenXml.Wordprocessing.Text(Content);
+            result.Space = SpaceProcessingModeValues.Preserve;
+            return result;
         }
 
         public override object Clone()

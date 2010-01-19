@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Russell.RADAR.POC.Entities.Content;
+using System.IO;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace Russell.RADAR.POC.Entities
 {
@@ -38,5 +42,23 @@ namespace Russell.RADAR.POC.Entities
         public virtual OpinionDocumentSection SellDiscipline { get; set; }
 
         public override DocumentType DocumentType { get { return DocumentType.Opinion; } }
+
+        public override void StreamOpenXMLDocument(Stream stream)
+        {
+            using (WordprocessingDocument package = WordprocessingDocument.Create(stream, WordprocessingDocumentType.Document))
+            {
+                var mainDocumentPart = package.AddMainDocumentPart();
+                var document = new DocumentFormat.OpenXml.Wordprocessing.Document();
+                mainDocumentPart.Document = document;
+
+                var body = new Body();
+                document.Append(body);
+
+                foreach (var para in InvestmentStaff.Content.GetParagraphs())
+                {
+                    body.Append(para);
+                }
+            }
+        }
     }
 }

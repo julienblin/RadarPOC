@@ -22,8 +22,6 @@ namespace Russell.RADAR.POC.AuthoringServices
                     throw new ApplicationException(string.Format("Unknown contentType {0}", contentType));
             }
 
-            newDoc.State = DocumentState.Draft;
-
             UnitOfWork.CurrentSession.Save(newDoc);
             return newDoc;
         }
@@ -36,11 +34,6 @@ namespace Russell.RADAR.POC.AuthoringServices
         public IEnumerable<Document> ListAll()
         {
             return UnitOfWork.CurrentSession.CreateCriteria<Document>().List<Document>();
-        }
-
-        public void Publish(Document document)
-        {
-            document.State = DocumentState.Published;
         }
 
         public void Delete(Document document)

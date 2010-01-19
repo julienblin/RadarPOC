@@ -13,8 +13,6 @@ namespace Russell.RADAR.POC.AuthoringServices
 
         IEnumerable<Document> ListAll();
 
-        void Publish(Document document);
-
         void Delete(Document document);
     }
 }

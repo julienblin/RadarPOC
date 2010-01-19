@@ -64,10 +64,15 @@ namespace Russell.RADAR.POC.Entities.Content
             throw new NotImplementedException();
         }
 
-        public IList<OpenXmlElement> TempOpenXmlElement()
+        public IList<DocumentFormat.OpenXml.Wordprocessing.Paragraph> GetParagraphs()
         {
-            var result = new List<OpenXmlElement>();
-            ForEachChild(x => result.Add(x.ToOpenXmlElement()));
+            var result = new List<DocumentFormat.OpenXml.Wordprocessing.Paragraph>();
+            ForEachChild(x =>
+            {
+                if (x is ParagraphFormattedElement)
+                    result.Add((DocumentFormat.OpenXml.Wordprocessing.Paragraph)x.ToOpenXmlElement());
+
+            });
             return result;
         }
 

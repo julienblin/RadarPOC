@@ -9,7 +9,7 @@ using NHibernate.SqlTypes;
 namespace Russell.RADAR.POC.Entities.Content
 {
     /// <summary>
-    /// Allow NHibernate persistence...
+    /// Allow NHibernate persistence.
     /// </summary>
     public class FormattedContentUserType : IUserType
     {
