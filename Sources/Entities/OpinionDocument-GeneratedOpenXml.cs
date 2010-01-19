@@ -1798,16 +1798,37 @@ namespace Russell.RADAR.POC.Entities
 
             CustomXmlBlock customXmlBlock8 = new CustomXmlBlock() { Uri = "http://hubblereports.com/namespace", Element = "category" };
 
-            Paragraph paragraph21 = CreateTopicTitle("TOPIC", "4");
+            Paragraph paragraphInvestmentStaffTitle = CreateTopicTitle("INVESTMENT STAFF", InvestmentStaff.Rank.ToString());
+            IList<Paragraph> paragraphsInvestmentStaffContent = CreateTopicText(InvestmentStaff.Content);
 
-            CustomXmlBlock customXmlBlock9 = new CustomXmlBlock() { Uri = "http://hubblereports.com/namespace", Element = "CatText" };
+            Paragraph paragraphOrganizationalStabilityTitle = CreateTopicTitle("ORGANIZATIONAL STABILITY", OrganizationalStability.Rank.ToString());
+            IList<Paragraph> paragraphsOrganizationalStabilityContent = CreateTopicText(OrganizationalStability.Content);
 
-            IList<Paragraph> paragraph22 = CreateTopicText(InvestmentStaff.Content);
+            Paragraph paragraphAssetAllocationTitle = CreateTopicTitle("ASSET ALLOCATION", AssetAllocation.Rank.ToString());
+            IList<Paragraph> paragraphsAssetAllocationContent = CreateTopicText(AssetAllocation.Content);
 
-            customXmlBlock9.Append(paragraph22.ToArray());
+            Paragraph paragraphResearchTitle = CreateTopicTitle("RESEARCH", Research.Rank.ToString());
+            IList<Paragraph> paragraphsResearchContent = CreateTopicText(Research.Content);
 
-            customXmlBlock8.Append(paragraph21);
-            customXmlBlock8.Append(customXmlBlock9);
+            Paragraph paragraphCountrySelectionTitle = CreateTopicTitle("COUNTRY SELECTION", CountrySelection.Rank.ToString());
+            IList<Paragraph> paragraphsCountrySelectionContent = CreateTopicText(CountrySelection.Content);
+
+            Paragraph paragraphPortfolioConstructionTitle = CreateTopicTitle("PORTFOLIO CONSTRUCTION", PortfolioConstruction.Rank.ToString());
+            IList<Paragraph> paragraphsPortfolioConstructionContent = CreateTopicText(PortfolioConstruction.Content);
+
+            Paragraph paragraphCurrencyManagementTitle = CreateTopicTitle("CURRENCY MANAGEMENT", CurrencyManagement.Rank.ToString());
+            IList<Paragraph> paragraphsCurrencyManagementContent = CreateTopicText(CurrencyManagement.Content);
+
+            Paragraph paragraphImplementationTitle = CreateTopicTitle("IMPLEMENTATION", Implementation.Rank.ToString());
+            IList<Paragraph> paragraphsImplementationContent = CreateTopicText(Implementation.Content);
+
+            Paragraph paragraphSecuritySelectionTitle = CreateTopicTitle("SECURITY SELECTION", SecuritySelection.Rank.ToString());
+            IList<Paragraph> paragraphsSecuritySelectionContent = CreateTopicText(SecuritySelection.Content);
+
+            Paragraph paragraphSellDisciplineTitle = CreateTopicTitle("SELL DISCIPLINE", SellDiscipline.Rank.ToString());
+            IList<Paragraph> paragraphsSellDisciplineContent = CreateTopicText(SellDiscipline.Content);
+
+
             Paragraph paragraph23 = new Paragraph() { RsidParagraphAddition = "00EE7B69", RsidParagraphProperties = "00C32704", RsidRunAdditionDefault = "00957E57" };
 
             customXmlBlock3.Append(customXmlBlock4);
@@ -1816,7 +1837,26 @@ namespace Russell.RADAR.POC.Entities
             customXmlBlock3.Append(paragraph19);
             customXmlBlock3.Append(paragraphDiscussionTitle);
             customXmlBlock3.Append(paragraphsDiscussionContent.ToArray());
-            customXmlBlock3.Append(customXmlBlock8);
+            customXmlBlock3.Append(paragraphInvestmentStaffTitle);
+            customXmlBlock3.Append(paragraphsInvestmentStaffContent.ToArray());
+            customXmlBlock3.Append(paragraphOrganizationalStabilityTitle);
+            customXmlBlock3.Append(paragraphsOrganizationalStabilityContent.ToArray());
+            customXmlBlock3.Append(paragraphAssetAllocationTitle);
+            customXmlBlock3.Append(paragraphsAssetAllocationContent.ToArray());
+            customXmlBlock3.Append(paragraphResearchTitle);
+            customXmlBlock3.Append(paragraphsResearchContent.ToArray());
+            customXmlBlock3.Append(paragraphCountrySelectionTitle);
+            customXmlBlock3.Append(paragraphsCountrySelectionContent.ToArray());
+            customXmlBlock3.Append(paragraphPortfolioConstructionTitle);
+            customXmlBlock3.Append(paragraphsPortfolioConstructionContent.ToArray());
+            customXmlBlock3.Append(paragraphCurrencyManagementTitle);
+            customXmlBlock3.Append(paragraphsCurrencyManagementContent.ToArray());
+            customXmlBlock3.Append(paragraphImplementationTitle);
+            customXmlBlock3.Append(paragraphsImplementationContent.ToArray());
+            customXmlBlock3.Append(paragraphSecuritySelectionTitle);
+            customXmlBlock3.Append(paragraphsSecuritySelectionContent.ToArray());
+            customXmlBlock3.Append(paragraphSellDisciplineTitle);
+            customXmlBlock3.Append(paragraphsSellDisciplineContent.ToArray());
             customXmlBlock3.Append(paragraph23);
 
             customXmlBlock2.Append(customXmlBlock3);
