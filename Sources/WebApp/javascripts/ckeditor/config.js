@@ -9,13 +9,14 @@ CKEDITOR.editorConfig = function( config )
 	
 	config.toolbar_Custom =
     [
-        ['Maximize', '-', 'Cut','Copy', 'PasteText','PasteFromWord','-', 'SpellChecker', 'Scayt'],
+        ['Maximize', '-', 'Cut','Copy', 'PasteText','-', 'SpellChecker', 'Scayt'],
         ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
         '/',
         ['Bold','Italic','Underline'],
-        ['NumberedList','BulletedList'],
-        ['Image','Table','SpecialChar']
+        ['NumberedList','BulletedList','SpecialChar']
     ];
     
     config.filebrowserImageBrowseUrl = '/javascripts/ckfinder/ckfinder.html?Type=Images';
+    
+    config.forcePasteAsPlainText = true;
 };
