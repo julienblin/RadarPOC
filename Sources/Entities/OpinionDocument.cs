@@ -47,7 +47,7 @@ namespace Russell.RADAR.POC.Entities
         {
             using (WordprocessingDocument package = WordprocessingDocument.Create(stream, WordprocessingDocumentType.Document))
             {
-                var mainDocumentPart = package.AddMainDocumentPart();
+                /*var mainDocumentPart = package.AddMainDocumentPart();
                 var document = new DocumentFormat.OpenXml.Wordprocessing.Document();
                 mainDocumentPart.Document = document;
 
@@ -57,7 +57,9 @@ namespace Russell.RADAR.POC.Entities
                 foreach (var para in InvestmentStaff.Content.GetParagraphs())
                 {
                     body.Append(para);
-                }
+                }*/
+
+                CreateParts(package);
             }
         }
     }
