@@ -5,6 +5,7 @@ using System.Text;
 using DocumentFormat.OpenXml;
 using HtmlAgilityPack;
 using System.Web;
+using System.Text.RegularExpressions;
 
 namespace Russell.RADAR.POC.Entities.Content
 {
@@ -39,12 +40,22 @@ namespace Russell.RADAR.POC.Entities.Content
                         createdNode = new ItalicFormattedContent();
                         break;
                     default:
-                        createdNode = new TextFormattedElement(HttpUtility.HtmlDecode(childNode.InnerText));
+                        createdNode = new TextFormattedElement(TrimText(HttpUtility.HtmlDecode(childNode.InnerText)));
                         break;
                 }
                 baseElement.Children.Add(createdNode);
                 ParseRecursive(createdNode, childNode);
             }
+        }
+
+        /// <summary>
+        /// Removes non-sgnificant characters (\r\n\t) in xhtml string.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        private string TrimText(string text)
+        {
+            return Regex.Replace(text, "[\r\n\t]", string.Empty);
         }
 
         public string ToXHTML()
