@@ -10,7 +10,7 @@ using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace Russell.RADAR.POC.Entities
 {
-    public class OpinionDocument : Document
+    public partial class OpinionDocument : Document
     {
         public OpinionDocument()
         {

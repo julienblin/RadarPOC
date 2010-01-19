@@ -80,6 +80,7 @@
     <Compile Include="DocumentState.cs" />
     <Compile Include="Content\FormattedContent.cs" />
     <Compile Include="Content\IFormattedElement.cs" />
+    <Compile Include="OpinionDocument-GeneratedOpenXml.cs" />
     <Compile Include="OpinionDocument.cs" />
     <Compile Include="OpinionDocumentMap.cs" />
     <Compile Include="OpinionDocumentSection.cs" />
