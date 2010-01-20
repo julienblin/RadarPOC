@@ -21,19 +21,21 @@ namespace Russell.RADAR.POC.Entities.Content
             var result = new DocumentFormat.OpenXml.Wordprocessing.Paragraph();
 
             var paragraphProperties = new ParagraphProperties();
-            var paragraphStyleId = new ParagraphStyleId() { Val = "UnorderedListStyle" };
 
             var numberingProperties = new NumberingProperties();
             var numberingLevelReference = new NumberingLevelReference() { Val = 0 };
 
             NumberingId numberingId;
+            ParagraphStyleId paragraphStyleId;
             if (Parent is UnorderedListFormattedContent)
             {
+                paragraphStyleId = new ParagraphStyleId() { Val = "UnorderedListStyle" };
                 numberingId = new NumberingId() { Val = 3 };
             }
             else
             {
-                numberingId = new NumberingId() { Val = 2 };
+                paragraphStyleId = new ParagraphStyleId() { Val = "NumberedList" };
+                numberingId = new NumberingId() { Val = 4 };
             }
 
 
