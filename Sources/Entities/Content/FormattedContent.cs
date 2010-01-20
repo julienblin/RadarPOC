@@ -64,6 +64,7 @@ namespace Russell.RADAR.POC.Entities.Content
                     case "td":
                     case "th":
                         createdNode = new TableCellFormattedElement();
+                        ExtractStyleWidth(childNode, (IWidthSpecifier)createdNode);
                         break;
                     default:
                         createdNode = new TextFormattedElement(TrimText(HttpUtility.HtmlDecode(childNode.InnerText)));

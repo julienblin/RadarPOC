@@ -81,6 +81,7 @@
     <Compile Include="Content\TableFormattedElement.cs" />
     <Compile Include="Content\TableRowFormattedElement.cs" />
     <Compile Include="Content\TextFormattedElement.cs" />
+    <Compile Include="Content\UnitHelper.cs" />
     <Compile Include="Content\UnorderedListFormattedElement.cs" />
     <Compile Include="DocumentType.cs" />
     <Compile Include="Document.cs" />

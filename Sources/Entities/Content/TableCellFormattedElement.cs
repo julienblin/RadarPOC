@@ -7,11 +7,25 @@ using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace Russell.RADAR.POC.Entities.Content
 {
-    public class TableCellFormattedElement : BaseFormattedElement
+    public class TableCellFormattedElement : BaseFormattedElement, IWidthSpecifier
     {
+        public System.Web.UI.WebControls.Unit Width { get; set; }
+
+        public TableCellFormattedElement()
+        {
+            Width = System.Web.UI.WebControls.Unit.Empty;
+        }
+
         public override void ToXHTML(StringBuilder builder)
         {
-            builder.Append("<td>");
+            if (Width.IsEmpty)
+            {
+                builder.Append("<td>");
+            }
+            else
+            {
+                builder.AppendFormat("<td style=\"width: {0}\">", Width);
+            }
             ForEachChild(x => x.ToXHTML(builder));
             builder.Append("</td>");
         }
@@ -19,6 +33,15 @@ namespace Russell.RADAR.POC.Entities.Content
         public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
         {
             TableCell result = new TableCell();
+
+            if (!Width.IsEmpty)
+            {
+                var cellProperties = new TableCellProperties();
+                var cellWidth = UnitHelper.Convert(Width).To<TableCellWidth>();
+                cellProperties.Append(cellWidth);
+                result.Append(cellProperties);
+            }
+
             var paraContent = new Paragraph();
             ForEachChild(x =>
             {
