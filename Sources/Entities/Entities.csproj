@@ -76,6 +76,9 @@
     <Compile Include="Content\ListFormattedElement.cs" />
     <Compile Include="Content\ListItemFormattedElement.cs" />
     <Compile Include="Content\ParagraphFormattedElement.cs" />
+    <Compile Include="Content\TableCellFormattedElement.cs" />
+    <Compile Include="Content\TableFormattedElement.cs" />
+    <Compile Include="Content\TableRowFormattedElement.cs" />
     <Compile Include="Content\TextFormattedElement.cs" />
     <Compile Include="Content\UnorderedListFormattedElement.cs" />
     <Compile Include="DocumentType.cs" />

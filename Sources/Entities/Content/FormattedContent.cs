@@ -48,13 +48,35 @@ namespace Russell.RADAR.POC.Entities.Content
                     case "li":
                         createdNode = new ListItemFormattedElement();
                         break;
+                    case "table":
+                        createdNode = new TableFormattedElement();
+                        break;
+                    case "tbody":
+                    case "thead":
+                        // ignore
+                        break;
+                    case "tr":
+                        createdNode = new TableRowFormattedElement();
+                        break;
+                    case "td":
+                    case "th":
+                        createdNode = new TableCellFormattedElement();
+                        break;
                     default:
                         createdNode = new TextFormattedElement(TrimText(HttpUtility.HtmlDecode(childNode.InnerText)));
                         break;
                 }
-                baseElement.Children.Add(createdNode);
-                createdNode.Parent = baseElement;
-                ParseRecursive(createdNode, childNode);
+                if (createdNode != null)
+                {
+                    baseElement.Children.Add(createdNode);
+                    createdNode.Parent = baseElement;
+                    ParseRecursive(createdNode, childNode);
+                }
+                else
+                {
+                    // if element was skipped (e.g. tbody)
+                    ParseRecursive(baseElement, childNode);
+                }
             }
         }
 
