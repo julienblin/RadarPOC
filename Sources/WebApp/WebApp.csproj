@@ -288,7 +288,7 @@
     <Content Include="javascripts\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
     <Content Include="javascripts\ckeditor\plugins\stylescombo\styles\default.js" />
     <Content Include="javascripts\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
-    <Content Include="javascripts\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="javascripts\ckeditor\plugins\table\dialogs\table_original.js" />
     <Content Include="javascripts\ckeditor\plugins\templates\dialogs\templates.js" />
     <Content Include="javascripts\ckeditor\plugins\templates\templates\default.js" />
     <Content Include="javascripts\ckeditor\plugins\templates\templates\images\template1.gif" />
@@ -787,6 +787,7 @@
     <Content Include="images\3.gif" />
     <Content Include="images\btn_Output.gif" />
     <Content Include="javascripts\ckeditor\ckeditor_original.js" />
+    <Content Include="javascripts\ckeditor\plugins\table\dialogs\table.js" />
     <Content Include="javascripts\ckfinder\changelog.txt" />
     <Content Include="javascripts\ckfinder\ckfinder.html" />
     <Content Include="javascripts\ckfinder\ckfinder.js" />

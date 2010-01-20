@@ -19,7 +19,7 @@ namespace Russell.RADAR.POC.Entities.Content
 
         public override void ToXHTML(StringBuilder builder)
         {
-            builder.AppendFormat("<table style=\"width: {0}\">", Width);
+            builder.AppendFormat("<table border=\"1\" cellpadding=\"0\" cellspacing=\"0\" style=\"width: {0}\">", Width);
             ForEachChild(x => x.ToXHTML(builder));
             builder.Append("</table>");
         }
