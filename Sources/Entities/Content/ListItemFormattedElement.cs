@@ -7,7 +7,7 @@ using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace Russell.RADAR.POC.Entities.Content
 {
-    public class ListItemFormattedContent : BaseFormattedElement
+    public class ListItemFormattedElement : BaseFormattedElement
     {
         public override void ToXHTML(StringBuilder builder)
         {
@@ -27,7 +27,7 @@ namespace Russell.RADAR.POC.Entities.Content
 
             NumberingId numberingId;
             ParagraphStyleId paragraphStyleId;
-            if (Parent is UnorderedListFormattedContent)
+            if (Parent is UnorderedListFormattedElement)
             {
                 paragraphStyleId = new ParagraphStyleId() { Val = "UnorderedListStyle" };
                 numberingId = new NumberingId() { Val = 3 };
@@ -69,7 +69,7 @@ namespace Russell.RADAR.POC.Entities.Content
 
         public override object Clone()
         {
-            var clone = new ListItemFormattedContent();
+            var clone = new ListItemFormattedElement();
             clone.DeepCopyChildren(Children);
             return clone;
         }

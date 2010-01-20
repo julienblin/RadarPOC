@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Wordprocessing;
 using System.Diagnostics;
 
 namespace Russell.RADAR.POC.Entities.Content
 {
-    public class OrderedListFormattedContent : ListFormattedContent
+    public class UnorderedListFormattedElement : ListFormattedElement
     {
         public override void ToXHTML(StringBuilder builder)
         {
-            builder.Append("<ol>");
+            builder.Append("<ul>");
             ForEachChild(x => x.ToXHTML(builder));
-            builder.Append("</ol>");
+            builder.Append("</ul>");
         }
 
         public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
@@ -21,7 +22,7 @@ namespace Russell.RADAR.POC.Entities.Content
             var result = new List<OpenXmlElement>();
             ForEachChild(x =>
             {
-                Debug.Assert(x is ListItemFormattedContent);
+                Debug.Assert(x is ListItemFormattedElement);
                 result.AddRange(x.ToOpenXmlElements());
             });
             return result;
@@ -29,7 +30,7 @@ namespace Russell.RADAR.POC.Entities.Content
 
         public override object Clone()
         {
-            var clone = new OrderedListFormattedContent();
+            var clone = new UnorderedListFormattedElement();
             clone.DeepCopyChildren(Children);
             return clone;
         }

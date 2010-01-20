@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Russell.RADAR.POC.Entities.Content
 {
-    public abstract class ListFormattedContent : ParagraphFormattedElement
+    public abstract class ListFormattedElement : ParagraphFormattedElement
     {
     }
 }

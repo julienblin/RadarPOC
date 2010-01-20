@@ -37,16 +37,16 @@ namespace Russell.RADAR.POC.Entities.Content
                         break;
                     case "i":
                     case "em":
-                        createdNode = new ItalicFormattedContent();
+                        createdNode = new ItalicFormattedElement();
                         break;
                     case "ul":
-                        createdNode = new UnorderedListFormattedContent();
+                        createdNode = new UnorderedListFormattedElement();
                         break;
                     case "ol":
-                        createdNode = new OrderedListFormattedContent();
+                        createdNode = new OrderedListFormattedElement();
                         break;
                     case "li":
-                        createdNode = new ListItemFormattedContent();
+                        createdNode = new ListItemFormattedElement();
                         break;
                     default:
                         createdNode = new TextFormattedElement(TrimText(HttpUtility.HtmlDecode(childNode.InnerText)));

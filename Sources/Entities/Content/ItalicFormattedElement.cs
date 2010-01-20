@@ -6,7 +6,7 @@ using DocumentFormat.OpenXml;
 
 namespace Russell.RADAR.POC.Entities.Content
 {
-    public class ItalicFormattedContent : BaseFormattedElement
+    public class ItalicFormattedElement : BaseFormattedElement
     {
         public override void ToXHTML(StringBuilder builder)
         {
@@ -30,7 +30,7 @@ namespace Russell.RADAR.POC.Entities.Content
 
         public override object Clone()
         {
-            var clone = new ItalicFormattedContent();
+            var clone = new ItalicFormattedElement();
             clone.DeepCopyChildren(Children);
             return clone;
         }
