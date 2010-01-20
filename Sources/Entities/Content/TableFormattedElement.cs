@@ -52,6 +52,7 @@ namespace Russell.RADAR.POC.Entities.Content
         public override object Clone()
         {
             var clone = new TableFormattedElement();
+            clone.Width = Width;
             clone.DeepCopyChildren(Children);
             return clone;
         }

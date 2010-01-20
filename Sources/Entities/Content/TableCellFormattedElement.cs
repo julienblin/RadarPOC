@@ -11,21 +11,29 @@ namespace Russell.RADAR.POC.Entities.Content
     {
         public System.Web.UI.WebControls.Unit Width { get; set; }
 
+        public int? Rowspan { get; set; }
+        public int? Colspan { get; set; }
+
         public TableCellFormattedElement()
         {
             Width = System.Web.UI.WebControls.Unit.Empty;
+            Rowspan = null;
+            Colspan = null;
         }
 
         public override void ToXHTML(StringBuilder builder)
         {
-            if (Width.IsEmpty)
-            {
-                builder.Append("<td>");
-            }
-            else
-            {
-                builder.AppendFormat("<td style=\"width: {0}\">", Width);
-            }
+            builder.Append("<td");
+            if (!Width.IsEmpty)
+                builder.AppendFormat(" style=\"width: {0}\"", Width);
+
+            if (Rowspan.HasValue)
+                builder.AppendFormat(" rowspan=\"{0}\"", Rowspan);
+
+            if (Colspan.HasValue)
+                builder.AppendFormat(" colspan=\"{0}\"", Colspan);
+
+            builder.Append(">");
             ForEachChild(x => x.ToXHTML(builder));
             builder.Append("</td>");
         }
@@ -33,14 +41,27 @@ namespace Russell.RADAR.POC.Entities.Content
         public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
         {
             TableCell result = new TableCell();
+            var cellProperties = new TableCellProperties();
 
             if (!Width.IsEmpty)
             {
-                var cellProperties = new TableCellProperties();
                 var cellWidth = UnitHelper.Convert(Width).To<TableCellWidth>();
                 cellProperties.Append(cellWidth);
-                result.Append(cellProperties);
             }
+
+            if (Colspan.HasValue)
+            {
+                var gridSpan = new GridSpan() { Val = Colspan };
+                cellProperties.Append(gridSpan);
+            }
+
+            if (Rowspan.HasValue)
+            {
+                var verticalMerge = new VerticalMerge() { Val = MergedCellValues.Restart };
+                cellProperties.Append(verticalMerge);
+            }
+
+            result.Append(cellProperties);
 
             var paraContent = new Paragraph();
             ForEachChild(x =>
@@ -64,6 +85,9 @@ namespace Russell.RADAR.POC.Entities.Content
         public override object Clone()
         {
             var clone = new TableCellFormattedElement();
+            clone.Width = Width;
+            clone.Rowspan = Rowspan;
+            clone.Colspan = Colspan;
             clone.DeepCopyChildren(Children);
             return clone;
         }
