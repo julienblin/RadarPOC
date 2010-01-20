@@ -11,13 +11,11 @@ namespace Russell.RADAR.POC.Entities.Content
     {
         public System.Web.UI.WebControls.Unit Width { get; set; }
 
-        public int? Rowspan { get; set; }
         public int? Colspan { get; set; }
 
         public TableCellFormattedElement()
         {
             Width = System.Web.UI.WebControls.Unit.Empty;
-            Rowspan = null;
             Colspan = null;
         }
 
@@ -26,9 +24,6 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.Append("<td");
             if (!Width.IsEmpty)
                 builder.AppendFormat(" style=\"width: {0}\"", Width);
-
-            if (Rowspan.HasValue)
-                builder.AppendFormat(" rowspan=\"{0}\"", Rowspan);
 
             if (Colspan.HasValue)
                 builder.AppendFormat(" colspan=\"{0}\"", Colspan);
@@ -53,12 +48,6 @@ namespace Russell.RADAR.POC.Entities.Content
             {
                 var gridSpan = new GridSpan() { Val = Colspan };
                 cellProperties.Append(gridSpan);
-            }
-
-            if (Rowspan.HasValue)
-            {
-                var verticalMerge = new VerticalMerge() { Val = MergedCellValues.Restart };
-                cellProperties.Append(verticalMerge);
             }
 
             result.Append(cellProperties);
@@ -86,7 +75,6 @@ namespace Russell.RADAR.POC.Entities.Content
         {
             var clone = new TableCellFormattedElement();
             clone.Width = Width;
-            clone.Rowspan = Rowspan;
             clone.Colspan = Colspan;
             clone.DeepCopyChildren(Children);
             return clone;

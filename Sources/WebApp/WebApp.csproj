@@ -786,6 +786,7 @@
     <Content Include="images\3%281%29.gif" />
     <Content Include="images\3.gif" />
     <Content Include="images\btn_Output.gif" />
+    <Content Include="javascripts\ckeditor\ckeditor_original.js" />
     <Content Include="javascripts\ckfinder\changelog.txt" />
     <Content Include="javascripts\ckfinder\ckfinder.html" />
     <Content Include="javascripts\ckfinder\ckfinder.js" />

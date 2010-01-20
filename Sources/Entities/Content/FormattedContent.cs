@@ -102,9 +102,6 @@ namespace Russell.RADAR.POC.Entities.Content
 
         private void ExtractRowspanAndColspan(HtmlNode htmlNode, TableCellFormattedElement tableCellFormattedElement)
         {
-            if (htmlNode.Attributes.Contains("rowspan"))
-                tableCellFormattedElement.Rowspan = Convert.ToInt32(htmlNode.Attributes["rowspan"].Value);
-
             if (htmlNode.Attributes.Contains("colspan"))
                 tableCellFormattedElement.Colspan = Convert.ToInt32(htmlNode.Attributes["colspan"].Value);
         }
