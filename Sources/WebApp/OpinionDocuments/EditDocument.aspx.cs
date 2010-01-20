@@ -41,8 +41,8 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
                 ddlOverallRank.DataSource = new int[] { 1, 2, 3, 4 };
                 ddlOverallRank.DataBind();
 
-                textBoxOverall.Text = doc.OverallEvaluation.Content.ToXHTML();
-                ddlOverallRank.SelectedIndex = doc.OverallEvaluation.Rank - 1;
+                textBoxOverall.Text = doc.OverallEvaluationContent;
+                ddlOverallRank.SelectedIndex = doc.OverallEvaluationRank - 1;
 
                 textBoxDiscussion.Text = doc.Discussion.ToXHTML();
 
@@ -63,8 +63,8 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments
         {
             using (var uow = UnitOfWork.Start())
             {
-                doc.OverallEvaluation.Content.FromXHTML(textBoxOverall.Text);
-                doc.OverallEvaluation.Rank = ddlOverallRank.SelectedIndex + 1;
+                doc.OverallEvaluationContent = textBoxOverall.Text;
+                doc.OverallEvaluationRank = ddlOverallRank.SelectedIndex + 1;
 
                 doc.Discussion.FromXHTML(textBoxDiscussion.Text);
 

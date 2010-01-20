@@ -14,8 +14,9 @@ namespace Russell.RADAR.POC.Entities
     {
         public OpinionDocument()
         {
+            OverallEvaluationRank = 1;
+            OverallEvaluationContent = string.Empty;
             Discussion = new FormattedContent();
-            OverallEvaluation = new OpinionDocumentSection();
             InvestmentStaff = new OpinionDocumentSection();
             OrganizationalStability = new OpinionDocumentSection();
             AssetAllocation = new OpinionDocumentSection();
@@ -28,7 +29,8 @@ namespace Russell.RADAR.POC.Entities
             SellDiscipline = new OpinionDocumentSection();
         }
 
-        public virtual OpinionDocumentSection OverallEvaluation { get; set; }
+        public virtual int OverallEvaluationRank { get; set; }
+        public virtual string OverallEvaluationContent { get; set; }
         public virtual FormattedContent Discussion { get; set; }
         public virtual OpinionDocumentSection InvestmentStaff { get; set; }
         public virtual OpinionDocumentSection OrganizationalStability { get; set; }

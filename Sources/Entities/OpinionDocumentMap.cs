@@ -11,12 +11,8 @@ namespace Russell.RADAR.POC.Entities
     {
         public OpinionDocumentMap()
         {
-            Component(x => x.OverallEvaluation, m =>
-            {
-                m.Map(x => x.Rank, "OverallEvaluationRank");
-                m.Map(x => x.Content, "OverallEvaluationContent").CustomType<FormattedContentUserType>();
-            }
-            );
+            Map(x => x.OverallEvaluationRank);
+            Map(x => x.OverallEvaluationContent);
 
             Map(x => x.Discussion).CustomType<FormattedContentUserType>();
 
