@@ -2447,13 +2447,13 @@ namespace Russell.RADAR.POC.Entities
 
             Wp.HorizontalPosition horizontalPosition1 = new Wp.HorizontalPosition() { RelativeFrom = Wp.HorizontalRelativePositionValues.Column };
             Wp.PositionOffset positionOffset1 = new Wp.PositionOffset();
-            positionOffset1.Text = "445770";
+            positionOffset1.Text = "398145";
 
             horizontalPosition1.Append(positionOffset1);
 
             Wp.VerticalPosition verticalPosition1 = new Wp.VerticalPosition() { RelativeFrom = Wp.VerticalRelativePositionValues.Paragraph };
             Wp.PositionOffset positionOffset2 = new Wp.PositionOffset();
-            positionOffset2.Text = "102235";
+            positionOffset2.Text = "-127635";
 
             verticalPosition1.Append(positionOffset2);
             Wp.Extent extent11 = new Wp.Extent() { Cx = 1085850L, Cy = 323850L };
