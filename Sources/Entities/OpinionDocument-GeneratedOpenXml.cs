@@ -5974,6 +5974,56 @@ namespace Russell.RADAR.POC.Entities
             styleUnorderedList.Append(styleParagraphPropertiesUnorderedList);
             styleUnorderedList.Append(styleRunPropertiesUnorderedList);
 
+            Style styleSimpleTable = new Style() { Type = StyleValues.Table, StyleId = "GrilledutableauSimpleTable" };
+            StyleName styleNameSimpleTable = new StyleName() { Val = "Table Grid SimpleTable" };
+            BasedOn basedOnSimpleTable = new BasedOn() { Val = "Grilledutableau" };
+            UIPriority uIPrioritySimpleTable = new UIPriority() { Val = 59 };
+
+            StyleParagraphProperties styleParagraphPropertiesSimpleTable = new StyleParagraphProperties();
+            SpacingBetweenLines spacingBetweenLinesSimpleTable = new SpacingBetweenLines() { After = "0", Line = "240", LineRule = LineSpacingRuleValues.Auto };
+
+            styleParagraphPropertiesSimpleTable.Append(spacingBetweenLinesSimpleTable);
+
+            StyleTableProperties styleTablePropertiesSimpleTable = new StyleTableProperties();
+            TableIndentation tableIndentationSimpleTable = new TableIndentation() { Width = 0, Type = TableWidthUnitValues.Dxa };
+
+            TableBorders tableBordersSimpleTable = new TableBorders();
+            TopBorder topBorderSimpleTable = new TopBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
+            LeftBorder leftBorderSimpleTable = new LeftBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
+            BottomBorder bottomBorderSimpleTable = new BottomBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
+            RightBorder rightBorderSimpleTable = new RightBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
+            InsideHorizontalBorder insideHorizontalBorderSimpleTable = new InsideHorizontalBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
+            InsideVerticalBorder insideVerticalBorderSimpleTable = new InsideVerticalBorder() { Val = BorderValues.Single, Color = "000000", ThemeColor = ThemeColorValues.Text1, Size = (UInt32Value)4U, Space = (UInt32Value)0U };
+
+            tableBordersSimpleTable.Append(topBorderSimpleTable);
+            tableBordersSimpleTable.Append(leftBorderSimpleTable);
+            tableBordersSimpleTable.Append(bottomBorderSimpleTable);
+            tableBordersSimpleTable.Append(rightBorderSimpleTable);
+            tableBordersSimpleTable.Append(insideHorizontalBorderSimpleTable);
+            tableBordersSimpleTable.Append(insideVerticalBorderSimpleTable);
+
+            TableCellMarginDefault tableCellMarginDefaultSimpleTable = new TableCellMarginDefault();
+            TopMargin topMarginSimpleTable = new TopMargin() { Width = "0", Type = TableWidthUnitValues.Dxa };
+            TableCellLeftMargin tableCellLeftMarginSimpleTable = new TableCellLeftMargin() { Width = 108, Type = TableWidthValues.Dxa };
+            BottomMargin bottomMarginSimpleTable = new BottomMargin() { Width = "0", Type = TableWidthUnitValues.Dxa };
+            TableCellRightMargin tableCellRightMarginSimpleTable = new TableCellRightMargin() { Width = 108, Type = TableWidthValues.Dxa };
+
+            tableCellMarginDefaultSimpleTable.Append(topMarginSimpleTable);
+            tableCellMarginDefaultSimpleTable.Append(tableCellLeftMarginSimpleTable);
+            tableCellMarginDefaultSimpleTable.Append(bottomMarginSimpleTable);
+            tableCellMarginDefaultSimpleTable.Append(tableCellRightMarginSimpleTable);
+
+            styleTablePropertiesSimpleTable.Append(tableIndentationSimpleTable);
+            styleTablePropertiesSimpleTable.Append(tableBordersSimpleTable);
+            styleTablePropertiesSimpleTable.Append(tableCellMarginDefaultSimpleTable);
+
+            styleSimpleTable.Append(styleNameSimpleTable);
+            styleSimpleTable.Append(basedOnSimpleTable);
+            styleSimpleTable.Append(uIPrioritySimpleTable);
+            styleSimpleTable.Append(styleParagraphPropertiesSimpleTable);
+            styleSimpleTable.Append(styleTablePropertiesSimpleTable);
+
+
             styles1.Append(docDefaults1);
             styles1.Append(latentStyles1);
             styles1.Append(style1);
@@ -6034,6 +6084,7 @@ namespace Russell.RADAR.POC.Entities
             styles1.Append(style56);
             styles1.Append(style57);
             styles1.Append(styleUnorderedList);
+            styles1.Append(styleSimpleTable);
 
             styleDefinitionsPart1.Styles = styles1;
         }

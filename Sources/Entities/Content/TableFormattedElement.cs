@@ -20,6 +20,20 @@ namespace Russell.RADAR.POC.Entities.Content
         public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
         {
             Table result = new Table();
+
+            var tableProperties = new TableProperties();
+            var tableStyle = new TableStyle() { Val = "GrilledutableauSimpleTable" };
+            var tableWidth = new TableWidth() { Width = "0", Type = TableWidthUnitValues.Auto };
+            var tableIndentation = new TableIndentation() { Width = 534, Type = TableWidthUnitValues.Dxa };
+            var tableLook = new TableLook() { Val = "04A0" };
+
+            tableProperties.Append(tableStyle);
+            tableProperties.Append(tableWidth);
+            tableProperties.Append(tableIndentation);
+            tableProperties.Append(tableLook);
+
+            result.Append(tableProperties);
+
             ForEachChild(x =>
             {
                 Debug.Assert(x is TableRowFormattedElement);
