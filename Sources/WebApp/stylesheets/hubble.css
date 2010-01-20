@@ -286,6 +286,9 @@ SPAN.info {
 #contentData {
 	PADDING-RIGHT: 15px; DISPLAY: block; PADDING-LEFT: 15px; FONT-SIZE: 11px; PADDING-BOTTOM: 15px; MARGIN: 0px; WIDTH: 95%; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif
 }
+#contentDataInput {
+	PADDING-RIGHT: 15px; DISPLAY: block; PADDING-LEFT: 15px; FONT-SIZE: 11px; PADDING-BOTTOM: 15px; MARGIN: 0px; WIDTH: 95%; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif; width: 800px;
+}
 #contentData UL {
 	LIST-STYLE-POSITION: outside; MARGIN: 10px 0px 10px 40px; LIST-STYLE-TYPE: square
 }

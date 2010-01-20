@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="Content\BaseFormattedElement.cs" />
     <Compile Include="Content\BoldFormattedElement.cs" />
+    <Compile Include="Content\IWidthSpecifier.cs" />
     <Compile Include="Content\OrderedListFormattedElement.cs" />
     <Compile Include="Content\FormattedContentUserType.cs" />
     <Compile Include="Content\ItalicFormattedElement.cs" />

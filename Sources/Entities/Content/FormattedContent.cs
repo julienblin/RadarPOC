@@ -11,6 +11,8 @@ namespace Russell.RADAR.POC.Entities.Content
 {
     public class FormattedContent : BaseFormattedElement
     {
+        static readonly Regex reStyleAttr = new Regex(@"(?<name>[^;:]+)\s*:\s*(?<value>[^;:]+)", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
+
         public void FromXHTML(string input)
         {
             Children.Clear();
@@ -50,6 +52,7 @@ namespace Russell.RADAR.POC.Entities.Content
                         break;
                     case "table":
                         createdNode = new TableFormattedElement();
+                        ExtractStyleWidth(childNode, (IWidthSpecifier)createdNode);
                         break;
                     case "tbody":
                     case "thead":
@@ -76,6 +79,21 @@ namespace Russell.RADAR.POC.Entities.Content
                 {
                     // if element was skipped (e.g. tbody)
                     ParseRecursive(baseElement, childNode);
+                }
+            }
+        }
+
+        private void ExtractStyleWidth(HtmlNode htmlNode, IWidthSpecifier content)
+        {
+            if (htmlNode.Attributes.Contains("style"))
+            {
+                var attrMatches = reStyleAttr.Matches(htmlNode.Attributes["style"].Value);
+                foreach (Match attrMatch in attrMatches)
+                {
+                    if (attrMatch.Groups["name"].Value.Equals("width", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        content.Width = System.Web.UI.WebControls.Unit.Parse(attrMatch.Groups["value"].Value);
+                    }
                 }
             }
         }

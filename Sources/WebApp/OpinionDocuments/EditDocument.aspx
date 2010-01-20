@@ -23,7 +23,7 @@
             </tbody>
         </table>
     </div>
-    <div id="contentData">
+    <div id="contentDataInput">
         <h3>
             Overall Evaluation&nbsp;&nbsp;<asp:DropDownList ID="ddlOverallRank" runat="server" /></h3>
         <asp:TextBox ID="textBoxOverall" TextMode="MultiLine" Rows="10" Width="100%" runat="server" />
