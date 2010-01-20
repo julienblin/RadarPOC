@@ -13,6 +13,7 @@ using Ovml = DocumentFormat.OpenXml.Vml.Office;
 using V = DocumentFormat.OpenXml.Vml;
 using M = DocumentFormat.OpenXml.Math;
 using Russell.RADAR.POC.Entities.Content;
+using System.Globalization;
 
 namespace Russell.RADAR.POC.Entities
 {
@@ -4141,7 +4142,7 @@ namespace Russell.RADAR.POC.Entities
             runProperties25.Append(fontSize12);
             runProperties25.Append(fontSizeComplexScript21);
             Text text30 = new Text();
-            text30.Text = "NOVEMBER 30, 2005";
+            text30.Text = DateTime.Today.ToString("MMMM dd, yyyy", CultureInfo.CreateSpecificCulture("en-US")).ToUpperInvariant();
 
             run44.Append(runProperties25);
             run44.Append(text30);
