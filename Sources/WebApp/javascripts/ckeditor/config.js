@@ -20,4 +20,6 @@ CKEDITOR.editorConfig = function( config )
     config.filebrowserImageBrowseUrl = '/javascripts/ckfinder/ckfinder.html?Type=Images';
     
     config.forcePasteAsPlainText = true;
+    
+    config.language = 'en';
 };
