@@ -16,7 +16,7 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.Append("</li>");
         }
 
-        public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
+        public override IEnumerable<OpenXmlElement> ToOpenXmlElements(DocumentFormat.OpenXml.Packaging.MainDocumentPart mainDocumentPart)
         {
             var result = new DocumentFormat.OpenXml.Wordprocessing.Paragraph();
 
@@ -54,13 +54,13 @@ namespace Russell.RADAR.POC.Entities.Content
                 if (x is TextFormattedElement)
                 {
                     result.Append(
-                        new DocumentFormat.OpenXml.Wordprocessing.Run(x.ToOpenXmlElements())
+                        new DocumentFormat.OpenXml.Wordprocessing.Run(x.ToOpenXmlElements(mainDocumentPart))
                     );
 
                 }
                 else
                 {
-                    result.Append(x.ToOpenXmlElements());
+                    result.Append(x.ToOpenXmlElements(mainDocumentPart));
                 }
             });
 

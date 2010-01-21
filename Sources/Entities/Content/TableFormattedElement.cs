@@ -24,7 +24,7 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.Append("</table>");
         }
 
-        public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
+        public override IEnumerable<OpenXmlElement> ToOpenXmlElements(DocumentFormat.OpenXml.Packaging.MainDocumentPart mainDocumentPart)
         {
             Table result = new Table();
 
@@ -44,7 +44,7 @@ namespace Russell.RADAR.POC.Entities.Content
             ForEachChild(x =>
             {
                 Debug.Assert(x is TableRowFormattedElement);
-                result.Append(x.ToOpenXmlElements());
+                result.Append(x.ToOpenXmlElements(mainDocumentPart));
             });
             return new List<OpenXmlElement> { result };
         }

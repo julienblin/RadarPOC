@@ -10,7 +10,7 @@ namespace Russell.RADAR.POC.Entities.Content
     {
         public abstract void ToXHTML(StringBuilder builder);
 
-        public abstract IEnumerable<OpenXmlElement> ToOpenXmlElements();
+        public abstract IEnumerable<OpenXmlElement> ToOpenXmlElements(DocumentFormat.OpenXml.Packaging.MainDocumentPart mainDocumentPart);
 
         private List<IFormattedElement> children = new List<IFormattedElement>();
 

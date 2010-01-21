@@ -155,14 +155,14 @@ namespace Russell.RADAR.POC.Entities.Content
             ForEachChild(x => x.ToXHTML(builder));
         }
 
-        public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
+        public override IEnumerable<OpenXmlElement> ToOpenXmlElements(DocumentFormat.OpenXml.Packaging.MainDocumentPart mainDocumentPart)
         {
             var result = new List<OpenXmlElement>();
             ForEachChild(x =>
             {
                 if (x is ParagraphFormattedElement)
                 {
-                    result.AddRange(x.ToOpenXmlElements());
+                    result.AddRange(x.ToOpenXmlElements(mainDocumentPart));
                 }
 
             });

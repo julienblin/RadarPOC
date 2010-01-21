@@ -1804,39 +1804,39 @@ namespace Russell.RADAR.POC.Entities
             paragraph19.Append(paragraphProperties19);
 
             Paragraph paragraphDiscussionTitle = CreateTopicTitle("DISCUSSION", null);
-            var paragraphsDiscussionContent = CreateTopicText(Discussion);
+            var paragraphsDiscussionContent = CreateTopicText(mainDocumentPart1, Discussion);
 
             CustomXmlBlock customXmlBlock8 = new CustomXmlBlock() { Uri = "http://hubblereports.com/namespace", Element = "category" };
 
             Paragraph paragraphInvestmentStaffTitle = CreateTopicTitle("INVESTMENT STAFF", InvestmentStaff.Rank.ToString());
-            var paragraphsInvestmentStaffContent = CreateTopicText(InvestmentStaff.Content);
+            var paragraphsInvestmentStaffContent = CreateTopicText(mainDocumentPart1, InvestmentStaff.Content);
 
             Paragraph paragraphOrganizationalStabilityTitle = CreateTopicTitle("ORGANIZATIONAL STABILITY", OrganizationalStability.Rank.ToString());
-            var paragraphsOrganizationalStabilityContent = CreateTopicText(OrganizationalStability.Content);
+            var paragraphsOrganizationalStabilityContent = CreateTopicText(mainDocumentPart1, OrganizationalStability.Content);
 
             Paragraph paragraphAssetAllocationTitle = CreateTopicTitle("ASSET ALLOCATION", AssetAllocation.Rank.ToString());
-            var paragraphsAssetAllocationContent = CreateTopicText(AssetAllocation.Content);
+            var paragraphsAssetAllocationContent = CreateTopicText(mainDocumentPart1, AssetAllocation.Content);
 
             Paragraph paragraphResearchTitle = CreateTopicTitle("RESEARCH", Research.Rank.ToString());
-            var paragraphsResearchContent = CreateTopicText(Research.Content);
+            var paragraphsResearchContent = CreateTopicText(mainDocumentPart1, Research.Content);
 
             Paragraph paragraphCountrySelectionTitle = CreateTopicTitle("COUNTRY SELECTION", CountrySelection.Rank.ToString());
-            var paragraphsCountrySelectionContent = CreateTopicText(CountrySelection.Content);
+            var paragraphsCountrySelectionContent = CreateTopicText(mainDocumentPart1, CountrySelection.Content);
 
             Paragraph paragraphPortfolioConstructionTitle = CreateTopicTitle("PORTFOLIO CONSTRUCTION", PortfolioConstruction.Rank.ToString());
-            var paragraphsPortfolioConstructionContent = CreateTopicText(PortfolioConstruction.Content);
+            var paragraphsPortfolioConstructionContent = CreateTopicText(mainDocumentPart1, PortfolioConstruction.Content);
 
             Paragraph paragraphCurrencyManagementTitle = CreateTopicTitle("CURRENCY MANAGEMENT", CurrencyManagement.Rank.ToString());
-            var paragraphsCurrencyManagementContent = CreateTopicText(CurrencyManagement.Content);
+            var paragraphsCurrencyManagementContent = CreateTopicText(mainDocumentPart1, CurrencyManagement.Content);
 
             Paragraph paragraphImplementationTitle = CreateTopicTitle("IMPLEMENTATION", Implementation.Rank.ToString());
-            var paragraphsImplementationContent = CreateTopicText(Implementation.Content);
+            var paragraphsImplementationContent = CreateTopicText(mainDocumentPart1, Implementation.Content);
 
             Paragraph paragraphSecuritySelectionTitle = CreateTopicTitle("SECURITY SELECTION", SecuritySelection.Rank.ToString());
-            var paragraphsSecuritySelectionContent = CreateTopicText(SecuritySelection.Content);
+            var paragraphsSecuritySelectionContent = CreateTopicText(mainDocumentPart1, SecuritySelection.Content);
 
             Paragraph paragraphSellDisciplineTitle = CreateTopicTitle("SELL DISCIPLINE", SellDiscipline.Rank.ToString());
-            var paragraphsSellDisciplineContent = CreateTopicText(SellDiscipline.Content);
+            var paragraphsSellDisciplineContent = CreateTopicText(mainDocumentPart1, SellDiscipline.Content);
 
 
             Paragraph paragraph23 = new Paragraph() { RsidParagraphAddition = "00EE7B69", RsidParagraphProperties = "00C32704", RsidRunAdditionDefault = "00957E57" };
@@ -1980,9 +1980,9 @@ namespace Russell.RADAR.POC.Entities
             mainDocumentPart1.Document = document1;
         }
 
-        private static IEnumerable<OpenXmlElement> CreateTopicText(FormattedContent formattedContent)
+        private static IEnumerable<OpenXmlElement> CreateTopicText(DocumentFormat.OpenXml.Packaging.MainDocumentPart mainDocumentPart, FormattedContent formattedContent)
         {
-            var formattedContentParagraphs = formattedContent.ToOpenXmlElements();
+            var formattedContentParagraphs = formattedContent.ToOpenXmlElements(mainDocumentPart);
 
             foreach (var para in formattedContentParagraphs)
             {

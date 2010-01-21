@@ -16,13 +16,13 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.Append("</ol>");
         }
 
-        public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
+        public override IEnumerable<OpenXmlElement> ToOpenXmlElements(DocumentFormat.OpenXml.Packaging.MainDocumentPart mainDocumentPart)
         {
             var result = new List<OpenXmlElement>();
             ForEachChild(x =>
             {
                 Debug.Assert(x is ListItemFormattedElement);
-                result.AddRange(x.ToOpenXmlElements());
+                result.AddRange(x.ToOpenXmlElements(mainDocumentPart));
             });
             return result;
         }

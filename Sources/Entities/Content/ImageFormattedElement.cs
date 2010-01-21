@@ -33,7 +33,7 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.AppendFormat("\">", Source);
         }
 
-        public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
+        public override IEnumerable<OpenXmlElement> ToOpenXmlElements(DocumentFormat.OpenXml.Packaging.MainDocumentPart mainDocumentPart)
         {
             throw new NotImplementedException();
         }

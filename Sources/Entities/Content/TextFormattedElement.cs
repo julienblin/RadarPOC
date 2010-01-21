@@ -25,7 +25,7 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.Append(HttpUtility.HtmlEncode(Content));
         }
 
-        public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
+        public override IEnumerable<OpenXmlElement> ToOpenXmlElements(DocumentFormat.OpenXml.Packaging.MainDocumentPart mainDocumentPart)
         {
             var result = new DocumentFormat.OpenXml.Wordprocessing.Text(Content);
             result.Space = SpaceProcessingModeValues.Preserve;

@@ -33,7 +33,7 @@ namespace Russell.RADAR.POC.Entities.Content
             builder.Append("</td>");
         }
 
-        public override IEnumerable<OpenXmlElement> ToOpenXmlElements()
+        public override IEnumerable<OpenXmlElement> ToOpenXmlElements(DocumentFormat.OpenXml.Packaging.MainDocumentPart mainDocumentPart)
         {
             TableCell result = new TableCell();
             var cellProperties = new TableCellProperties();
@@ -58,13 +58,13 @@ namespace Russell.RADAR.POC.Entities.Content
                 if (x is TextFormattedElement)
                 {
                     paraContent.Append(
-                        new Run(x.ToOpenXmlElements())
+                        new Run(x.ToOpenXmlElements(mainDocumentPart))
                     );
 
                 }
                 else
                 {
-                    paraContent.Append(x.ToOpenXmlElements());
+                    paraContent.Append(x.ToOpenXmlElements(mainDocumentPart));
                 }
             });
             result.Append(paraContent);
