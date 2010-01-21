@@ -243,7 +243,7 @@
     <Content Include="javascripts\ckeditor\plugins\forms\dialogs\textarea.js" />
     <Content Include="javascripts\ckeditor\plugins\forms\dialogs\textfield.js" />
     <Content Include="javascripts\ckeditor\plugins\iframedialog\plugin.js" />
-    <Content Include="javascripts\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="javascripts\ckeditor\plugins\image\dialogs\image_original.js" />
     <Content Include="javascripts\ckeditor\plugins\link\dialogs\anchor.js" />
     <Content Include="javascripts\ckeditor\plugins\link\dialogs\link.js" />
     <Content Include="javascripts\ckeditor\plugins\link\images\anchor.gif" />
@@ -787,6 +787,7 @@
     <Content Include="images\3.gif" />
     <Content Include="images\btn_Output.gif" />
     <Content Include="javascripts\ckeditor\ckeditor_original.js" />
+    <Content Include="javascripts\ckeditor\plugins\image\dialogs\image.js" />
     <Content Include="javascripts\ckeditor\plugins\table\dialogs\table.js" />
     <Content Include="javascripts\ckfinder\changelog.txt" />
     <Content Include="javascripts\ckfinder\ckfinder.html" />
