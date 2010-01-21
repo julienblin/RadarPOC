@@ -13,8 +13,8 @@ CKEDITOR.editorConfig = function( config )
         ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
         '/',
         ['Bold','Italic','Underline'],
-        ['Table'],
-        ['NumberedList','BulletedList','SpecialChar']
+        ['Table', 'Image'],
+        ['BulletedList','SpecialChar']
     ];
     
     config.filebrowserImageBrowseUrl = '/javascripts/ckfinder/ckfinder.html?Type=Images';

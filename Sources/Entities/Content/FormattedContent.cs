@@ -11,7 +11,7 @@ namespace Russell.RADAR.POC.Entities.Content
 {
     public class FormattedContent : BaseFormattedElement
     {
-        static readonly Regex reStyleAttr = new Regex(@"(?<name>[^;:]+)\s*:\s*(?<value>[^;:]+)", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
+        static readonly Regex reStyleAttr = new Regex(@"(?<name>[^;:\s]+)\s*:\s*(?<value>[^;:]+)", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.IgnoreCase);
 
         public void FromXHTML(string input)
         {
@@ -67,6 +67,12 @@ namespace Russell.RADAR.POC.Entities.Content
                         ExtractStyleWidth(childNode, (IWidthSpecifier)createdNode);
                         ExtractRowspanAndColspan(childNode, (TableCellFormattedElement)createdNode);
                         break;
+                    case "img":
+                        createdNode = new ImageFormattedElement();
+                        ExtractImageSource(childNode, (ImageFormattedElement)createdNode);
+                        ExtractStyleWidth(childNode, (IWidthSpecifier)createdNode);
+                        ExtractStyleHeight(childNode, (IHeightSpecifier)createdNode);
+                        break;
                     default:
                         createdNode = new TextFormattedElement(TrimText(HttpUtility.HtmlDecode(childNode.InnerText)));
                         break;
@@ -100,10 +106,31 @@ namespace Russell.RADAR.POC.Entities.Content
             }
         }
 
+        private void ExtractStyleHeight(HtmlNode htmlNode, IHeightSpecifier content)
+        {
+            if (htmlNode.Attributes.Contains("style"))
+            {
+                var attrMatches = reStyleAttr.Matches(htmlNode.Attributes["style"].Value);
+                foreach (Match attrMatch in attrMatches)
+                {
+                    if (attrMatch.Groups["name"].Value.Equals("height", StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        content.Height = System.Web.UI.WebControls.Unit.Parse(attrMatch.Groups["value"].Value);
+                    }
+                }
+            }
+        }
+
         private void ExtractRowspanAndColspan(HtmlNode htmlNode, TableCellFormattedElement tableCellFormattedElement)
         {
             if (htmlNode.Attributes.Contains("colspan"))
                 tableCellFormattedElement.Colspan = Convert.ToInt32(htmlNode.Attributes["colspan"].Value);
+        }
+
+        private void ExtractImageSource(HtmlNode htmlNode, ImageFormattedElement imageFormattedElement)
+        {
+            if (htmlNode.Attributes.Contains("src"))
+                imageFormattedElement.Source = htmlNode.Attributes["src"].Value;
         }
 
         /// <summary>
