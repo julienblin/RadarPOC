@@ -48,6 +48,7 @@
       <HintPath>..\..\Dependencies\NHibernate-2.1.2.GA\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -70,6 +71,7 @@
     </Compile>
     <Compile Include="Content\BaseFormattedElement.cs" />
     <Compile Include="Content\BoldFormattedElement.cs" />
+    <Compile Include="Content\IdHelper.cs" />
     <Compile Include="Content\IHeightSpecifier.cs" />
     <Compile Include="Content\ImageFormattedElement.cs" />
     <Compile Include="Content\IWidthSpecifier.cs" />

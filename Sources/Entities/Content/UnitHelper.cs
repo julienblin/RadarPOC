@@ -38,6 +38,14 @@ namespace Russell.RADAR.POC.Entities.Content
 
             return result;
         }
+
+        public static long ConvertPixelsToEMUS(System.Web.UI.WebControls.Unit unit)
+        {
+            if (unit.Type != System.Web.UI.WebControls.UnitType.Pixel)
+                throw new NotSupportedException();
+
+            return System.Convert.ToInt64(unit.Value * 9525);
+        }
     }
 
     public class WordUnit
