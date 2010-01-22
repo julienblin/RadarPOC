@@ -26,6 +26,8 @@ namespace Russell.RADAR.POC.Entities
             GenerateExtendedFilePropertiesPart1Content(extendedFilePropertiesPart1);
 
             MainDocumentPart mainDocumentPart1 = document.AddMainDocumentPart();
+            NumberingDefinitionsPart numberingDefinitionsPart1 = mainDocumentPart1.AddNewPart<NumberingDefinitionsPart>("rId1");
+
             GenerateMainDocumentPart1Content(mainDocumentPart1);
 
             ImagePart imagePart1 = mainDocumentPart1.AddNewPart<ImagePart>("image/gif", "rId8");
@@ -65,7 +67,6 @@ namespace Russell.RADAR.POC.Entities
             StyleDefinitionsPart styleDefinitionsPart1 = mainDocumentPart1.AddNewPart<StyleDefinitionsPart>("rId2");
             GenerateStyleDefinitionsPart1Content(styleDefinitionsPart1);
 
-            NumberingDefinitionsPart numberingDefinitionsPart1 = mainDocumentPart1.AddNewPart<NumberingDefinitionsPart>("rId1");
             GenerateNumberingDefinitionsPart1Content(numberingDefinitionsPart1);
 
             EndnotesPart endnotesPart1 = mainDocumentPart1.AddNewPart<EndnotesPart>("rId6");
@@ -6987,12 +6988,6 @@ namespace Russell.RADAR.POC.Entities
             numberingInstance3.Append(abstractNumId3);
 
             NumberingInstance numberingInstance4 = new NumberingInstance() { NumberID = 4 };
-            AbstractNumId abstractNumId4 = new AbstractNumId() { Val = 0 };
-
-            numberingInstance4.Append(abstractNumId4);
-
-            NumberingInstance numberingInstance5 = new NumberingInstance() { NumberID = 5 };
-            AbstractNumId abstractNumId5 = new AbstractNumId() { Val = 0 };
 
             LevelOverride levelOverride1 = new LevelOverride() { LevelIndex = 0 };
             StartOverrideNumberingValue startOverrideNumberingValue1 = new StartOverrideNumberingValue() { Val = 1 };
@@ -7039,7 +7034,6 @@ namespace Russell.RADAR.POC.Entities
 
             levelOverride9.Append(startOverrideNumberingValue9);
 
-            numberingInstance4.Append(abstractNumId5);
             numberingInstance4.Append(levelOverride1);
             numberingInstance4.Append(levelOverride2);
             numberingInstance4.Append(levelOverride3);
@@ -7057,7 +7051,6 @@ namespace Russell.RADAR.POC.Entities
             numbering1.Append(numberingInstance2);
             numbering1.Append(numberingInstance3);
             numbering1.Append(numberingInstance4);
-            numbering1.Append(numberingInstance5);
 
             numberingDefinitionsPart1.Numbering = numbering1;
         }

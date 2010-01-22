@@ -27,15 +27,18 @@ namespace Russell.RADAR.POC.Entities.Content
 
             NumberingId numberingId;
             ParagraphStyleId paragraphStyleId;
-            if (Parent is UnorderedListFormattedElement)
+            if (Parent is OrderedListFormattedElement)
             {
-                paragraphStyleId = new ParagraphStyleId() { Val = "UnorderedListStyle" };
-                numberingId = new NumberingId() { Val = 3 };
+                paragraphStyleId = new ParagraphStyleId() { Val = "NumberedList" };
+                numberingId = new NumberingId() { Val = ((OrderedListFormattedElement)Parent).NumberingInstanceId };
+
+                var indentation = new Indentation() { Left = "1440", Hanging = "720" };
+                paragraphProperties.Append(indentation);
             }
             else
             {
-                paragraphStyleId = new ParagraphStyleId() { Val = "NumberedList" };
-                numberingId = new NumberingId() { Val = 4 };
+                paragraphStyleId = new ParagraphStyleId() { Val = "UnorderedListStyle" };
+                numberingId = new NumberingId() { Val = 3 };
             }
 
 

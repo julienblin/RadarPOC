@@ -19,5 +19,10 @@ namespace Russell.RADAR.POC.Entities.Content
             }
             return builder.ToString();
         }
+
+        public static int GenerateIntId()
+        {
+            return (random.Next(900) + 100);
+        }
     }
 }
