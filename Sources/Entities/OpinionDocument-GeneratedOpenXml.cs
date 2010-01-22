@@ -4179,7 +4179,7 @@ namespace Russell.RADAR.POC.Entities
 
             Run run45 = new Run();
             Text text31 = new Text();
-            text31.Text = "Morgan Stanley Investement Management, Inc.";
+            text31.Text = "Morgan Stanley Investment Management, Inc.";
 
             run45.Append(text31);
 

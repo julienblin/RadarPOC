@@ -690,7 +690,6 @@
     <Content Include="javascripts\ckeditor\_source\skins\v2\templates.css" />
     <Content Include="javascripts\ckeditor\_source\skins\v2\toolbar.css" />
     <Content Include="javascripts\ckeditor\_source\themes\default\theme.js" />
-    <Content Include="OpinionDocuments\PrintHTML.aspx" />
     <Content Include="stylesheets\hubble.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -731,13 +730,6 @@
     </Compile>
     <Compile Include="OpinionDocuments\EditDocument.aspx.designer.cs">
       <DependentUpon>EditDocument.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="OpinionDocuments\PrintHTML.aspx.cs">
-      <DependentUpon>PrintHTML.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OpinionDocuments\PrintHTML.aspx.designer.cs">
-      <DependentUpon>PrintHTML.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrintWord.aspx.cs">
       <DependentUpon>PrintWord.aspx</DependentUpon>

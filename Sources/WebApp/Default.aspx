@@ -32,7 +32,7 @@
                                 <td width="100%">
                                     <b>Type</b>
                                 </td>
-                                <td colspan="4">
+                                <td colspan="3">
                                     <b>Actions</b>
                                 </td>
                             </tr>
@@ -49,9 +49,6 @@
                         </td>
                         <td>
                             <asp:HyperLink ID="HyperLink1" runat="server" Text='Edit' NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/EditDocument.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
-                        </td>
-                        <td>
-                            <asp:HyperLink ID="HyperLink2" runat="server" Text="Print-HTML" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintHTML.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
                         </td>
                         <td>
                             <asp:HyperLink ID="HyperLink3" runat="server" Text="Print-Word" NavigateUrl='<%# "~/PrintWord.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
@@ -72,9 +69,6 @@
                         </td>
                         <td>
                             <asp:HyperLink ID="HyperLink4" runat="server" Text='Edit' NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/EditDocument.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
-                        </td>
-                        <td>
-                            <asp:HyperLink ID="HyperLink5" runat="server" Text="Print-HTML" NavigateUrl='<%# "~/" + DataBinder.Eval(Container.DataItem, "DocumentType") + "Documents/PrintHTML.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />
                         </td>
                         <td>
                             <asp:HyperLink ID="HyperLink6" runat="server" Text="Print-Word" NavigateUrl='<%# "~/PrintWord.aspx?id=" + DataBinder.Eval(Container.DataItem, "Id")%>' />

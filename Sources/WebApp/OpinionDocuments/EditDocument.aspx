@@ -24,6 +24,10 @@
         </table>
     </div>
     <div id="contentDataInput">
+        <div>
+            <asp:Button ID="buttonOK2" Text="Save" runat="server" />
+            <asp:Button ID="buttonCancel2" Text="Cancel" runat="server" />
+        </div>
         <h3>
             Overall Evaluation&nbsp;&nbsp;<asp:DropDownList ID="ddlOverallRank" runat="server" /></h3>
         <asp:TextBox ID="textBoxOverall" TextMode="MultiLine" Rows="10" Width="100%" runat="server" />
@@ -34,13 +38,6 @@
         <radar:SectionEditor id="SectionInvestementStaff" Title="Investment Staff" runat="server" />
         <radar:SectionEditor id="SectionOrganizationalStability" Title="Organizational Stability" runat="server" />
         <radar:SectionEditor id="SectionAssetAllocation" Title="Asset Allocation" runat="server" />
-        <radar:SectionEditor id="SectionResearch" Title="Research" runat="server" />
-        <radar:SectionEditor id="SectionCountrySelection" Title="Country Selection" runat="server" />
-        <radar:SectionEditor id="SectionPortfolioConstruction" Title="Portfolio Construction" runat="server" />
-        <radar:SectionEditor id="SectionCurrencyManagement" Title="Currency Management" runat="server" />
-        <radar:SectionEditor id="SectionImplementation" Title="Implementation" runat="server" />
-        <radar:SectionEditor id="SectionSecuritySelection" Title="Security Selection" runat="server" />
-        <radar:SectionEditor id="SectionSellDiscipline" Title="Sell Discipline" runat="server" />
         <br />
         <div>
             <asp:Button ID="buttonOk" Text="Save" runat="server" />

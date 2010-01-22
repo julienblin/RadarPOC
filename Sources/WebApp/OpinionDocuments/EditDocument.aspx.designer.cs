@@ -23,6 +23,24 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments {
         protected global::System.Web.UI.WebControls.ImageButton linkOutput;
         
         /// <summary>
+        /// buttonOK2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonOK2;
+        
+        /// <summary>
+        /// buttonCancel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonCancel2;
+        
+        /// <summary>
         /// ddlOverallRank control.
         /// </summary>
         /// <remarks>
@@ -75,69 +93,6 @@ namespace Russell.RADAR.POC.WebApp.OpinionDocuments {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Russell.RADAR.POC.WebApp.OpinionDocuments.Components.SectionEditor SectionAssetAllocation;
-        
-        /// <summary>
-        /// SectionResearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Russell.RADAR.POC.WebApp.OpinionDocuments.Components.SectionEditor SectionResearch;
-        
-        /// <summary>
-        /// SectionCountrySelection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Russell.RADAR.POC.WebApp.OpinionDocuments.Components.SectionEditor SectionCountrySelection;
-        
-        /// <summary>
-        /// SectionPortfolioConstruction control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Russell.RADAR.POC.WebApp.OpinionDocuments.Components.SectionEditor SectionPortfolioConstruction;
-        
-        /// <summary>
-        /// SectionCurrencyManagement control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Russell.RADAR.POC.WebApp.OpinionDocuments.Components.SectionEditor SectionCurrencyManagement;
-        
-        /// <summary>
-        /// SectionImplementation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Russell.RADAR.POC.WebApp.OpinionDocuments.Components.SectionEditor SectionImplementation;
-        
-        /// <summary>
-        /// SectionSecuritySelection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Russell.RADAR.POC.WebApp.OpinionDocuments.Components.SectionEditor SectionSecuritySelection;
-        
-        /// <summary>
-        /// SectionSellDiscipline control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Russell.RADAR.POC.WebApp.OpinionDocuments.Components.SectionEditor SectionSellDiscipline;
         
         /// <summary>
         /// buttonOk control.
