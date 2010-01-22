@@ -44,7 +44,7 @@
     </Reference>
     <Reference Include="CKFinder, Version=1.4.2.23058, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>javascripts\ckfinder\bin\Release\CKFinder.dll</HintPath>
+      <HintPath>..\..\Dependencies\CKFinder\CKFinder.dll</HintPath>
     </Reference>
     <Reference Include="FluentNHibernate, Version=1.0.0.593, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
