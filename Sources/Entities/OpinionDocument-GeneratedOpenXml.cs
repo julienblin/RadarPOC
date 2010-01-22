@@ -1818,27 +1818,6 @@ namespace Russell.RADAR.POC.Entities
             Paragraph paragraphAssetAllocationTitle = CreateTopicTitle("ASSET ALLOCATION", AssetAllocation.Rank.ToString());
             var paragraphsAssetAllocationContent = CreateTopicText(mainDocumentPart1, AssetAllocation.Content);
 
-            Paragraph paragraphResearchTitle = CreateTopicTitle("RESEARCH", Research.Rank.ToString());
-            var paragraphsResearchContent = CreateTopicText(mainDocumentPart1, Research.Content);
-
-            Paragraph paragraphCountrySelectionTitle = CreateTopicTitle("COUNTRY SELECTION", CountrySelection.Rank.ToString());
-            var paragraphsCountrySelectionContent = CreateTopicText(mainDocumentPart1, CountrySelection.Content);
-
-            Paragraph paragraphPortfolioConstructionTitle = CreateTopicTitle("PORTFOLIO CONSTRUCTION", PortfolioConstruction.Rank.ToString());
-            var paragraphsPortfolioConstructionContent = CreateTopicText(mainDocumentPart1, PortfolioConstruction.Content);
-
-            Paragraph paragraphCurrencyManagementTitle = CreateTopicTitle("CURRENCY MANAGEMENT", CurrencyManagement.Rank.ToString());
-            var paragraphsCurrencyManagementContent = CreateTopicText(mainDocumentPart1, CurrencyManagement.Content);
-
-            Paragraph paragraphImplementationTitle = CreateTopicTitle("IMPLEMENTATION", Implementation.Rank.ToString());
-            var paragraphsImplementationContent = CreateTopicText(mainDocumentPart1, Implementation.Content);
-
-            Paragraph paragraphSecuritySelectionTitle = CreateTopicTitle("SECURITY SELECTION", SecuritySelection.Rank.ToString());
-            var paragraphsSecuritySelectionContent = CreateTopicText(mainDocumentPart1, SecuritySelection.Content);
-
-            Paragraph paragraphSellDisciplineTitle = CreateTopicTitle("SELL DISCIPLINE", SellDiscipline.Rank.ToString());
-            var paragraphsSellDisciplineContent = CreateTopicText(mainDocumentPart1, SellDiscipline.Content);
-
 
             Paragraph paragraph23 = new Paragraph() { RsidParagraphAddition = "00EE7B69", RsidParagraphProperties = "00C32704", RsidRunAdditionDefault = "00957E57" };
 
@@ -1854,20 +1833,6 @@ namespace Russell.RADAR.POC.Entities
             customXmlBlock3.Append(paragraphsOrganizationalStabilityContent.ToArray());
             customXmlBlock3.Append(paragraphAssetAllocationTitle);
             customXmlBlock3.Append(paragraphsAssetAllocationContent.ToArray());
-            customXmlBlock3.Append(paragraphResearchTitle);
-            customXmlBlock3.Append(paragraphsResearchContent.ToArray());
-            customXmlBlock3.Append(paragraphCountrySelectionTitle);
-            customXmlBlock3.Append(paragraphsCountrySelectionContent.ToArray());
-            customXmlBlock3.Append(paragraphPortfolioConstructionTitle);
-            customXmlBlock3.Append(paragraphsPortfolioConstructionContent.ToArray());
-            customXmlBlock3.Append(paragraphCurrencyManagementTitle);
-            customXmlBlock3.Append(paragraphsCurrencyManagementContent.ToArray());
-            customXmlBlock3.Append(paragraphImplementationTitle);
-            customXmlBlock3.Append(paragraphsImplementationContent.ToArray());
-            customXmlBlock3.Append(paragraphSecuritySelectionTitle);
-            customXmlBlock3.Append(paragraphsSecuritySelectionContent.ToArray());
-            customXmlBlock3.Append(paragraphSellDisciplineTitle);
-            customXmlBlock3.Append(paragraphsSellDisciplineContent.ToArray());
             customXmlBlock3.Append(paragraph23);
 
             customXmlBlock2.Append(customXmlBlock3);
