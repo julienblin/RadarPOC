@@ -12,7 +12,7 @@ namespace Russell.RADAR.POC.Entities
         public OpinionDocumentMap()
         {
             Map(x => x.OverallEvaluationRank);
-            Map(x => x.OverallEvaluationContent);
+            Map(x => x.OverallEvaluationContent).CustomSqlType("NTEXT");
 
             Map(x => x.Discussion).CustomType<FormattedContentUserType>();
 
