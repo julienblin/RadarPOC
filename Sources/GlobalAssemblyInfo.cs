@@ -18,6 +18,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyrightAttribute("Copyright Russell 2010")]
 [assembly: AssemblyTrademarkAttribute("")]
 [assembly: AssemblyCultureAttribute("")]
-[assembly: AssemblyVersionAttribute("10.1.22.4042")]
-[assembly: AssemblyFileVersionAttribute("10.1.22.4042")]
+[assembly: AssemblyVersionAttribute("10.1.22.5093")]
+[assembly: AssemblyFileVersionAttribute("10.1.22.5093")]
 
